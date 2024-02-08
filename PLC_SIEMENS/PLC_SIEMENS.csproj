@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\CefSharp.Common.110.0.300\build\CefSharp.Common.props" Condition="Exists('..\packages\CefSharp.Common.110.0.300\build\CefSharp.Common.props')" />
+  <Import Project="..\packages\cef.redist.x86.110.0.30\build\cef.redist.x86.props" Condition="Exists('..\packages\cef.redist.x86.110.0.30\build\cef.redist.x86.props')" />
+  <Import Project="..\packages\cef.redist.x64.110.0.30\build\cef.redist.x64.props" Condition="Exists('..\packages\cef.redist.x64.110.0.30\build\cef.redist.x64.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E5589F6A-D30D-48AB-A13C-4027ECDD83ED}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PLC_SIEMENS</RootNamespace>
+    <AssemblyName>PLC_SIEMENS</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CefSharp, Version=110.0.300.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>..\packages\CefSharp.Common.110.0.300\lib\net452\CefSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.Core, Version=110.0.300.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>..\packages\CefSharp.Common.110.0.300\lib\net452\CefSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.WinForms, Version=110.0.300.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>..\packages\CefSharp.WinForms.110.0.300\lib\net462\CefSharp.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.3.6.0\lib\net45\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="S7.Net, Version=0.16.0.0, Culture=neutral, PublicKeyToken=d5812d469e84c693, processorArchitecture=MSIL">
+      <HintPath>..\packages\S7netplus.0.16.0\lib\net452\S7.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Alarmy_aktywne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alarmy_aktywne.Designer.cs">
+      <DependentUpon>Alarmy_aktywne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alarmy_historyczne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alarmy_historyczne.Designer.cs">
+      <DependentUpon>Alarmy_historyczne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AMR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AMR.Designer.cs">
+      <DependentUpon>AMR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Auto1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Auto1.Designer.cs">
+      <DependentUpon>Auto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Error_PLC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Error_PLC.Designer.cs">
+      <DependentUpon>Error_PLC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PLC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ze6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ze6.Designer.cs">
+      <DependentUpon>ze6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ze5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ze5.Designer.cs">
+      <DependentUpon>ze5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ze4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ze4.Designer.cs">
+      <DependentUpon>ze4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ze3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ze3.Designer.cs">
+      <DependentUpon>ze3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ze2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ze2.Designer.cs">
+      <DependentUpon>ze2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zezwolenie_na_lok.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zezwolenie_na_lok.Designer.cs">
+      <DependentUpon>Zezwolenie_na_lok.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Instrukcja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Instrukcja.Designer.cs">
+      <DependentUpon>Instrukcja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Schemat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Schemat.Designer.cs">
+      <DependentUpon>Schemat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wykresy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wykresy.Designer.cs">
+      <DependentUpon>Wykresy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="R1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="R1.Designer.cs">
+      <DependentUpon>R1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="login_main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="login_main.Designer.cs">
+      <DependentUpon>login_main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpisyZ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpisyZ.Designer.cs">
+      <DependentUpon>OpisyZ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ze1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ze1.Designer.cs">
+      <DependentUpon>ze1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Serwis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Serwis.Designer.cs">
+      <DependentUpon>Serwis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parametry_podstawowe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Parametry_podstawowe.Designer.cs">
+      <DependentUpon>Parametry_podstawowe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Alarmy_aktywne.resx">
+      <DependentUpon>Alarmy_aktywne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alarmy_historyczne.resx">
+      <DependentUpon>Alarmy_historyczne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AMR.resx">
+      <DependentUpon>AMR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Auto1.resx">
+      <DependentUpon>Auto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Error_PLC.resx">
+      <DependentUpon>Error_PLC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Instrukcja.resx">
+      <DependentUpon>Instrukcja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="R1.resx">
+      <DependentUpon>R1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login_main.resx">
+      <DependentUpon>login_main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpisyZ.resx">
+      <DependentUpon>OpisyZ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Parametry_podstawowe.resx">
+      <DependentUpon>Parametry_podstawowe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Schemat.resx">
+      <DependentUpon>Schemat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Serwis.resx">
+      <DependentUpon>Serwis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wykresy.resx">
+      <DependentUpon>Wykresy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ze6.resx">
+      <DependentUpon>ze6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ze5.resx">
+      <DependentUpon>ze5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ze4.resx">
+      <DependentUpon>ze4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ze3.resx">
+      <DependentUpon>ze3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ze2.resx">
+      <DependentUpon>ze2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ze1.resx">
+      <DependentUpon>ze1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zezwolenie_na_lok.resx">
+      <DependentUpon>Zezwolenie_na_lok.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\S7.Net.Types.Real.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ZE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ZE_OPEN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ZE_CLOSE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ZE_ALARM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Do_silos_czesc_D_Nap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\R4_srod1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\R4_srod1_praca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\R4_srod1_alarm.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\cef.redist.x64.110.0.30\build\cef.redist.x64.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x64.110.0.30\build\cef.redist.x64.props'))" />
+    <Error Condition="!Exists('..\packages\cef.redist.x86.110.0.30\build\cef.redist.x86.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x86.110.0.30\build\cef.redist.x86.props'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Common.110.0.300\build\CefSharp.Common.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.110.0.300\build\CefSharp.Common.props'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Common.110.0.300\build\CefSharp.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.110.0.300\build\CefSharp.Common.targets'))" />
+  </Target>
+  <Import Project="..\packages\CefSharp.Common.110.0.300\build\CefSharp.Common.targets" Condition="Exists('..\packages\CefSharp.Common.110.0.300\build\CefSharp.Common.targets')" />
+</Project>

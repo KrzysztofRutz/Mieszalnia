@@ -1,0 +1,22 @@
+
+Base of graphical files is a property of ASKOM Spó³ka z o.o., Gliwice. No part of this base may be reproduced or transmitted in any form. 
+
+Graphical files may be used only in projects of synoptical masks of asix system application. 
+
+In order to apply graphical files, you should do the following steps:
+
+1. Add the name of directory where the files with graphics will be located to application configuration XML file. 
+Such configuration is made with use of Architect program: 
+
+Architect > 'Fields and Computers' > 'Masks' > 'Files and directories' tab > 'Mask paths' option.
+
+2. Put the graphical files in the indicated directory.
+
+3. Graphical files may be placed on synoptical masks in PICTURE/PICTURES, BUTTON or PRESENTER object in particular. 
+
+
+
+
+Copyright © 2010, ASKOM Sp. z o. o., Gliwice
+
+

@@ -1,0 +1,20 @@
+
+Baza plików graficznych stanowi w³asnoœæ firmy ASKOM. Nieautoryzowane rozpowszechnianie ca³oœci lub fragmentu niniejszej bazy w
+jakiejkolwiek postaci jest zabronione. 
+
+Pliki graficzne mog¹ byæ wykorzystywane do projektów masek synoptycznych aplikacji systemu asix.
+
+W celu u¿ycia plików graficznych na maskach aplikacji asixa nale¿y wykonaæ nastêpuj¹ce kroki:
+
+1.  W pliku konfiguracyjnym aplikacji zadeklarowaæ przy u¿yciu programu Architekt katalog, do którego zostan¹ wgrane pliki graficzne. 
+Deklaracji takiej dokonuje siê za pomoc¹ opcji 'Œcie¿ki masek', dostêpnej w: 
+
+program Architekt > 'Obszary i komputery' > 'Maski' > zak³adka 'Pliki i foldery' > opcja 'Œcie¿ka masek'.
+
+2. Wgraæ do zadeklarowanego katalogu pliki graficzne, które bêd¹ wykorzystywane w aplikacji.
+
+3. Pliki graficzne mog¹ byæ wstawione na maskach synoptycznych aplikacji w szczególnoœci do obiektów: OBRAZEK/OBRAZKI, PRZYCISK, PREZENTER.
+
+
+
+Copyright © 2010, ASKOM Sp. z o. o., Gliwice
