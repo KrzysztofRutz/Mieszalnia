@@ -35,11 +35,6 @@
             this.droga02_check = new System.Windows.Forms.CheckBox();
             this.droga03_check = new System.Windows.Forms.CheckBox();
             this.droga04_check = new System.Windows.Forms.CheckBox();
-            this.droga05_check = new System.Windows.Forms.CheckBox();
-            this.droga06_check = new System.Windows.Forms.CheckBox();
-            this.droga07_check = new System.Windows.Forms.CheckBox();
-            this.droga08_check = new System.Windows.Forms.CheckBox();
-            this.droga09_check = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.zezwolenie_label = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -123,76 +118,6 @@
             this.droga04_check.UseVisualStyleBackColor = false;
             this.droga04_check.CheckedChanged += new System.EventHandler(this.droga04_check_CheckedChanged);
             // 
-            // droga05_check
-            // 
-            this.droga05_check.AutoSize = true;
-            this.droga05_check.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.droga05_check.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.droga05_check.Location = new System.Drawing.Point(5, 161);
-            this.droga05_check.Name = "droga05_check";
-            this.droga05_check.Size = new System.Drawing.Size(38, 24);
-            this.droga05_check.TabIndex = 25;
-            this.droga05_check.Text = "Z";
-            this.droga05_check.UseVisualStyleBackColor = false;
-            this.droga05_check.Visible = false;
-            this.droga05_check.CheckedChanged += new System.EventHandler(this.droga05_check_CheckedChanged);
-            // 
-            // droga06_check
-            // 
-            this.droga06_check.AutoSize = true;
-            this.droga06_check.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.droga06_check.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.droga06_check.Location = new System.Drawing.Point(5, 191);
-            this.droga06_check.Name = "droga06_check";
-            this.droga06_check.Size = new System.Drawing.Size(38, 24);
-            this.droga06_check.TabIndex = 26;
-            this.droga06_check.Text = "Z";
-            this.droga06_check.UseVisualStyleBackColor = false;
-            this.droga06_check.Visible = false;
-            this.droga06_check.CheckedChanged += new System.EventHandler(this.droga06_check_CheckedChanged);
-            // 
-            // droga07_check
-            // 
-            this.droga07_check.AutoSize = true;
-            this.droga07_check.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.droga07_check.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.droga07_check.Location = new System.Drawing.Point(5, 221);
-            this.droga07_check.Name = "droga07_check";
-            this.droga07_check.Size = new System.Drawing.Size(38, 24);
-            this.droga07_check.TabIndex = 27;
-            this.droga07_check.Text = "Z";
-            this.droga07_check.UseVisualStyleBackColor = false;
-            this.droga07_check.Visible = false;
-            this.droga07_check.CheckedChanged += new System.EventHandler(this.droga07_check_CheckedChanged);
-            // 
-            // droga08_check
-            // 
-            this.droga08_check.AutoSize = true;
-            this.droga08_check.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.droga08_check.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.droga08_check.Location = new System.Drawing.Point(5, 251);
-            this.droga08_check.Name = "droga08_check";
-            this.droga08_check.Size = new System.Drawing.Size(38, 24);
-            this.droga08_check.TabIndex = 28;
-            this.droga08_check.Text = "Z";
-            this.droga08_check.UseVisualStyleBackColor = false;
-            this.droga08_check.Visible = false;
-            this.droga08_check.CheckedChanged += new System.EventHandler(this.droga08_check_CheckedChanged);
-            // 
-            // droga09_check
-            // 
-            this.droga09_check.AutoSize = true;
-            this.droga09_check.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.droga09_check.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.droga09_check.Location = new System.Drawing.Point(5, 281);
-            this.droga09_check.Name = "droga09_check";
-            this.droga09_check.Size = new System.Drawing.Size(38, 24);
-            this.droga09_check.TabIndex = 29;
-            this.droga09_check.Text = "Z";
-            this.droga09_check.UseVisualStyleBackColor = false;
-            this.droga09_check.Visible = false;
-            this.droga09_check.CheckedChanged += new System.EventHandler(this.droga09_check_CheckedChanged);
-            // 
             // label3
             // 
             this.label3.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -271,11 +196,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.zezwolenie_label);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.droga09_check);
-            this.Controls.Add(this.droga08_check);
-            this.Controls.Add(this.droga07_check);
-            this.Controls.Add(this.droga06_check);
-            this.Controls.Add(this.droga05_check);
             this.Controls.Add(this.droga04_check);
             this.Controls.Add(this.droga03_check);
             this.Controls.Add(this.droga02_check);
@@ -301,11 +221,6 @@
         private System.Windows.Forms.CheckBox droga02_check;
         private System.Windows.Forms.CheckBox droga03_check;
         private System.Windows.Forms.CheckBox droga04_check;
-        private System.Windows.Forms.CheckBox droga05_check;
-        private System.Windows.Forms.CheckBox droga06_check;
-        private System.Windows.Forms.CheckBox droga07_check;
-        private System.Windows.Forms.CheckBox droga08_check;
-        private System.Windows.Forms.CheckBox droga09_check;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label zezwolenie_label;
         private System.Windows.Forms.Label label5;

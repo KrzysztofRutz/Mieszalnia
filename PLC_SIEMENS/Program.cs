@@ -18,6 +18,7 @@ namespace PLC_SIEMENS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            PLC.connect();
             Application.Run(new Main());
         }
 

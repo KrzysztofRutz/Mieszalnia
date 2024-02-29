@@ -1,91 +1,63 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-using CefSharp.DevTools.WebAudio;
 using CefSharp.WinForms.Internals;
 using S7.Net;
 
 namespace PLC_SIEMENS
 {
-    public class PLC : Form
+    public static class PLC
     {
         public static Plc plc;
-        public static bool isconnected;
-        public static readonly Main main = new Main();
-         
-        //public void connect()
-        public PLC()
-        {
-            connect();
-        }
+        private readonly static Error_PLC error_window = new Error_PLC();
 
-        public void connect()
+        public static void connect()
         {
             var plc_ = new Plc(CpuType.S71200, "192.168.0.202", 0, 1);
-            plc = plc_;            
-            //var window = new Main();
-            //isconnected = plc_.IsConnected;        
-            try
-            {
-                if (plc_.IsConnected == false)
-                {
-                    plc.Open();
-                }
-                else
-                {
-                    main.ERROR_PLC_label.Visible = false;
-                }
-            }
-            catch (Exception ex)
-            {
-                if (main.ERROR_PLC_label.Visible == false)
-                {
-                    main.ERROR_PLC_label.Visible = true;
-                    MessageBox.Show("Brak połączenia z PLC Siemens.", "Błąd połączenia", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    Console.WriteLine(ex.Message);
-                }
-            }
+            plc = plc_;
+            //var window = new Error_PLC();
 
-            isconnected = plc_.IsConnected;
-        }
-
-        public bool read_bool(string variable)
-        {
-            bool read_value = false;
-            if (isconnected)
+            if (plc_.IsConnected == false)
             {
                 try
                 {
-                    read_value = (bool)plc.Read(variable);
+                    plc.Open();
                 }
                 catch
                 {
-                    connect();
-                }                
+                    if (!error_window.IsActiveControl()) error_window.ShowDialog();
+                }
             }
-            else 
-            {
-                connect();                
-            }            
-            return read_value;
+            else error_window.Close();         
         }
 
-        public void write_bool(string variable)
-        {
-            if (isconnected)
-            {
-                plc.Write(variable, true);
-            }
-            else
-            {
-                connect();
-            }
+        public static async Task<bool> readBool(string variable)
+        {          
+            bool ret_value = false;
+            if (plc.IsConnected) ret_value =  Convert.ToBoolean(await plc.ReadAsync(variable));
+            else connect();
+
+            return ret_value;
         }
-    }        
+
+        public static async Task writeBool(string variable, bool value)
+        {
+            if (plc.IsConnected) await plc.WriteAsync(variable, value);
+            else connect();
+        }
+
+        public static async Task<double> analog_read(int nr_DB, int zmienna)
+        {
+            short variable = new short();
+            if (plc.IsConnected) variable =  Convert.ToInt16(await plc.ReadAsync(DataType.DataBlock, nr_DB, zmienna, VarType.Int, 1));
+            else connect();
+
+            return variable;
+        }
+
+        public static async Task analog_write(string variable, short value)
+        {
+            if (plc.IsConnected) await plc.WriteAsync(variable, value);
+            else connect();
+        }
+    }
 }

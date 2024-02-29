@@ -42,10 +42,6 @@
             System.Windows.Forms.Button zezwolenie_lok_button;
             System.Windows.Forms.Button auto1_button;
             System.Windows.Forms.Button button5;
-            System.Windows.Forms.Button prady_button;
-            System.Windows.Forms.Button button8;
-            System.Windows.Forms.Button button9;
-            System.Windows.Forms.Button button10;
             System.Windows.Forms.Button parametry_podstawowe_button;
             System.Windows.Forms.Button serwis_button;
             System.Windows.Forms.Button alarmy_aktywne_button;
@@ -56,8 +52,6 @@
             System.Windows.Forms.Button wyloguj_button;
             System.Windows.Forms.Button schemat_button;
             System.Windows.Forms.Button instrukcja_button;
-            System.Windows.Forms.Button button7;
-            System.Windows.Forms.Button wykresy_button;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.connect_text = new System.Windows.Forms.Label();
             this.close_app_button = new System.Windows.Forms.Button();
@@ -69,14 +63,11 @@
             this.bez_blokad_label = new System.Windows.Forms.Label();
             this.z_blokadami_label = new System.Windows.Forms.Label();
             this.opr_dr_tech_label = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.user_label = new System.Windows.Forms.Label();
             this.kontrola_obroty_OFF_label = new System.Windows.Forms.TextBox();
             this.kontrola_prad_OFF_label = new System.Windows.Forms.TextBox();
             this.kontrola_blokadasoft_OFF_label = new System.Windows.Forms.TextBox();
             this.kontrola_pas_OFF_label = new System.Windows.Forms.TextBox();
             this.tryb_pracy_panel = new System.Windows.Forms.Panel();
-            this.wykresy_panel = new System.Windows.Forms.Panel();
             this.ustawienia_panel = new System.Windows.Forms.Panel();
             this.alarmy_panel = new System.Windows.Forms.Panel();
             this.uzytkownik_panel = new System.Windows.Forms.Panel();
@@ -92,9 +83,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.r1_predkosc_text = new System.Windows.Forms.Label();
             this.pomoc_panel = new System.Windows.Forms.Panel();
-            this.zez_lok_panel = new System.Windows.Forms.Panel();
-            this.zezw_lok_label = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.Z1_pelny = new System.Windows.Forms.PictureBox();
             this.Z2_pelny = new System.Windows.Forms.PictureBox();
@@ -114,7 +102,6 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.logo = new System.Windows.Forms.PictureBox();
             this.dzwonek_image = new System.Windows.Forms.PictureBox();
             this.ZE1 = new System.Windows.Forms.PictureBox();
             this.ZE2 = new System.Windows.Forms.PictureBox();
@@ -136,10 +123,6 @@
             zezwolenie_lok_button = new System.Windows.Forms.Button();
             auto1_button = new System.Windows.Forms.Button();
             button5 = new System.Windows.Forms.Button();
-            prady_button = new System.Windows.Forms.Button();
-            button8 = new System.Windows.Forms.Button();
-            button9 = new System.Windows.Forms.Button();
-            button10 = new System.Windows.Forms.Button();
             parametry_podstawowe_button = new System.Windows.Forms.Button();
             serwis_button = new System.Windows.Forms.Button();
             alarmy_aktywne_button = new System.Windows.Forms.Button();
@@ -150,15 +133,11 @@
             wyloguj_button = new System.Windows.Forms.Button();
             schemat_button = new System.Windows.Forms.Button();
             instrukcja_button = new System.Windows.Forms.Button();
-            button7 = new System.Windows.Forms.Button();
-            wykresy_button = new System.Windows.Forms.Button();
             this.tryb_pracy_panel.SuspendLayout();
-            this.wykresy_panel.SuspendLayout();
             this.ustawienia_panel.SuspendLayout();
             this.alarmy_panel.SuspendLayout();
             this.uzytkownik_panel.SuspendLayout();
             this.pomoc_panel.SuspendLayout();
-            this.zez_lok_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Z1_pelny)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Z2_pelny)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -177,7 +156,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dzwonek_image)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ZE1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ZE2)).BeginInit();
@@ -374,7 +352,6 @@
             zezwolenie_lok_button.Text = "Zezwolenie na lok.";
             zezwolenie_lok_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             zezwolenie_lok_button.UseVisualStyleBackColor = false;
-            zezwolenie_lok_button.Click += new System.EventHandler(this.zezwolenie_lok_button_Click);
             // 
             // auto1_button
             // 
@@ -410,75 +387,6 @@
             button5.Text = "Auto ... ";
             button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             button5.UseVisualStyleBackColor = false;
-            // 
-            // prady_button
-            // 
-            prady_button.BackColor = System.Drawing.Color.White;
-            prady_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            prady_button.Dock = System.Windows.Forms.DockStyle.Top;
-            prady_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            prady_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            prady_button.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            prady_button.ForeColor = System.Drawing.SystemColors.WindowText;
-            prady_button.Location = new System.Drawing.Point(0, 60);
-            prady_button.Name = "prady_button";
-            prady_button.Size = new System.Drawing.Size(118, 31);
-            prady_button.TabIndex = 33;
-            prady_button.Text = "Prądy";
-            prady_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            prady_button.UseVisualStyleBackColor = false;
-            prady_button.Click += new System.EventHandler(this.prady_button_Click);
-            // 
-            // button8
-            // 
-            button8.BackColor = System.Drawing.Color.White;
-            button8.Cursor = System.Windows.Forms.Cursors.Hand;
-            button8.Dock = System.Windows.Forms.DockStyle.Top;
-            button8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button8.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            button8.ForeColor = System.Drawing.SystemColors.WindowText;
-            button8.Location = new System.Drawing.Point(0, 122);
-            button8.Name = "button8";
-            button8.Size = new System.Drawing.Size(118, 31);
-            button8.TabIndex = 35;
-            button8.Text = "Tryb pracy";
-            button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            button8.UseVisualStyleBackColor = false;
-            // 
-            // button9
-            // 
-            button9.BackColor = System.Drawing.Color.White;
-            button9.Cursor = System.Windows.Forms.Cursors.Hand;
-            button9.Dock = System.Windows.Forms.DockStyle.Top;
-            button9.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button9.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            button9.ForeColor = System.Drawing.SystemColors.WindowText;
-            button9.Location = new System.Drawing.Point(0, 153);
-            button9.Name = "button9";
-            button9.Size = new System.Drawing.Size(118, 31);
-            button9.TabIndex = 36;
-            button9.Text = "Tryb pracy";
-            button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            button9.UseVisualStyleBackColor = false;
-            // 
-            // button10
-            // 
-            button10.BackColor = System.Drawing.Color.White;
-            button10.Cursor = System.Windows.Forms.Cursors.Hand;
-            button10.Dock = System.Windows.Forms.DockStyle.Top;
-            button10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button10.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            button10.ForeColor = System.Drawing.SystemColors.WindowText;
-            button10.Location = new System.Drawing.Point(0, 184);
-            button10.Name = "button10";
-            button10.Size = new System.Drawing.Size(118, 31);
-            button10.TabIndex = 37;
-            button10.Text = "Tryb pracy";
-            button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            button10.UseVisualStyleBackColor = false;
             // 
             // parametry_podstawowe_button
             // 
@@ -658,40 +566,6 @@
             instrukcja_button.UseVisualStyleBackColor = false;
             instrukcja_button.Click += new System.EventHandler(this.instrukcja_button_Click);
             // 
-            // button7
-            // 
-            button7.BackColor = System.Drawing.Color.White;
-            button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            button7.Dock = System.Windows.Forms.DockStyle.Top;
-            button7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button7.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            button7.ForeColor = System.Drawing.SystemColors.WindowText;
-            button7.Location = new System.Drawing.Point(0, 91);
-            button7.Name = "button7";
-            button7.Size = new System.Drawing.Size(118, 31);
-            button7.TabIndex = 34;
-            button7.Text = "Wydajność falownika";
-            button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            button7.UseVisualStyleBackColor = false;
-            // 
-            // wykresy_button
-            // 
-            wykresy_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            wykresy_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            wykresy_button.Dock = System.Windows.Forms.DockStyle.Top;
-            wykresy_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            wykresy_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            wykresy_button.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            wykresy_button.ForeColor = System.Drawing.SystemColors.WindowText;
-            wykresy_button.Location = new System.Drawing.Point(0, 0);
-            wykresy_button.Name = "wykresy_button";
-            wykresy_button.Size = new System.Drawing.Size(118, 60);
-            wykresy_button.TabIndex = 25;
-            wykresy_button.Text = "Wykresy";
-            wykresy_button.UseVisualStyleBackColor = false;
-            wykresy_button.Click += new System.EventHandler(this.wykresy_button_Click);
-            // 
             // connect_text
             // 
             this.connect_text.AutoSize = true;
@@ -816,31 +690,6 @@
             this.opr_dr_tech_label.Text = "Opróżnianie dróg technologicznych";
             this.opr_dr_tech_label.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox1.Location = new System.Drawing.Point(1527, 114);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(393, 30);
-            this.textBox1.TabIndex = 11;
-            this.textBox1.Text = "Zalogowany:";
-            // 
-            // user_label
-            // 
-            this.user_label.AutoSize = true;
-            this.user_label.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.user_label.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.user_label.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.user_label.Location = new System.Drawing.Point(1658, 117);
-            this.user_label.Name = "user_label";
-            this.user_label.Size = new System.Drawing.Size(98, 23);
-            this.user_label.TabIndex = 12;
-            this.user_label.Text = "-----------";
-            // 
             // kontrola_obroty_OFF_label
             // 
             this.kontrola_obroty_OFF_label.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -907,19 +756,6 @@
             this.tryb_pracy_panel.Size = new System.Drawing.Size(118, 60);
             this.tryb_pracy_panel.TabIndex = 32;
             // 
-            // wykresy_panel
-            // 
-            this.wykresy_panel.Controls.Add(button10);
-            this.wykresy_panel.Controls.Add(button9);
-            this.wykresy_panel.Controls.Add(button8);
-            this.wykresy_panel.Controls.Add(button7);
-            this.wykresy_panel.Controls.Add(prady_button);
-            this.wykresy_panel.Controls.Add(wykresy_button);
-            this.wykresy_panel.Location = new System.Drawing.Point(116, 1);
-            this.wykresy_panel.Name = "wykresy_panel";
-            this.wykresy_panel.Size = new System.Drawing.Size(118, 60);
-            this.wykresy_panel.TabIndex = 33;
-            // 
             // ustawienia_panel
             // 
             this.ustawienia_panel.Controls.Add(serwis_button);
@@ -955,7 +791,7 @@
             // program_cycle
             // 
             this.program_cycle.Enabled = true;
-            this.program_cycle.Interval = 1000;
+            this.program_cycle.Interval = 500;
             this.program_cycle.Tick += new System.EventHandler(this.program_cycle_Tick);
             // 
             // p1_prad_text
@@ -1093,41 +929,6 @@
             this.pomoc_panel.Name = "pomoc_panel";
             this.pomoc_panel.Size = new System.Drawing.Size(118, 60);
             this.pomoc_panel.TabIndex = 121;
-            // 
-            // zez_lok_panel
-            // 
-            this.zez_lok_panel.Controls.Add(this.zezw_lok_label);
-            this.zez_lok_panel.Controls.Add(this.label8);
-            this.zez_lok_panel.Location = new System.Drawing.Point(1054, 1);
-            this.zez_lok_panel.Name = "zez_lok_panel";
-            this.zez_lok_panel.Size = new System.Drawing.Size(202, 50);
-            this.zez_lok_panel.TabIndex = 122;
-            // 
-            // zezw_lok_label
-            // 
-            this.zezw_lok_label.BackColor = System.Drawing.SystemColors.Highlight;
-            this.zezw_lok_label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.zezw_lok_label.Dock = System.Windows.Forms.DockStyle.Top;
-            this.zezw_lok_label.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.zezw_lok_label.ForeColor = System.Drawing.Color.Black;
-            this.zezw_lok_label.Location = new System.Drawing.Point(0, 24);
-            this.zezw_lok_label.Name = "zezw_lok_label";
-            this.zezw_lok_label.Size = new System.Drawing.Size(202, 26);
-            this.zezw_lok_label.TabIndex = 1;
-            this.zezw_lok_label.Text = "Nie zezwolono";
-            this.zezw_lok_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label8
-            // 
-            this.label8.BackColor = System.Drawing.SystemColors.Control;
-            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label8.Location = new System.Drawing.Point(0, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(202, 24);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Zezwolenie na ster. lokalne";
             // 
             // label13
             // 
@@ -1320,17 +1121,6 @@
             this.pictureBox1.TabIndex = 42;
             this.pictureBox1.TabStop = false;
             // 
-            // logo
-            // 
-            this.logo.ErrorImage = null;
-            this.logo.Image = ((System.Drawing.Image)(resources.GetObject("logo.Image")));
-            this.logo.InitialImage = null;
-            this.logo.Location = new System.Drawing.Point(2, 1030);
-            this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(303, 48);
-            this.logo.TabIndex = 24;
-            this.logo.TabStop = false;
-            // 
             // dzwonek_image
             // 
             this.dzwonek_image.ErrorImage = null;
@@ -1434,7 +1224,6 @@
             this.Controls.Add(this.ZE2);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.zez_lok_panel);
             this.Controls.Add(this.pomoc_panel);
             this.Controls.Add(this.r1_predkosc_text);
             this.Controls.Add(this.label10);
@@ -1465,9 +1254,7 @@
             this.Controls.Add(this.uzytkownik_panel);
             this.Controls.Add(this.alarmy_panel);
             this.Controls.Add(this.ustawienia_panel);
-            this.Controls.Add(this.wykresy_panel);
             this.Controls.Add(this.tryb_pracy_panel);
-            this.Controls.Add(this.logo);
             this.Controls.Add(this.dzwonek_image);
             this.Controls.Add(kasuj_alarmy_button);
             this.Controls.Add(dzwonek_OFF_button);
@@ -1476,8 +1263,6 @@
             this.Controls.Add(this.kontrola_blokadasoft_OFF_label);
             this.Controls.Add(this.kontrola_prad_OFF_label);
             this.Controls.Add(this.kontrola_obroty_OFF_label);
-            this.Controls.Add(this.user_label);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.opr_dr_tech_label);
             this.Controls.Add(this.z_blokadami_label);
             this.Controls.Add(this.bez_blokad_label);
@@ -1496,12 +1281,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
             this.tryb_pracy_panel.ResumeLayout(false);
-            this.wykresy_panel.ResumeLayout(false);
             this.ustawienia_panel.ResumeLayout(false);
             this.alarmy_panel.ResumeLayout(false);
             this.uzytkownik_panel.ResumeLayout(false);
             this.pomoc_panel.ResumeLayout(false);
-            this.zez_lok_panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Z1_pelny)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Z2_pelny)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
@@ -1520,7 +1303,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dzwonek_image)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ZE1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ZE2)).EndInit();
@@ -1539,15 +1321,12 @@
         private System.Windows.Forms.Label bez_blokad_label;
         private System.Windows.Forms.Label z_blokadami_label;
         private System.Windows.Forms.TextBox opr_dr_tech_label;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox kontrola_obroty_OFF_label;
         private System.Windows.Forms.TextBox kontrola_prad_OFF_label;
         private System.Windows.Forms.TextBox kontrola_blokadasoft_OFF_label;
         private System.Windows.Forms.TextBox kontrola_pas_OFF_label;
         private System.Windows.Forms.PictureBox dzwonek_image;
-        private System.Windows.Forms.PictureBox logo;
         private System.Windows.Forms.Panel tryb_pracy_panel;
-        private System.Windows.Forms.Panel wykresy_panel;
         private System.Windows.Forms.Panel ustawienia_panel;
         private System.Windows.Forms.Panel alarmy_panel;
         private System.Windows.Forms.Panel uzytkownik_panel;
@@ -1583,11 +1362,7 @@
         public System.Windows.Forms.Label label9;
         public System.Windows.Forms.Label label10;
         public System.Windows.Forms.Label r1_predkosc_text;
-        public System.Windows.Forms.Label user_label;
         private System.Windows.Forms.Panel pomoc_panel;
-        private System.Windows.Forms.Panel zez_lok_panel;
-        private System.Windows.Forms.Label zezw_lok_label;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label13;
         public System.Windows.Forms.PictureBox ZE2;
         private System.Windows.Forms.Label label14;

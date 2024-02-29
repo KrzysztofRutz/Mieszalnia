@@ -114,12 +114,6 @@
     <Compile Include="Alarmy_historyczne.Designer.cs">
       <DependentUpon>Alarmy_historyczne.cs</DependentUpon>
     </Compile>
-    <Compile Include="AMR.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AMR.Designer.cs">
-      <DependentUpon>AMR.cs</DependentUpon>
-    </Compile>
     <Compile Include="Auto1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,27 +132,7 @@
     <Compile Include="login.Designer.cs">
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
-    <Compile Include="PLC.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ze6.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ze6.Designer.cs">
-      <DependentUpon>ze6.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ze5.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ze5.Designer.cs">
-      <DependentUpon>ze5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ze4.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ze4.Designer.cs">
-      <DependentUpon>ze4.cs</DependentUpon>
-    </Compile>
+    <Compile Include="PLC.cs" />
     <Compile Include="ze3.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,12 +145,6 @@
     <Compile Include="ze2.Designer.cs">
       <DependentUpon>ze2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Zezwolenie_na_lok.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Zezwolenie_na_lok.Designer.cs">
-      <DependentUpon>Zezwolenie_na_lok.cs</DependentUpon>
-    </Compile>
     <Compile Include="Instrukcja.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,12 +156,6 @@
     </Compile>
     <Compile Include="Schemat.Designer.cs">
       <DependentUpon>Schemat.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Wykresy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Wykresy.Designer.cs">
-      <DependentUpon>Wykresy.cs</DependentUpon>
     </Compile>
     <Compile Include="R1.cs">
       <SubType>Form</SubType>
@@ -245,9 +207,6 @@
     <EmbeddedResource Include="Alarmy_historyczne.resx">
       <DependentUpon>Alarmy_historyczne.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AMR.resx">
-      <DependentUpon>AMR.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Auto1.resx">
       <DependentUpon>Auto1.cs</DependentUpon>
     </EmbeddedResource>
@@ -291,18 +250,6 @@
     <EmbeddedResource Include="Serwis.resx">
       <DependentUpon>Serwis.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Wykresy.resx">
-      <DependentUpon>Wykresy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ze6.resx">
-      <DependentUpon>ze6.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ze5.resx">
-      <DependentUpon>ze5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ze4.resx">
-      <DependentUpon>ze4.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ze3.resx">
       <DependentUpon>ze3.cs</DependentUpon>
     </EmbeddedResource>
@@ -311,9 +258,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ze1.resx">
       <DependentUpon>ze1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Zezwolenie_na_lok.resx">
-      <DependentUpon>Zezwolenie_na_lok.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\S7.Net.Types.Real.datasource" />
