@@ -5,7 +5,6 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Office.Interop.Excel;
 using PLC_SIEMENS.Definitions;
 
 namespace PLC_SIEMENS
@@ -42,13 +41,6 @@ namespace PLC_SIEMENS
         private async Task active_alarm()
         {
             await PLC.writeBool("DB8.DBX0.7", true);
-            /*int row;
-            Microsoft.Office.Interop.Excel.Application App;
-            Workbook book;
-            Worksheet sheet;
-            Range range;
-            string file = "C:\\Users\\krzys\\OneDrive\\Pulpit\\UMG\\_Praca inżynierska\\SCADA\\PLC_SIEMENS\\PLC_SIEMENS\\Alarmy.xlsx";*/
-
             bool isconnect = false;
 
             //Połączenie z bazą danych sql server
@@ -66,11 +58,6 @@ namespace PLC_SIEMENS
 
             if (isconnect)
             {
-                /*App = new Microsoft.Office.Interop.Excel.Application();
-                book = await Task.Run(() => App.Workbooks.Open(file));
-                sheet = book.Worksheets["Alarmy"];
-                range = sheet.UsedRange;*/
-
                 await Task.Run(async () =>
                 {
                     for (int row = 0; row < DefinitionAlarm.Variable.Count(); row++)
@@ -134,14 +121,6 @@ namespace PLC_SIEMENS
         private async void kasuj_alarmy_button_Click(object sender, EventArgs e)
         {
             await PLC.writeBool("DB8.DBX0.4", true);
-
-            int row;
-            Microsoft.Office.Interop.Excel.Application App;
-            Workbook book;
-            Worksheet sheet;
-            Range range;
-            string file = "C:\\Users\\krzys\\OneDrive\\Pulpit\\UMG\\_Praca inżynierska\\SCADA\\PLC_SIEMENS\\PLC_SIEMENS\\Alarmy.xlsx";
-
             bool new_alarm = await PLC.readBool("DB8.DBX1.0");
             bool isconnect = false;
 
@@ -160,46 +139,39 @@ namespace PLC_SIEMENS
 
             if (isconnect)
             {
-                App = new Microsoft.Office.Interop.Excel.Application();
-                book = await Task.Run(() => App.Workbooks.Open(file));
-                sheet = book.Worksheets["Alarmy"];
-                range = sheet.UsedRange;
-
-                for (row = 2; row <= range.Rows.Count; row++)
+                await Task.Run(async () =>
                 {
-                    string zmienna = range.Cells[row, 2].Text;
-                    bool variable_al = await PLC.readBool(zmienna);
-                    if (!variable_al)
+                    for (int row = 0; row < DefinitionAlarm.Variable.Count(); row++)
                     {
-                        var datestart = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-                        string column = "C" + row;
-                        string alarm_name = range.Cells[row, 3].Text;
-
-                        var command_check = new SqlCommand($"SELECT id FROM Alarm WHERE DateEnd is NULL AND Descrip = '{alarm_name}';", conn);
-                        var reader_check = await command_check.ExecuteReaderAsync();
-                        int check = 0;
-                        using (reader_check)
+                        string zmienna = DefinitionAlarm.Variable[row];
+                        bool variable_al = await PLC.readBool(zmienna);
+                        if (!variable_al)
                         {
-                            while (await reader_check.ReadAsync())
+                            var datestart = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                            string column = "C" + row;
+                            string alarm_name = DefinitionAlarm.Text[row];
+
+                            var command_check = new SqlCommand($"SELECT id FROM Alarm WHERE DateEnd is NULL AND Descrip = '{alarm_name}';", conn);
+                            var reader_check = await command_check.ExecuteReaderAsync();
+                            int check = 0;
+                            using (reader_check)
                             {
-                                check = reader_check.GetInt32(0);
+                                while (await reader_check.ReadAsync())
+                                {
+                                    check = reader_check.GetInt32(0);
+                                }
+                            }
+
+                            if (check != 0)
+                            {
+                                var command = new SqlCommand($"UPDATE Alarm SET DateEnd = '{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}' WHERE DateEnd is NULL AND Descrip = '{alarm_name}';", conn);
+                                using (command) await command.ExecuteNonQueryAsync();
                             }
                         }
-
-                        if (check != 0)
-                        {
-                            var command = new SqlCommand($"UPDATE Alarm SET DateEnd = '{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}' WHERE DateEnd is NULL AND Descrip = '{alarm_name}';", conn);
-                            using (command) await command.ExecuteNonQueryAsync();
-                        }
+                        else continue;
                     }
-                    else continue;
-                }
-                await Task.Run(() =>
-                {
-                    book.Close();
-                    App.Quit();
                     conn.Close();
-                });                
+                });                              
             }
         }
 

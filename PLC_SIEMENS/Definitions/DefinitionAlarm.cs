@@ -1,5 +1,4 @@
-﻿using Microsoft.Office.Interop.Excel;
-using System;
+﻿using System;
 using System.IO;
 using System.Threading.Tasks;
 
@@ -13,7 +12,6 @@ namespace PLC_SIEMENS.Definitions
         public static async Task init()
         {          
             string file = "C:\\Users\\krzys\\OneDrive\\Pulpit\\UMG\\_Praca inżynierska\\SCADA\\PLC_SIEMENS\\PLC_SIEMENS\\Alarmy.csv";
-
             string[] variable = new string[0];
             string[] text = new string[0];
 
@@ -40,17 +38,7 @@ namespace PLC_SIEMENS.Definitions
                 }
                 Variable = variable;
                 Text = text;
-            });            
-            /*await Task.Run(() =>
-            {
-                for (int row = 2; row <= range.Rows.Count; row++)
-                {
-                    variable[row - 2] = range.Cells[row, 2].Text;
-                    text[row - 2] = range.Cells[row, 3].Text;                  
-                }
-                book.Close();
-                App.Quit();
-            });  */         
+            });                  
         }
     }
 }

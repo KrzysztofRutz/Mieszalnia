@@ -99,6 +99,7 @@
             this.Controls.Add(this.alarmy_grid);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Alarmy_aktywne";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alarmy aktywne";
             this.Load += new System.EventHandler(this.Alarmy_aktywne_Load);
             ((System.ComponentModel.ISupportInitialize)(this.alarmy_grid)).EndInit();
