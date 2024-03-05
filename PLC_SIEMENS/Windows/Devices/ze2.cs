@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using PLC_SIEMENS.Definitions;
 
 namespace PLC_SIEMENS
 {

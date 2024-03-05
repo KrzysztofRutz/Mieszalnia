@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using CefSharp.WinForms.Internals;
 using S7.Net;
 
-namespace PLC_SIEMENS
+namespace PLC_SIEMENS.Definitions
 {
     public static class PLC
     {

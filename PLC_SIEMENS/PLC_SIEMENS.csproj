@@ -117,138 +117,137 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Alarmy_aktywne.cs">
+    <Compile Include="Windows\Alarms\Alarmy_aktywne.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Alarmy_aktywne.Designer.cs">
+    <Compile Include="Windows\Alarms\Alarmy_aktywne.Designer.cs">
       <DependentUpon>Alarmy_aktywne.cs</DependentUpon>
     </Compile>
-    <Compile Include="Alarmy_historyczne.cs">
+    <Compile Include="Windows\Alarms\Alarmy_historyczne.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Alarmy_historyczne.Designer.cs">
+    <Compile Include="Windows\Alarms\Alarmy_historyczne.Designer.cs">
       <DependentUpon>Alarmy_historyczne.cs</DependentUpon>
     </Compile>
-    <Compile Include="Auto1.cs">
+    <Compile Include="Windows\Auto1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Auto1.Designer.cs">
+    <Compile Include="Windows\Auto1.Designer.cs">
       <DependentUpon>Auto1.cs</DependentUpon>
     </Compile>
-    <Compile Include="DB.cs" />
     <Compile Include="Definitions\DefinitionAlarm.cs" />
-    <Compile Include="Error_PLC.cs">
+    <Compile Include="Windows\Error_PLC.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Error_PLC.Designer.cs">
+    <Compile Include="Windows\Error_PLC.Designer.cs">
       <DependentUpon>Error_PLC.cs</DependentUpon>
     </Compile>
-    <Compile Include="login.cs">
+    <Compile Include="Windows\login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="login.Designer.cs">
+    <Compile Include="Windows\login.Designer.cs">
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
-    <Compile Include="PLC.cs" />
-    <Compile Include="ze3.cs">
+    <Compile Include="Definitions\PLC.cs" />
+    <Compile Include="Windows\Devices\ze3.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ze3.Designer.cs">
+    <Compile Include="Windows\Devices\ze3.Designer.cs">
       <DependentUpon>ze3.cs</DependentUpon>
     </Compile>
-    <Compile Include="ze2.cs">
+    <Compile Include="Windows\Devices\ze2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ze2.Designer.cs">
+    <Compile Include="Windows\Devices\ze2.Designer.cs">
       <DependentUpon>ze2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Instrukcja.cs">
+    <Compile Include="Windows\Instrukcja.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Instrukcja.Designer.cs">
+    <Compile Include="Windows\Instrukcja.Designer.cs">
       <DependentUpon>Instrukcja.cs</DependentUpon>
     </Compile>
-    <Compile Include="Schemat.cs">
+    <Compile Include="Windows\Schemat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Schemat.Designer.cs">
+    <Compile Include="Windows\Schemat.Designer.cs">
       <DependentUpon>Schemat.cs</DependentUpon>
     </Compile>
-    <Compile Include="R1.cs">
+    <Compile Include="Windows\Devices\R1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="R1.Designer.cs">
+    <Compile Include="Windows\Devices\R1.Designer.cs">
       <DependentUpon>R1.cs</DependentUpon>
     </Compile>
-    <Compile Include="login_main.cs">
+    <Compile Include="Windows\login_main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="login_main.Designer.cs">
+    <Compile Include="Windows\login_main.Designer.cs">
       <DependentUpon>login_main.cs</DependentUpon>
     </Compile>
-    <Compile Include="OpisyZ.cs">
+    <Compile Include="Windows\OpisyZ.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OpisyZ.Designer.cs">
+    <Compile Include="Windows\OpisyZ.Designer.cs">
       <DependentUpon>OpisyZ.cs</DependentUpon>
     </Compile>
-    <Compile Include="ze1.cs">
+    <Compile Include="Windows\Devices\ze1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ze1.Designer.cs">
+    <Compile Include="Windows\Devices\ze1.Designer.cs">
       <DependentUpon>ze1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Serwis.cs">
+    <Compile Include="Windows\Settings\Serwis.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Serwis.Designer.cs">
+    <Compile Include="Windows\Settings\Serwis.Designer.cs">
       <DependentUpon>Serwis.cs</DependentUpon>
     </Compile>
-    <Compile Include="Parametry_podstawowe.cs">
+    <Compile Include="Windows\Settings\Parametry_podstawowe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Parametry_podstawowe.Designer.cs">
+    <Compile Include="Windows\Settings\Parametry_podstawowe.Designer.cs">
       <DependentUpon>Parametry_podstawowe.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main.cs">
+    <Compile Include="Windows\Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main.Designer.cs">
+    <Compile Include="Windows\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Alarmy_aktywne.resx">
+    <EmbeddedResource Include="Windows\Alarms\Alarmy_aktywne.resx">
       <DependentUpon>Alarmy_aktywne.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Alarmy_historyczne.resx">
+    <EmbeddedResource Include="Windows\Alarms\Alarmy_historyczne.resx">
       <DependentUpon>Alarmy_historyczne.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Auto1.resx">
+    <EmbeddedResource Include="Windows\Auto1.resx">
       <DependentUpon>Auto1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Error_PLC.resx">
+    <EmbeddedResource Include="Windows\Error_PLC.resx">
       <DependentUpon>Error_PLC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Instrukcja.resx">
+    <EmbeddedResource Include="Windows\Instrukcja.resx">
       <DependentUpon>Instrukcja.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="login.resx">
+    <EmbeddedResource Include="Windows\login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="R1.resx">
+    <EmbeddedResource Include="Windows\Devices\R1.resx">
       <DependentUpon>R1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="login_main.resx">
+    <EmbeddedResource Include="Windows\login_main.resx">
       <DependentUpon>login_main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OpisyZ.resx">
+    <EmbeddedResource Include="Windows\OpisyZ.resx">
       <DependentUpon>OpisyZ.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Parametry_podstawowe.resx">
+    <EmbeddedResource Include="Windows\Settings\Parametry_podstawowe.resx">
       <DependentUpon>Parametry_podstawowe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main.resx">
+    <EmbeddedResource Include="Windows\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -261,19 +260,19 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Schemat.resx">
+    <EmbeddedResource Include="Windows\Schemat.resx">
       <DependentUpon>Schemat.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Serwis.resx">
+    <EmbeddedResource Include="Windows\Settings\Serwis.resx">
       <DependentUpon>Serwis.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ze3.resx">
+    <EmbeddedResource Include="Windows\Devices\ze3.resx">
       <DependentUpon>ze3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ze2.resx">
+    <EmbeddedResource Include="Windows\Devices\ze2.resx">
       <DependentUpon>ze2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ze1.resx">
+    <EmbeddedResource Include="Windows\Devices\ze1.resx">
       <DependentUpon>ze1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PLC_SIEMENS.Definitions;
 
 namespace PLC_SIEMENS
 {
