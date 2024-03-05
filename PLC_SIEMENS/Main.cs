@@ -1,26 +1,23 @@
 ﻿using System;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Excel;
+using PLC_SIEMENS.Definitions;
 
 namespace PLC_SIEMENS
 {
     public partial class Main : Form
     {
         public static Main instance;
-        public System.Windows.Forms.TextBox z1_l;
-
         public Main()
         {
             InitializeComponent();
             instance = this;
-
-            //login_main window = new login_main();
-            //window.Show();
-
+            //Wpisanie nazw silosów 
             string filepath = "OpisyZ.txt";
             string[] name = new string[2];
             name = File.ReadAllLines(filepath).ToArray();
@@ -32,78 +29,66 @@ namespace PLC_SIEMENS
             program_cycle.Start();
         }
 
-
         public async void main_timer_Tick(object sender, EventArgs e)
         {
+            //Odświeżanie daty i godziny na wizualizacji 
             actual_time.Text = DateTime.Now.ToLongTimeString();
             actual_date.Text = DateTime.Now.ToLongDateString();
 
-            int row;
+            //Jeśli wystąpił nowy alarm to wykonujemy funkcje dodania go do bazy 
+            if (await PLC.readBool("DB8.DBX1.0")) await active_alarm();
+        }
+
+        private async Task active_alarm()
+        {
+            await PLC.writeBool("DB8.DBX0.7", true);
+            /*int row;
             Microsoft.Office.Interop.Excel.Application App;
             Workbook book;
             Worksheet sheet;
             Range range;
+            string file = "C:\\Users\\krzys\\OneDrive\\Pulpit\\UMG\\_Praca inżynierska\\SCADA\\PLC_SIEMENS\\PLC_SIEMENS\\Alarmy.xlsx";*/
 
-            string file = "C:\\Users\\krzys\\OneDrive\\Pulpit\\UMG\\_Praca inżynierska\\SCADA\\PLC_SIEMENS\\PLC_SIEMENS\\Alarmy.xlsx";
-            string filepath1 = "alarm_his_date.txt";
-            string filepath2 = "alarm_his_text.txt";
+            bool isconnect = false;
 
-            bool new_alarm = await PLC.readBool("DB8.DBX1.0");
-            if (new_alarm)
+            //Połączenie z bazą danych sql server
+            var conn = new SqlConnection("Data Source = DESKTOP-2LGV1R3; Initial Catalog = Mieszalnia; Integrated Security = true");
+            try
             {
-                if (file != string.Empty)
+                await conn.OpenAsync();
+                isconnect = true;
+            }
+            catch
+            {
+                conn.Dispose();
+                isconnect = false;
+            }
+
+            if (isconnect)
+            {
+                /*App = new Microsoft.Office.Interop.Excel.Application();
+                book = await Task.Run(() => App.Workbooks.Open(file));
+                sheet = book.Worksheets["Alarmy"];
+                range = sheet.UsedRange;*/
+
+                await Task.Run(async () =>
                 {
-                    App = new Microsoft.Office.Interop.Excel.Application();
-                    book = await Task.Run (() => App.Workbooks.Open(file));
-                    sheet = book.Worksheets["Alarmy"];
-                    range = sheet.UsedRange;
-
-                    StreamWriter sw1 = await Task.Run(() => File.AppendText(filepath1));
-                    StreamWriter sw2 = await Task.Run(() => File.AppendText(filepath2));
-
-                    
-                    for (row = 2; row <= range.Rows.Count; row++)
+                    for (int row = 0; row < DefinitionAlarm.Variable.Count(); row++)
                     {
-
-                        string zmienna = range.Cells[row, 2].Text;
-                        bool j = await PLC.readBool(zmienna);
-                        if (j == true)
+                        string zmienna = DefinitionAlarm.Variable[row];
+                        bool variable_al = await PLC.readBool(zmienna);
+                        if (variable_al)
                         {
+                            var datestart = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                            string alarm_name = DefinitionAlarm.Text[row];
 
-                            string data = DateTime.Now.ToLongDateString();
-                            string czas = DateTime.Now.ToLongTimeString();
-                            string alarm_date = data + " " + czas;
-                            string column = "D" + row;
-                            Range cellRange = sheet.Range[column, column];
-                            cellRange.Value = null;
-
-                            cellRange.Value = alarm_date;
-
-                            //sw1.NewLine = alarm_date;
-                            //sw2.NewLine = range.Cells[row, 3].Text;
-                            await Task.Run(() =>
-                            {
-                                sw1.WriteLine(alarm_date);
-                                sw2.WriteLine(range.Cells[row, 3].Text);
-
-                                book.Save();
-                            });
-                            
-                            //Alarmy_historyczne.instance.alarmyhis_grid.Rows.Add(range.Cells[row, 4].Text, range.Cells[row, 3].Text);
+                            var command = new SqlCommand($"INSERT INTO Alarm (DateStart, Descrip) VALUES ('{datestart}', '{alarm_name}');", conn);
+                            using (command) await command.ExecuteNonQueryAsync();
                         }
-                        else
-                        {
-                            continue;
-                        }
+                        else continue;
                     }
-                    await Task.Run(() =>
-                    {
-                        sw1.Close();
-                        sw2.Close();
-                        book.Close();
-                        App.Quit();
-                    });
-                }
+                    conn.Close();
+                });                              
             }
         }
 
@@ -132,7 +117,8 @@ namespace PLC_SIEMENS
 
         private void close_app_button_Click(object sender, EventArgs e)
         {
-            this.Close();
+            var result = MessageBox.Show("Czy napewno chcesz wyjść z aplikacji?", "Zamykanie", MessageBoxButtons.YesNo, MessageBoxIcon.Question);          
+            if (result == DialogResult.Yes) this.Close();
         }
 
         private async void STOP_button_Click(object sender, EventArgs e)
@@ -148,6 +134,73 @@ namespace PLC_SIEMENS
         private async void kasuj_alarmy_button_Click(object sender, EventArgs e)
         {
             await PLC.writeBool("DB8.DBX0.4", true);
+
+            int row;
+            Microsoft.Office.Interop.Excel.Application App;
+            Workbook book;
+            Worksheet sheet;
+            Range range;
+            string file = "C:\\Users\\krzys\\OneDrive\\Pulpit\\UMG\\_Praca inżynierska\\SCADA\\PLC_SIEMENS\\PLC_SIEMENS\\Alarmy.xlsx";
+
+            bool new_alarm = await PLC.readBool("DB8.DBX1.0");
+            bool isconnect = false;
+
+            //Połączenie z bazą danych sql server
+            var conn = new SqlConnection("Data Source = DESKTOP-2LGV1R3; Initial Catalog = Mieszalnia; Integrated Security = true");
+            try
+            {
+                await conn.OpenAsync();
+                isconnect = true;
+            }
+            catch
+            {
+                conn.Dispose();
+                isconnect = false;
+            }
+
+            if (isconnect)
+            {
+                App = new Microsoft.Office.Interop.Excel.Application();
+                book = await Task.Run(() => App.Workbooks.Open(file));
+                sheet = book.Worksheets["Alarmy"];
+                range = sheet.UsedRange;
+
+                for (row = 2; row <= range.Rows.Count; row++)
+                {
+                    string zmienna = range.Cells[row, 2].Text;
+                    bool variable_al = await PLC.readBool(zmienna);
+                    if (!variable_al)
+                    {
+                        var datestart = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                        string column = "C" + row;
+                        string alarm_name = range.Cells[row, 3].Text;
+
+                        var command_check = new SqlCommand($"SELECT id FROM Alarm WHERE DateEnd is NULL AND Descrip = '{alarm_name}';", conn);
+                        var reader_check = await command_check.ExecuteReaderAsync();
+                        int check = 0;
+                        using (reader_check)
+                        {
+                            while (await reader_check.ReadAsync())
+                            {
+                                check = reader_check.GetInt32(0);
+                            }
+                        }
+
+                        if (check != 0)
+                        {
+                            var command = new SqlCommand($"UPDATE Alarm SET DateEnd = '{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}' WHERE DateEnd is NULL AND Descrip = '{alarm_name}';", conn);
+                            using (command) await command.ExecuteNonQueryAsync();
+                        }
+                    }
+                    else continue;
+                }
+                await Task.Run(() =>
+                {
+                    book.Close();
+                    App.Quit();
+                    conn.Close();
+                });                
+            }
         }
 
         private async void bez_blokad_button_Click(object sender, EventArgs e)

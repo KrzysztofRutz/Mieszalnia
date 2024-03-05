@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
+using PLC_SIEMENS.Definitions;
 
 namespace PLC_SIEMENS
 {
@@ -18,10 +19,9 @@ namespace PLC_SIEMENS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Task.Run(async () => await DefinitionAlarm.init());
             PLC.connect();
             Application.Run(new Main());
         }
-
     }   
-
 }
