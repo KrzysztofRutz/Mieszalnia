@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.Z2_textbox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -37,7 +38,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Z1_textbox = new System.Windows.Forms.TextBox();
-            this.Z2_textbox = new System.Windows.Forms.TextBox();
             this.save_button = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -72,6 +72,16 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(550, 131);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // Z2_textbox
+            // 
+            this.Z2_textbox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Z2_textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Z2_textbox.Location = new System.Drawing.Point(244, 67);
+            this.Z2_textbox.Name = "Z2_textbox";
+            this.Z2_textbox.Size = new System.Drawing.Size(303, 26);
+            this.Z2_textbox.TabIndex = 22;
+            this.Z2_textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label14
             // 
@@ -181,16 +191,6 @@
             this.Z1_textbox.TabIndex = 21;
             this.Z1_textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // Z2_textbox
-            // 
-            this.Z2_textbox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Z2_textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Z2_textbox.Location = new System.Drawing.Point(244, 67);
-            this.Z2_textbox.Name = "Z2_textbox";
-            this.Z2_textbox.Size = new System.Drawing.Size(303, 26);
-            this.Z2_textbox.TabIndex = 22;
-            this.Z2_textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // save_button
             // 
             this.save_button.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -214,6 +214,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Opisy_Z";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Opisy zbiorników";
             this.Load += new System.EventHandler(this.Opisy_Z_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

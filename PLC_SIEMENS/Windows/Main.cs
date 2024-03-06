@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
@@ -79,26 +80,35 @@ namespace PLC_SIEMENS
             }
         }
 
-        private void program_cycle_Tick(object sender, EventArgs e)
+        private async void program_cycle_Tick(object sender, EventArgs e)
         {
             if (PLC.plc.IsConnected)
             {
-                dzwonek();
-                opr_dr_tech();
-                auto();
-                alarm_obiekt();               
+                await dzwonek();
+                await opr_dr_tech();
+                await auto();
+                await alarm_obiekt();
                 //analog_read(40, p1_prad_text, "A");
+                var weight = await PLC.analog_read(10, 0, S7.Net.VarType.Real);
+                weight_label.Text = $"{weight.ToString("0.##")} kg";
                 //analog_write(18, r1_predkosc_text, "%");
-                napelnienie("DB6.DBX4.0", Z1_pelny);
-                napelnienie("DB6.DBX4.1", Z2_pelny);
+                await napelnienie("DB6.DBX4.0", Z1_pelny);
+                await napelnienie("DB6.DBX4.1", Z2_pelny);
                 //redler("DB6.DBX0.0", "DB6.DBX0.1", R1);
-                //zasuwa("DB6.DBX40.0", "DB6.DBX40.1", "DB6.DBX40.2", ZE1);
-                //zasuwa("DB6.DBX40.3", "DB6.DBX40.4", "DB6.DBX40.5", ZE2);
-                zasuwa("DB6.DBX2.6", "DB6.DBX2.7", "DB6.DBX3.0", ZE3);
-                kontrola_off("DB8.DBX4.6", kontrola_blokadasoft_OFF_label);
-                kontrola_off("DB8.DBX4.7", kontrola_prad_OFF_label);
-                kontrola_off("DB8.DBX5.0", kontrola_obroty_OFF_label);
-                kontrola_off("DB8.DBX5.1", kontrola_pas_OFF_label);
+                await zasuwa("DB6.DBX2.0", "DB6.DBX2.1", "DB6.DBX2.2", ZE1);
+                await zasuwa("DB6.DBX2.3", "DB6.DBX2.4", "DB6.DBX2.5", ZE2);
+                await zasuwa("DB6.DBX2.6", "DB6.DBX2.7", "DB6.DBX3.0", ZE3);
+                await kontrola_off("DB8.DBX4.6", kontrola_blokadasoft_OFF_label);
+                await kontrola_off("DB8.DBX4.7", kontrola_prad_OFF_label);
+                await kontrola_off("DB8.DBX5.0", kontrola_obroty_OFF_label);
+                await kontrola_off("DB8.DBX5.1", kontrola_pas_OFF_label);
+
+                await drogi("DB5.DBX0.0", odc1_label1);
+                await drogi("DB5.DBX0.0", odc1_label2);
+                await drogi("DB5.DBX0.0", odc1_label3);
+                await drogi("DB5.DBX0.1", odc2_label1);
+                await drogi("DB5.DBX0.1", odc2_label2);
+                await drogi("DB5.DBX0.1", odc2_label3);
             }            
         }
 
@@ -187,7 +197,7 @@ namespace PLC_SIEMENS
             tryb_pracy_panel.Height = 60;
         }
 
-        private async void dzwonek()
+        private async Task dzwonek()
         {
             bool dzwonek = await PLC.readBool("DB8.DBX6.5");
             if (dzwonek == true)
@@ -200,7 +210,7 @@ namespace PLC_SIEMENS
             }
         }
 
-        private async void opr_dr_tech()
+        private async Task opr_dr_tech()
         {
             bool opr_dr_tech = await PLC.readBool("DB8.DBX6.3");
             if (opr_dr_tech == true)
@@ -213,7 +223,7 @@ namespace PLC_SIEMENS
             }
         }
 
-        private async void auto()
+        private async Task auto()
         {
             bool auto = await PLC.readBool("DB8.DBX6.1");
             if (auto == true)
@@ -228,7 +238,7 @@ namespace PLC_SIEMENS
             }
         }
 
-        private async void kontrola_off(string zmienna, System.Windows.Forms.TextBox label)
+        private async Task kontrola_off(string zmienna, TextBox label)
         {
             bool kontrola_off = await PLC.readBool(zmienna);
             if (kontrola_off == true)
@@ -241,7 +251,7 @@ namespace PLC_SIEMENS
             }
         }
         
-        private async void alarm_obiekt()
+        private async Task alarm_obiekt()
         {
             bool alarm_obiekt = await PLC.readBool("DB8.DBX6.4");
             if (alarm_obiekt == true)
@@ -254,11 +264,81 @@ namespace PLC_SIEMENS
             }
         }
 
+        private async Task zasuwa(string open, string close, string awaria, PictureBox name)
+        {
+            bool bit_open = await PLC.readBool(open);
+            bool bit_close = await PLC.readBool(close);
+            bool bit_awaria = await PLC.readBool(awaria);
+
+            if (bit_open == true && bit_awaria == false)
+            {
+                name.Image = Properties.Resources.ZE_OPEN;
+            }
+            else if (bit_close == true && bit_awaria == false)
+            {
+                name.Image = Properties.Resources.ZE_CLOSE;
+            }
+            else if (bit_awaria == true)
+            {
+                name.Image = Properties.Resources.ZE_ALARM;
+            }
+            else
+            {
+                name.Image = Properties.Resources.ZE;
+            }
+        }
+
+        private async void redler(string on, string awaria, System.Windows.Forms.Label name)
+        {
+            bool bit_on = await PLC.readBool(on);
+            bool bit_awaria = await PLC.readBool(awaria);
+
+            if (bit_on == true && bit_awaria == false)
+            {
+                name.BackColor = Color.Green;
+            }
+            else if (bit_awaria == true)
+            {
+                name.BackColor = Color.Red;
+            }
+            else
+            {
+                name.BackColor = Color.Silver;
+            }
+        }
+        private async Task napelnienie(string zmienna, PictureBox name)
+        {
+            bool var = await PLC.readBool(zmienna);
+
+            if (var == true)
+            {
+                name.Visible = true;
+            }
+            else
+            {
+                name.Visible = false;
+            }
+        }
+
+        private async Task drogi(string zmienna, Label name)
+        {
+            bool var = await PLC.readBool(zmienna);
+
+            if (var == true)
+            {
+                name.BackColor = Color.LimeGreen;
+            }
+            else
+            {
+                name.BackColor = Color.Gray;
+            }
+        }
+
         private void tryb_pracy_button_Click(object sender, EventArgs e)
         {
             if (tryb_pracy_panel.Height == 60)
             {
-                tryb_pracy_panel.Height = 216;
+                tryb_pracy_panel.Height = 122;
             }
             else
             {
@@ -282,7 +362,7 @@ namespace PLC_SIEMENS
         {
             if (alarmy_panel.Height == 60)
             {
-                alarmy_panel.Height = 184;
+                alarmy_panel.Height = 124;
             }
             else
             {
@@ -342,67 +422,21 @@ namespace PLC_SIEMENS
             alarmy_window.Show();
             alarmy_panel.Height = 60;
         }
-
-        private async void zasuwa(string open, string close, string awaria, PictureBox name)
-        {
-            bool bit_open = await PLC.readBool(open);
-            bool bit_close = await PLC.readBool(close);
-            bool bit_awaria = await PLC.readBool(awaria);
-
-            if (bit_open == true && bit_awaria == false)
-            {
-                name.Image = Properties.Resources.ZE_OPEN;
-            }
-            else if (bit_close == true && bit_awaria == false)
-            {
-                name.Image = Properties.Resources.ZE_CLOSE;
-            }
-            else if (bit_awaria == true)
-            {
-                name.Image = Properties.Resources.ZE_ALARM;
-            }
-            else
-            {
-                name.Image = Properties.Resources.ZE;
-            }
-        }
-
-        private async void redler(string on, string awaria, System.Windows.Forms.Label name)
-        {
-            bool bit_on = await PLC.readBool(on);
-            bool bit_awaria = await PLC.readBool(awaria);
-
-            if (bit_on == true && bit_awaria == false)
-            {
-                name.BackColor = Color.Green;
-            }
-            else if (bit_awaria == true)
-            {
-                name.BackColor = Color.Red;
-            }
-            else
-            {
-                name.BackColor = Color.Silver;
-            }
-        }
-
-        private async void napelnienie(string zmienna, PictureBox name)
-        {
-            bool var = await PLC.readBool(zmienna);
-
-            if (var == true)
-            {
-                name.Visible = true;
-            }
-            else
-            {
-                name.Visible = false;
-            }
-        }       
-
+       
         private void ZE1_Click(object sender, EventArgs e)
         {
             ze1 window = new ze1();
+            window.Show();
+        }
+        private void ZE2_Click(object sender, EventArgs e)
+        {
+            ze2 window = new ze2();
+            window.Show();
+        }
+
+        private void ZE3_Click(object sender, EventArgs e)
+        {
+            ze3 window = new ze3();
             window.Show();
         }
 
@@ -449,19 +483,7 @@ namespace PLC_SIEMENS
             Instrukcja win = new Instrukcja();
             win.Show();
             pomoc_panel.Height = 60;
-        }
-
-        private void ZE2_Click(object sender, EventArgs e)
-        {
-            ze2 window = new ze2();
-            window.Show();
-        }
-
-        private void ZE3_Click(object sender, EventArgs e)
-        {
-            ze3 window = new ze3();
-            window.Show();
-        }
+        }       
 
         private void auto1_button_Click(object sender, EventArgs e)
         {

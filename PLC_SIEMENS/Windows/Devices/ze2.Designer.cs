@@ -107,7 +107,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ze2";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Zasuwa ze2";
             this.ResumeLayout(false);
 

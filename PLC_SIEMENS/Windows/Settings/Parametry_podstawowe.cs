@@ -1,6 +1,7 @@
 ﻿using System;
 using PLC_SIEMENS.Definitions;
 using System.Windows.Forms;
+using S7.Net;
 
 namespace PLC_SIEMENS
 {
@@ -14,10 +15,10 @@ namespace PLC_SIEMENS
 
         private async void InitValue()
         {
-            var t_ze = await PLC.analog_read(11, 4) / 1000;
-            var t_re = await PLC.analog_read(11, 6) / 1000;
-            var t_nap = await PLC.analog_read(11, 8);
-            var t_opr_dr = await PLC.analog_read(11, 0);
+            var t_ze = await PLC.analog_read(11, 4, VarType.Int) / 1000;
+            var t_re = await PLC.analog_read(11, 6, VarType.Int) / 1000;
+            var t_nap = await PLC.analog_read(11, 8, VarType.Int);
+            var t_opr_dr = await PLC.analog_read(11, 0, VarType.Int);
 
             t_ze_text.Text = t_ze.ToString();
             t_re_text.Text = t_re.ToString();
