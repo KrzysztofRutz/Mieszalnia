@@ -50,6 +50,7 @@
             System.Windows.Forms.Button wyloguj_button;
             System.Windows.Forms.Button schemat_button;
             System.Windows.Forms.Button instrukcja_button;
+            System.Windows.Forms.Button recipe_button;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.close_app_button = new System.Windows.Forms.Button();
             this.main_timer = new System.Windows.Forms.Timer(this.components);
@@ -60,56 +61,53 @@
             this.bez_blokad_label = new System.Windows.Forms.Label();
             this.z_blokadami_label = new System.Windows.Forms.Label();
             this.opr_dr_tech_label = new System.Windows.Forms.TextBox();
-            this.kontrola_obroty_OFF_label = new System.Windows.Forms.TextBox();
-            this.kontrola_prad_OFF_label = new System.Windows.Forms.TextBox();
-            this.kontrola_blokadasoft_OFF_label = new System.Windows.Forms.TextBox();
-            this.kontrola_pas_OFF_label = new System.Windows.Forms.TextBox();
             this.tryb_pracy_panel = new System.Windows.Forms.Panel();
             this.ustawienia_panel = new System.Windows.Forms.Panel();
             this.alarmy_panel = new System.Windows.Forms.Panel();
             this.uzytkownik_panel = new System.Windows.Forms.Panel();
             this.program_cycle = new System.Windows.Forms.Timer(this.components);
-            this.p1_prad_text = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.z1_name = new System.Windows.Forms.TextBox();
             this.z2_name = new System.Windows.Forms.TextBox();
-            this.R1 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.r1_predkosc_text = new System.Windows.Forms.Label();
             this.pomoc_panel = new System.Windows.Forms.Panel();
             this.odc2_label2 = new System.Windows.Forms.Label();
-            this.Z1_pelny = new System.Windows.Forms.PictureBox();
-            this.Z2_pelny = new System.Windows.Forms.PictureBox();
-            this.dzwonek_image = new System.Windows.Forms.PictureBox();
-            this.ZE1 = new System.Windows.Forms.PictureBox();
-            this.ZE2 = new System.Windows.Forms.PictureBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.ZE3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.ERROR_PLC_label = new System.Windows.Forms.Label();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
-            this.pictureBox19 = new System.Windows.Forms.PictureBox();
-            this.pictureBox20 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.odc2_label1 = new System.Windows.Forms.Label();
             this.odc1_label1 = new System.Windows.Forms.Label();
             this.odc1_label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.W1_pelny = new System.Windows.Forms.PictureBox();
             this.odc2_label3 = new System.Windows.Forms.Label();
             this.odc1_label3 = new System.Windows.Forms.Label();
             this.weight_label = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.Wb1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.odc3_label = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.Wb3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.ZE3 = new System.Windows.Forms.PictureBox();
+            this.ZE1 = new System.Windows.Forms.PictureBox();
+            this.ZE2 = new System.Windows.Forms.PictureBox();
             this.Wb2 = new System.Windows.Forms.PictureBox();
+            this.Wb1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.W1_pelny = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Z1_pelny = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.Z2_pelny = new System.Windows.Forms.PictureBox();
+            this.pictureBox20 = new System.Windows.Forms.PictureBox();
+            this.pictureBox19 = new System.Windows.Forms.PictureBox();
+            this.pictureBox16 = new System.Windows.Forms.PictureBox();
+            this.pictureBox17 = new System.Windows.Forms.PictureBox();
+            this.dzwonek_image = new System.Windows.Forms.PictureBox();
             STOP_button = new System.Windows.Forms.Button();
             dzwonek_OFF_button = new System.Windows.Forms.Button();
             kasuj_alarmy_button = new System.Windows.Forms.Button();
@@ -131,30 +129,33 @@
             wyloguj_button = new System.Windows.Forms.Button();
             schemat_button = new System.Windows.Forms.Button();
             instrukcja_button = new System.Windows.Forms.Button();
+            recipe_button = new System.Windows.Forms.Button();
             this.tryb_pracy_panel.SuspendLayout();
             this.ustawienia_panel.SuspendLayout();
             this.alarmy_panel.SuspendLayout();
             this.uzytkownik_panel.SuspendLayout();
             this.pomoc_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Z1_pelny)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Z2_pelny)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dzwonek_image)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wb3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ZE3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ZE1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ZE2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ZE3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wb2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wb1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.W1_pelny)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Z1_pelny)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.W1_pelny)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Wb1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Wb2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Z2_pelny)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dzwonek_image)).BeginInit();
             this.SuspendLayout();
             // 
             // STOP_button
@@ -526,6 +527,22 @@
             instrukcja_button.UseVisualStyleBackColor = false;
             instrukcja_button.Click += new System.EventHandler(this.instrukcja_button_Click);
             // 
+            // recipe_button
+            // 
+            recipe_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            recipe_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            recipe_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            recipe_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            recipe_button.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            recipe_button.ForeColor = System.Drawing.SystemColors.WindowText;
+            recipe_button.Location = new System.Drawing.Point(349, 1);
+            recipe_button.Name = "recipe_button";
+            recipe_button.Size = new System.Drawing.Size(118, 60);
+            recipe_button.TabIndex = 163;
+            recipe_button.Text = "Receptury";
+            recipe_button.UseVisualStyleBackColor = false;
+            recipe_button.Click += new System.EventHandler(this.recipe_button_Click);
+            // 
             // close_app_button
             // 
             this.close_app_button.BackColor = System.Drawing.Color.Red;
@@ -641,58 +658,6 @@
             this.opr_dr_tech_label.Text = "Opróżnianie dróg technologicznych";
             this.opr_dr_tech_label.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // kontrola_obroty_OFF_label
-            // 
-            this.kontrola_obroty_OFF_label.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.kontrola_obroty_OFF_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.kontrola_obroty_OFF_label.ForeColor = System.Drawing.Color.Red;
-            this.kontrola_obroty_OFF_label.Location = new System.Drawing.Point(1701, 151);
-            this.kontrola_obroty_OFF_label.Name = "kontrola_obroty_OFF_label";
-            this.kontrola_obroty_OFF_label.Size = new System.Drawing.Size(207, 20);
-            this.kontrola_obroty_OFF_label.TabIndex = 13;
-            this.kontrola_obroty_OFF_label.Text = "Wyłączona kontrola obrotów";
-            this.kontrola_obroty_OFF_label.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.kontrola_obroty_OFF_label.Visible = false;
-            // 
-            // kontrola_prad_OFF_label
-            // 
-            this.kontrola_prad_OFF_label.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.kontrola_prad_OFF_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.kontrola_prad_OFF_label.ForeColor = System.Drawing.Color.Red;
-            this.kontrola_prad_OFF_label.Location = new System.Drawing.Point(1701, 170);
-            this.kontrola_prad_OFF_label.Name = "kontrola_prad_OFF_label";
-            this.kontrola_prad_OFF_label.Size = new System.Drawing.Size(207, 20);
-            this.kontrola_prad_OFF_label.TabIndex = 14;
-            this.kontrola_prad_OFF_label.Text = "Wyłączona kontrola prądów";
-            this.kontrola_prad_OFF_label.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.kontrola_prad_OFF_label.Visible = false;
-            // 
-            // kontrola_blokadasoft_OFF_label
-            // 
-            this.kontrola_blokadasoft_OFF_label.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.kontrola_blokadasoft_OFF_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.kontrola_blokadasoft_OFF_label.ForeColor = System.Drawing.Color.Red;
-            this.kontrola_blokadasoft_OFF_label.Location = new System.Drawing.Point(1701, 189);
-            this.kontrola_blokadasoft_OFF_label.Name = "kontrola_blokadasoft_OFF_label";
-            this.kontrola_blokadasoft_OFF_label.Size = new System.Drawing.Size(207, 20);
-            this.kontrola_blokadasoft_OFF_label.TabIndex = 15;
-            this.kontrola_blokadasoft_OFF_label.Text = "Wyłączona blokada softstartów";
-            this.kontrola_blokadasoft_OFF_label.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.kontrola_blokadasoft_OFF_label.Visible = false;
-            // 
-            // kontrola_pas_OFF_label
-            // 
-            this.kontrola_pas_OFF_label.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.kontrola_pas_OFF_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.kontrola_pas_OFF_label.ForeColor = System.Drawing.Color.Red;
-            this.kontrola_pas_OFF_label.Location = new System.Drawing.Point(1701, 208);
-            this.kontrola_pas_OFF_label.Name = "kontrola_pas_OFF_label";
-            this.kontrola_pas_OFF_label.Size = new System.Drawing.Size(207, 20);
-            this.kontrola_pas_OFF_label.TabIndex = 16;
-            this.kontrola_pas_OFF_label.Text = "Wyłączona kontrola przesunięcia pasa";
-            this.kontrola_pas_OFF_label.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.kontrola_pas_OFF_label.Visible = false;
-            // 
             // tryb_pracy_panel
             // 
             this.tryb_pracy_panel.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -742,19 +707,6 @@
             this.program_cycle.Enabled = true;
             this.program_cycle.Interval = 500;
             this.program_cycle.Tick += new System.EventHandler(this.program_cycle_Tick);
-            // 
-            // p1_prad_text
-            // 
-            this.p1_prad_text.AutoSize = true;
-            this.p1_prad_text.BackColor = System.Drawing.Color.GhostWhite;
-            this.p1_prad_text.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.p1_prad_text.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.p1_prad_text.Location = new System.Drawing.Point(184, 102);
-            this.p1_prad_text.Name = "p1_prad_text";
-            this.p1_prad_text.Size = new System.Drawing.Size(43, 18);
-            this.p1_prad_text.TabIndex = 38;
-            this.p1_prad_text.Text = "label1";
-            this.p1_prad_text.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
@@ -820,55 +772,6 @@
             this.z2_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.z2_name.Click += new System.EventHandler(this.z2_name_Click);
             // 
-            // R1
-            // 
-            this.R1.BackColor = System.Drawing.Color.Silver;
-            this.R1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.R1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.R1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.R1.Location = new System.Drawing.Point(68, 740);
-            this.R1.Name = "R1";
-            this.R1.Size = new System.Drawing.Size(159, 18);
-            this.R1.TabIndex = 117;
-            this.R1.Click += new System.EventHandler(this.R1_Click);
-            // 
-            // label9
-            // 
-            this.label9.BackColor = System.Drawing.SystemColors.GrayText;
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label9.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label9.Location = new System.Drawing.Point(54, 740);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(20, 18);
-            this.label9.TabIndex = 118;
-            this.label9.Text = " ●";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label10
-            // 
-            this.label10.BackColor = System.Drawing.SystemColors.GrayText;
-            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label10.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label10.Location = new System.Drawing.Point(223, 740);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(20, 18);
-            this.label10.TabIndex = 119;
-            this.label10.Text = " ●";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // r1_predkosc_text
-            // 
-            this.r1_predkosc_text.AutoSize = true;
-            this.r1_predkosc_text.BackColor = System.Drawing.Color.GhostWhite;
-            this.r1_predkosc_text.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.r1_predkosc_text.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.r1_predkosc_text.Location = new System.Drawing.Point(194, 722);
-            this.r1_predkosc_text.Name = "r1_predkosc_text";
-            this.r1_predkosc_text.Size = new System.Drawing.Size(43, 18);
-            this.r1_predkosc_text.TabIndex = 120;
-            this.r1_predkosc_text.Text = "label1";
-            this.r1_predkosc_text.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // pomoc_panel
             // 
             this.pomoc_panel.Controls.Add(instrukcja_button);
@@ -886,64 +789,6 @@
             this.odc2_label2.Name = "odc2_label2";
             this.odc2_label2.Size = new System.Drawing.Size(150, 5);
             this.odc2_label2.TabIndex = 125;
-            // 
-            // Z1_pelny
-            // 
-            this.Z1_pelny.Image = global::PLC_SIEMENS.Properties.Resources.Do_silos_czesc_D_Nap;
-            this.Z1_pelny.Location = new System.Drawing.Point(605, 435);
-            this.Z1_pelny.Margin = new System.Windows.Forms.Padding(2);
-            this.Z1_pelny.Name = "Z1_pelny";
-            this.Z1_pelny.Size = new System.Drawing.Size(119, 27);
-            this.Z1_pelny.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Z1_pelny.TabIndex = 96;
-            this.Z1_pelny.TabStop = false;
-            this.Z1_pelny.Visible = false;
-            // 
-            // Z2_pelny
-            // 
-            this.Z2_pelny.Image = global::PLC_SIEMENS.Properties.Resources.Do_silos_czesc_D_Nap;
-            this.Z2_pelny.Location = new System.Drawing.Point(1028, 435);
-            this.Z2_pelny.Margin = new System.Windows.Forms.Padding(2);
-            this.Z2_pelny.Name = "Z2_pelny";
-            this.Z2_pelny.Size = new System.Drawing.Size(119, 27);
-            this.Z2_pelny.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Z2_pelny.TabIndex = 95;
-            this.Z2_pelny.TabStop = false;
-            this.Z2_pelny.Visible = false;
-            // 
-            // dzwonek_image
-            // 
-            this.dzwonek_image.ErrorImage = null;
-            this.dzwonek_image.Image = ((System.Drawing.Image)(resources.GetObject("dzwonek_image.Image")));
-            this.dzwonek_image.InitialImage = null;
-            this.dzwonek_image.Location = new System.Drawing.Point(1476, 12);
-            this.dzwonek_image.Name = "dzwonek_image";
-            this.dzwonek_image.Size = new System.Drawing.Size(35, 42);
-            this.dzwonek_image.TabIndex = 21;
-            this.dzwonek_image.TabStop = false;
-            this.dzwonek_image.Visible = false;
-            // 
-            // ZE1
-            // 
-            this.ZE1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ZE1.Image = global::PLC_SIEMENS.Properties.Resources.ZE;
-            this.ZE1.Location = new System.Drawing.Point(650, 479);
-            this.ZE1.Name = "ZE1";
-            this.ZE1.Size = new System.Drawing.Size(33, 15);
-            this.ZE1.TabIndex = 39;
-            this.ZE1.TabStop = false;
-            this.ZE1.Click += new System.EventHandler(this.ZE1_Click);
-            // 
-            // ZE2
-            // 
-            this.ZE2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ZE2.Image = global::PLC_SIEMENS.Properties.Resources.ZE;
-            this.ZE2.Location = new System.Drawing.Point(1072, 479);
-            this.ZE2.Name = "ZE2";
-            this.ZE2.Size = new System.Drawing.Size(33, 15);
-            this.ZE2.TabIndex = 127;
-            this.ZE2.TabStop = false;
-            this.ZE2.Click += new System.EventHandler(this.ZE2_Click);
             // 
             // label14
             // 
@@ -965,28 +810,6 @@
             this.label15.TabIndex = 130;
             this.label15.Text = "ze3";
             // 
-            // ZE3
-            // 
-            this.ZE3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ZE3.Image = global::PLC_SIEMENS.Properties.Resources.ZE;
-            this.ZE3.Location = new System.Drawing.Point(860, 766);
-            this.ZE3.Name = "ZE3";
-            this.ZE3.Size = new System.Drawing.Size(33, 15);
-            this.ZE3.TabIndex = 129;
-            this.ZE3.TabStop = false;
-            this.ZE3.Click += new System.EventHandler(this.ZE3_Click);
-            // 
-            // pictureBox17
-            // 
-            this.pictureBox17.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox17.Image")));
-            this.pictureBox17.Location = new System.Drawing.Point(793, 738);
-            this.pictureBox17.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(165, 30);
-            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox17.TabIndex = 131;
-            this.pictureBox17.TabStop = false;
-            // 
             // ERROR_PLC_label
             // 
             this.ERROR_PLC_label.AutoSize = true;
@@ -999,36 +822,241 @@
             this.ERROR_PLC_label.Text = "Brak połączenia z PLC!!!";
             this.ERROR_PLC_label.Visible = false;
             // 
-            // pictureBox16
+            // odc2_label1
             // 
-            this.pictureBox16.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox16.Image")));
-            this.pictureBox16.Location = new System.Drawing.Point(1028, 461);
-            this.pictureBox16.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(119, 20);
-            this.pictureBox16.TabIndex = 135;
-            this.pictureBox16.TabStop = false;
+            this.odc2_label1.BackColor = System.Drawing.Color.Gray;
+            this.odc2_label1.Location = new System.Drawing.Point(1085, 490);
+            this.odc2_label1.Name = "odc2_label1";
+            this.odc2_label1.Size = new System.Drawing.Size(5, 100);
+            this.odc2_label1.TabIndex = 144;
             // 
-            // pictureBox19
+            // odc1_label1
             // 
-            this.pictureBox19.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox19.Image")));
-            this.pictureBox19.Location = new System.Drawing.Point(1028, 268);
-            this.pictureBox19.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(119, 43);
-            this.pictureBox19.TabIndex = 136;
-            this.pictureBox19.TabStop = false;
+            this.odc1_label1.BackColor = System.Drawing.Color.Gray;
+            this.odc1_label1.Location = new System.Drawing.Point(663, 490);
+            this.odc1_label1.Name = "odc1_label1";
+            this.odc1_label1.Size = new System.Drawing.Size(5, 100);
+            this.odc1_label1.TabIndex = 145;
             // 
-            // pictureBox20
+            // odc1_label2
             // 
-            this.pictureBox20.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox20.Image")));
-            this.pictureBox20.Location = new System.Drawing.Point(1028, 309);
-            this.pictureBox20.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(119, 153);
-            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox20.TabIndex = 137;
-            this.pictureBox20.TabStop = false;
+            this.odc1_label2.BackColor = System.Drawing.Color.Gray;
+            this.odc1_label2.Location = new System.Drawing.Point(663, 590);
+            this.odc1_label2.Name = "odc1_label2";
+            this.odc1_label2.Size = new System.Drawing.Size(150, 5);
+            this.odc1_label2.TabIndex = 146;
+            // 
+            // odc2_label3
+            // 
+            this.odc2_label3.BackColor = System.Drawing.Color.Gray;
+            this.odc2_label3.Location = new System.Drawing.Point(940, 590);
+            this.odc2_label3.Name = "odc2_label3";
+            this.odc2_label3.Size = new System.Drawing.Size(5, 100);
+            this.odc2_label3.TabIndex = 149;
+            // 
+            // odc1_label3
+            // 
+            this.odc1_label3.BackColor = System.Drawing.Color.Gray;
+            this.odc1_label3.Location = new System.Drawing.Point(808, 590);
+            this.odc1_label3.Name = "odc1_label3";
+            this.odc1_label3.Size = new System.Drawing.Size(5, 100);
+            this.odc1_label3.TabIndex = 150;
+            // 
+            // weight_label
+            // 
+            this.weight_label.BackColor = System.Drawing.Color.GhostWhite;
+            this.weight_label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.weight_label.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.weight_label.Location = new System.Drawing.Point(662, 703);
+            this.weight_label.Name = "weight_label";
+            this.weight_label.Size = new System.Drawing.Size(120, 37);
+            this.weight_label.TabIndex = 151;
+            this.weight_label.Text = "label1";
+            this.weight_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.Location = new System.Drawing.Point(855, 711);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(44, 25);
+            this.label4.TabIndex = 152;
+            this.label4.Text = "W1";
+            // 
+            // odc3_label
+            // 
+            this.odc3_label.BackColor = System.Drawing.Color.Gray;
+            this.odc3_label.Location = new System.Drawing.Point(873, 778);
+            this.odc3_label.Name = "odc3_label";
+            this.odc3_label.Size = new System.Drawing.Size(5, 100);
+            this.odc3_label.TabIndex = 157;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label5.Location = new System.Drawing.Point(1197, 437);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(32, 13);
+            this.label5.TabIndex = 160;
+            this.label5.Text = "Wb2";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label6.Location = new System.Drawing.Point(772, 437);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(32, 13);
+            this.label6.TabIndex = 161;
+            this.label6.Text = "Wb1";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label7.Location = new System.Drawing.Point(1008, 714);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(32, 13);
+            this.label7.TabIndex = 162;
+            this.label7.Text = "Wb3";
+            // 
+            // Wb3
+            // 
+            this.Wb3.BackColor = System.Drawing.Color.Transparent;
+            this.Wb3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Wb3.Image = global::PLC_SIEMENS.Properties.Resources.silnik_2;
+            this.Wb3.Location = new System.Drawing.Point(968, 712);
+            this.Wb3.Name = "Wb3";
+            this.Wb3.Size = new System.Drawing.Size(32, 15);
+            this.Wb3.TabIndex = 158;
+            this.Wb3.TabStop = false;
+            this.Wb3.Click += new System.EventHandler(this.Wb3_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(957, 707);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(25, 43);
+            this.pictureBox5.TabIndex = 159;
+            this.pictureBox5.TabStop = false;
+            // 
+            // ZE3
+            // 
+            this.ZE3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ZE3.Image = global::PLC_SIEMENS.Properties.Resources.ZE;
+            this.ZE3.Location = new System.Drawing.Point(860, 767);
+            this.ZE3.Name = "ZE3";
+            this.ZE3.Size = new System.Drawing.Size(33, 12);
+            this.ZE3.TabIndex = 129;
+            this.ZE3.TabStop = false;
+            this.ZE3.Click += new System.EventHandler(this.ZE3_Click);
+            // 
+            // ZE1
+            // 
+            this.ZE1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ZE1.Image = global::PLC_SIEMENS.Properties.Resources.ZE;
+            this.ZE1.Location = new System.Drawing.Point(650, 481);
+            this.ZE1.Name = "ZE1";
+            this.ZE1.Size = new System.Drawing.Size(33, 12);
+            this.ZE1.TabIndex = 39;
+            this.ZE1.TabStop = false;
+            this.ZE1.Click += new System.EventHandler(this.ZE1_Click);
+            // 
+            // ZE2
+            // 
+            this.ZE2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ZE2.Image = global::PLC_SIEMENS.Properties.Resources.ZE;
+            this.ZE2.Location = new System.Drawing.Point(1072, 481);
+            this.ZE2.Name = "ZE2";
+            this.ZE2.Size = new System.Drawing.Size(33, 12);
+            this.ZE2.TabIndex = 127;
+            this.ZE2.TabStop = false;
+            this.ZE2.Click += new System.EventHandler(this.ZE2_Click);
+            // 
+            // Wb2
+            // 
+            this.Wb2.BackColor = System.Drawing.Color.Transparent;
+            this.Wb2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Wb2.Image = global::PLC_SIEMENS.Properties.Resources.silnik_2;
+            this.Wb2.Location = new System.Drawing.Point(1159, 435);
+            this.Wb2.Name = "Wb2";
+            this.Wb2.Size = new System.Drawing.Size(32, 15);
+            this.Wb2.TabIndex = 156;
+            this.Wb2.TabStop = false;
+            this.Wb2.Click += new System.EventHandler(this.Wb2_Click);
+            // 
+            // Wb1
+            // 
+            this.Wb1.BackColor = System.Drawing.Color.Transparent;
+            this.Wb1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Wb1.Image = global::PLC_SIEMENS.Properties.Resources.silnik_2;
+            this.Wb1.Location = new System.Drawing.Point(734, 435);
+            this.Wb1.Name = "Wb1";
+            this.Wb1.Size = new System.Drawing.Size(32, 15);
+            this.Wb1.TabIndex = 153;
+            this.Wb1.TabStop = false;
+            this.Wb1.Click += new System.EventHandler(this.Wb1_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(1146, 430);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(25, 43);
+            this.pictureBox4.TabIndex = 155;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(723, 430);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(25, 43);
+            this.pictureBox3.TabIndex = 154;
+            this.pictureBox3.TabStop = false;
+            // 
+            // W1_pelny
+            // 
+            this.W1_pelny.Image = global::PLC_SIEMENS.Properties.Resources.Do_silos_czesc_D_Nap;
+            this.W1_pelny.Location = new System.Drawing.Point(793, 711);
+            this.W1_pelny.Margin = new System.Windows.Forms.Padding(2);
+            this.W1_pelny.Name = "W1_pelny";
+            this.W1_pelny.Size = new System.Drawing.Size(165, 27);
+            this.W1_pelny.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.W1_pelny.TabIndex = 148;
+            this.W1_pelny.TabStop = false;
+            this.W1_pelny.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(793, 690);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(165, 48);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 147;
+            this.pictureBox1.TabStop = false;
+            // 
+            // Z1_pelny
+            // 
+            this.Z1_pelny.Image = global::PLC_SIEMENS.Properties.Resources.Do_silos_czesc_D_Nap;
+            this.Z1_pelny.Location = new System.Drawing.Point(605, 435);
+            this.Z1_pelny.Margin = new System.Windows.Forms.Padding(2);
+            this.Z1_pelny.Name = "Z1_pelny";
+            this.Z1_pelny.Size = new System.Drawing.Size(119, 27);
+            this.Z1_pelny.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Z1_pelny.TabIndex = 96;
+            this.Z1_pelny.TabStop = false;
+            this.Z1_pelny.Visible = false;
             // 
             // pictureBox10
             // 
@@ -1061,134 +1089,71 @@
             this.pictureBox12.TabIndex = 141;
             this.pictureBox12.TabStop = false;
             // 
-            // odc2_label1
+            // Z2_pelny
             // 
-            this.odc2_label1.BackColor = System.Drawing.Color.Gray;
-            this.odc2_label1.Location = new System.Drawing.Point(1085, 490);
-            this.odc2_label1.Name = "odc2_label1";
-            this.odc2_label1.Size = new System.Drawing.Size(5, 100);
-            this.odc2_label1.TabIndex = 144;
+            this.Z2_pelny.Image = global::PLC_SIEMENS.Properties.Resources.Do_silos_czesc_D_Nap;
+            this.Z2_pelny.Location = new System.Drawing.Point(1028, 435);
+            this.Z2_pelny.Margin = new System.Windows.Forms.Padding(2);
+            this.Z2_pelny.Name = "Z2_pelny";
+            this.Z2_pelny.Size = new System.Drawing.Size(119, 27);
+            this.Z2_pelny.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Z2_pelny.TabIndex = 95;
+            this.Z2_pelny.TabStop = false;
+            this.Z2_pelny.Visible = false;
             // 
-            // odc1_label1
+            // pictureBox20
             // 
-            this.odc1_label1.BackColor = System.Drawing.Color.Gray;
-            this.odc1_label1.Location = new System.Drawing.Point(663, 490);
-            this.odc1_label1.Name = "odc1_label1";
-            this.odc1_label1.Size = new System.Drawing.Size(5, 100);
-            this.odc1_label1.TabIndex = 145;
+            this.pictureBox20.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox20.Image")));
+            this.pictureBox20.Location = new System.Drawing.Point(1028, 309);
+            this.pictureBox20.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox20.Name = "pictureBox20";
+            this.pictureBox20.Size = new System.Drawing.Size(119, 153);
+            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox20.TabIndex = 137;
+            this.pictureBox20.TabStop = false;
             // 
-            // odc1_label2
+            // pictureBox19
             // 
-            this.odc1_label2.BackColor = System.Drawing.Color.Gray;
-            this.odc1_label2.Location = new System.Drawing.Point(663, 590);
-            this.odc1_label2.Name = "odc1_label2";
-            this.odc1_label2.Size = new System.Drawing.Size(150, 5);
-            this.odc1_label2.TabIndex = 146;
+            this.pictureBox19.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox19.Image")));
+            this.pictureBox19.Location = new System.Drawing.Point(1028, 268);
+            this.pictureBox19.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox19.Name = "pictureBox19";
+            this.pictureBox19.Size = new System.Drawing.Size(119, 43);
+            this.pictureBox19.TabIndex = 136;
+            this.pictureBox19.TabStop = false;
             // 
-            // pictureBox1
+            // pictureBox16
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(793, 690);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(165, 48);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 147;
-            this.pictureBox1.TabStop = false;
+            this.pictureBox16.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox16.Image")));
+            this.pictureBox16.Location = new System.Drawing.Point(1028, 461);
+            this.pictureBox16.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox16.Name = "pictureBox16";
+            this.pictureBox16.Size = new System.Drawing.Size(119, 20);
+            this.pictureBox16.TabIndex = 135;
+            this.pictureBox16.TabStop = false;
             // 
-            // W1_pelny
+            // pictureBox17
             // 
-            this.W1_pelny.Image = global::PLC_SIEMENS.Properties.Resources.Do_silos_czesc_D_Nap;
-            this.W1_pelny.Location = new System.Drawing.Point(793, 711);
-            this.W1_pelny.Margin = new System.Windows.Forms.Padding(2);
-            this.W1_pelny.Name = "W1_pelny";
-            this.W1_pelny.Size = new System.Drawing.Size(165, 27);
-            this.W1_pelny.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.W1_pelny.TabIndex = 148;
-            this.W1_pelny.TabStop = false;
-            this.W1_pelny.Visible = false;
+            this.pictureBox17.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox17.Image")));
+            this.pictureBox17.Location = new System.Drawing.Point(793, 738);
+            this.pictureBox17.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox17.Name = "pictureBox17";
+            this.pictureBox17.Size = new System.Drawing.Size(165, 30);
+            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox17.TabIndex = 131;
+            this.pictureBox17.TabStop = false;
             // 
-            // odc2_label3
+            // dzwonek_image
             // 
-            this.odc2_label3.BackColor = System.Drawing.Color.Gray;
-            this.odc2_label3.Location = new System.Drawing.Point(940, 590);
-            this.odc2_label3.Name = "odc2_label3";
-            this.odc2_label3.Size = new System.Drawing.Size(5, 100);
-            this.odc2_label3.TabIndex = 149;
-            // 
-            // odc1_label3
-            // 
-            this.odc1_label3.BackColor = System.Drawing.Color.Gray;
-            this.odc1_label3.Location = new System.Drawing.Point(808, 590);
-            this.odc1_label3.Name = "odc1_label3";
-            this.odc1_label3.Size = new System.Drawing.Size(5, 100);
-            this.odc1_label3.TabIndex = 150;
-            // 
-            // weight_label
-            // 
-            this.weight_label.BackColor = System.Drawing.Color.GhostWhite;
-            this.weight_label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.weight_label.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.weight_label.Location = new System.Drawing.Point(970, 703);
-            this.weight_label.Name = "weight_label";
-            this.weight_label.Size = new System.Drawing.Size(120, 37);
-            this.weight_label.TabIndex = 151;
-            this.weight_label.Text = "label1";
-            this.weight_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(855, 711);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 25);
-            this.label4.TabIndex = 152;
-            this.label4.Text = "W1";
-            // 
-            // Wb1
-            // 
-            this.Wb1.BackColor = System.Drawing.Color.Transparent;
-            this.Wb1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Wb1.Image = ((System.Drawing.Image)(resources.GetObject("Wb1.Image")));
-            this.Wb1.Location = new System.Drawing.Point(729, 435);
-            this.Wb1.Name = "Wb1";
-            this.Wb1.Size = new System.Drawing.Size(32, 15);
-            this.Wb1.TabIndex = 153;
-            this.Wb1.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(723, 430);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(25, 43);
-            this.pictureBox3.TabIndex = 154;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(1146, 430);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(25, 43);
-            this.pictureBox4.TabIndex = 155;
-            this.pictureBox4.TabStop = false;
-            // 
-            // Wb2
-            // 
-            this.Wb2.BackColor = System.Drawing.Color.Transparent;
-            this.Wb2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Wb2.Image = ((System.Drawing.Image)(resources.GetObject("Wb2.Image")));
-            this.Wb2.Location = new System.Drawing.Point(1159, 435);
-            this.Wb2.Name = "Wb2";
-            this.Wb2.Size = new System.Drawing.Size(32, 15);
-            this.Wb2.TabIndex = 156;
-            this.Wb2.TabStop = false;
+            this.dzwonek_image.ErrorImage = null;
+            this.dzwonek_image.Image = ((System.Drawing.Image)(resources.GetObject("dzwonek_image.Image")));
+            this.dzwonek_image.InitialImage = null;
+            this.dzwonek_image.Location = new System.Drawing.Point(1476, 12);
+            this.dzwonek_image.Name = "dzwonek_image";
+            this.dzwonek_image.Size = new System.Drawing.Size(35, 42);
+            this.dzwonek_image.TabIndex = 21;
+            this.dzwonek_image.TabStop = false;
+            this.dzwonek_image.Visible = false;
             // 
             // Main
             // 
@@ -1196,6 +1161,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(recipe_button);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.Wb3);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.ZE3);
+            this.Controls.Add(this.ZE1);
+            this.Controls.Add(this.ZE2);
+            this.Controls.Add(this.odc3_label);
             this.Controls.Add(this.Wb2);
             this.Controls.Add(this.Wb1);
             this.Controls.Add(this.pictureBox4);
@@ -1222,18 +1197,11 @@
             this.Controls.Add(this.pictureBox16);
             this.Controls.Add(this.ERROR_PLC_label);
             this.Controls.Add(this.pictureBox17);
-            this.Controls.Add(this.ZE1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.ZE3);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.ZE2);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.odc2_label2);
             this.Controls.Add(this.pomoc_panel);
-            this.Controls.Add(this.r1_predkosc_text);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.R1);
             this.Controls.Add(this.uzytkownik_panel);
             this.Controls.Add(this.alarmy_panel);
             this.Controls.Add(this.ustawienia_panel);
@@ -1242,10 +1210,6 @@
             this.Controls.Add(kasuj_alarmy_button);
             this.Controls.Add(dzwonek_OFF_button);
             this.Controls.Add(STOP_button);
-            this.Controls.Add(this.kontrola_pas_OFF_label);
-            this.Controls.Add(this.kontrola_blokadasoft_OFF_label);
-            this.Controls.Add(this.kontrola_prad_OFF_label);
-            this.Controls.Add(this.kontrola_obroty_OFF_label);
             this.Controls.Add(this.opr_dr_tech_label);
             this.Controls.Add(this.z_blokadami_label);
             this.Controls.Add(this.bez_blokad_label);
@@ -1254,7 +1218,6 @@
             this.Controls.Add(this.actual_date);
             this.Controls.Add(this.actual_time);
             this.Controls.Add(this.close_app_button);
-            this.Controls.Add(this.p1_prad_text);
             this.Controls.Add(this.odc2_label3);
             this.ForeColor = System.Drawing.SystemColors.WindowText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1268,25 +1231,27 @@
             this.alarmy_panel.ResumeLayout(false);
             this.uzytkownik_panel.ResumeLayout(false);
             this.pomoc_panel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Z1_pelny)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Z2_pelny)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dzwonek_image)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wb3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ZE3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ZE1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ZE2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ZE3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wb2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wb1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.W1_pelny)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Z1_pelny)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.W1_pelny)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Wb1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Wb2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Z2_pelny)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dzwonek_image)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1300,10 +1265,6 @@
         private System.Windows.Forms.Label bez_blokad_label;
         private System.Windows.Forms.Label z_blokadami_label;
         private System.Windows.Forms.TextBox opr_dr_tech_label;
-        private System.Windows.Forms.TextBox kontrola_obroty_OFF_label;
-        private System.Windows.Forms.TextBox kontrola_prad_OFF_label;
-        private System.Windows.Forms.TextBox kontrola_blokadasoft_OFF_label;
-        private System.Windows.Forms.TextBox kontrola_pas_OFF_label;
         private System.Windows.Forms.PictureBox dzwonek_image;
         private System.Windows.Forms.Panel tryb_pracy_panel;
         private System.Windows.Forms.Panel ustawienia_panel;
@@ -1311,7 +1272,6 @@
         private System.Windows.Forms.Panel uzytkownik_panel;
         public System.Windows.Forms.TextBox actual_time;
         public System.Windows.Forms.TextBox actual_date;
-        public System.Windows.Forms.Label p1_prad_text;
         public System.Windows.Forms.PictureBox ZE1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox Z2_pelny;
@@ -1320,10 +1280,6 @@
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox z1_name;
         public System.Windows.Forms.TextBox z2_name;
-        public System.Windows.Forms.Label R1;
-        public System.Windows.Forms.Label label9;
-        public System.Windows.Forms.Label label10;
-        public System.Windows.Forms.Label r1_predkosc_text;
         private System.Windows.Forms.Panel pomoc_panel;
         private System.Windows.Forms.Label odc2_label2;
         public System.Windows.Forms.PictureBox ZE2;
@@ -1352,6 +1308,12 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         public System.Windows.Forms.PictureBox Wb2;
+        private System.Windows.Forms.Label odc3_label;
+        public System.Windows.Forms.PictureBox Wb3;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }
 

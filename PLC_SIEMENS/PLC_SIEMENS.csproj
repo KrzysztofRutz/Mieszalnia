@@ -136,6 +136,24 @@
       <DependentUpon>Auto1.cs</DependentUpon>
     </Compile>
     <Compile Include="Definitions\DefinitionAlarm.cs" />
+    <Compile Include="Windows\Devices\Wb1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Devices\Wb1.Designer.cs">
+      <DependentUpon>Wb1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Devices\Wb2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Devices\Wb2.Designer.cs">
+      <DependentUpon>Wb2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Devices\Wb3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Devices\Wb3.Designer.cs">
+      <DependentUpon>Wb3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Error_PLC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +184,24 @@
     </Compile>
     <Compile Include="Windows\Instrukcja.Designer.cs">
       <DependentUpon>Instrukcja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Recipes\Add_recipe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Recipes\Add_recipe.Designer.cs">
+      <DependentUpon>Add_recipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Recipes\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Recipes\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Recipes\Modify_recipe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Recipes\Modify_recipe.Designer.cs">
+      <DependentUpon>Modify_recipe.cs</DependentUpon>
     </Compile>
     <Compile Include="Windows\Schemat.cs">
       <SubType>Form</SubType>
@@ -226,6 +262,15 @@
     <EmbeddedResource Include="Windows\Auto1.resx">
       <DependentUpon>Auto1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Devices\Wb1.resx">
+      <DependentUpon>Wb1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Devices\Wb2.resx">
+      <DependentUpon>Wb2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Devices\Wb3.resx">
+      <DependentUpon>Wb3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\Error_PLC.resx">
       <DependentUpon>Error_PLC.cs</DependentUpon>
     </EmbeddedResource>
@@ -243,6 +288,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\OpisyZ.resx">
       <DependentUpon>OpisyZ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Recipes\Add_recipe.resx">
+      <DependentUpon>Add_recipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Recipes\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Recipes\Modify_recipe.resx">
+      <DependentUpon>Modify_recipe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Settings\Parametry_podstawowe.resx">
       <DependentUpon>Parametry_podstawowe.cs</DependentUpon>
@@ -362,6 +416,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\R4_srod1_alarm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\silnik_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\silnik_2_praca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\silnik_2_alarm.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

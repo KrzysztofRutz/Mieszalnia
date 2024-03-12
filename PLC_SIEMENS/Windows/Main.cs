@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PLC_SIEMENS.Definitions;
+using PLC_SIEMENS.Windows.Devices;
 
 namespace PLC_SIEMENS
 {
@@ -84,6 +85,7 @@ namespace PLC_SIEMENS
         {
             if (PLC.plc.IsConnected)
             {
+                await Task.WhenAll();
                 await dzwonek();
                 await opr_dr_tech();
                 await auto();
@@ -95,13 +97,13 @@ namespace PLC_SIEMENS
                 await napelnienie("DB6.DBX4.0", Z1_pelny);
                 await napelnienie("DB6.DBX4.1", Z2_pelny);
                 //redler("DB6.DBX0.0", "DB6.DBX0.1", R1);
+
+                await wibro("DB6.DBX0.2", "DB6.DBX0.3", Wb1);
+                await wibro("DB6.DBX0.4", "DB6.DBX0.5", Wb2);
+                await wibro("DB6.DBX0.6", "DB6.DBX0.7", Wb3);
                 await zasuwa("DB6.DBX2.0", "DB6.DBX2.1", "DB6.DBX2.2", ZE1);
                 await zasuwa("DB6.DBX2.3", "DB6.DBX2.4", "DB6.DBX2.5", ZE2);
-                await zasuwa("DB6.DBX2.6", "DB6.DBX2.7", "DB6.DBX3.0", ZE3);
-                await kontrola_off("DB8.DBX4.6", kontrola_blokadasoft_OFF_label);
-                await kontrola_off("DB8.DBX4.7", kontrola_prad_OFF_label);
-                await kontrola_off("DB8.DBX5.0", kontrola_obroty_OFF_label);
-                await kontrola_off("DB8.DBX5.1", kontrola_pas_OFF_label);
+                await zasuwa("DB6.DBX2.6", "DB6.DBX2.7", "DB6.DBX3.0", ZE3);               
 
                 await drogi("DB5.DBX0.0", odc1_label1);
                 await drogi("DB5.DBX0.0", odc1_label2);
@@ -109,6 +111,7 @@ namespace PLC_SIEMENS
                 await drogi("DB5.DBX0.1", odc2_label1);
                 await drogi("DB5.DBX0.1", odc2_label2);
                 await drogi("DB5.DBX0.1", odc2_label3);
+                await drogi("DB5.DBX0.2", odc3_label);
             }            
         }
 
@@ -288,24 +291,25 @@ namespace PLC_SIEMENS
             }
         }
 
-        private async void redler(string on, string awaria, System.Windows.Forms.Label name)
+        private async Task wibro(string on, string awaria, PictureBox name)
         {
             bool bit_on = await PLC.readBool(on);
             bool bit_awaria = await PLC.readBool(awaria);
 
             if (bit_on == true && bit_awaria == false)
             {
-                name.BackColor = Color.Green;
+                name.Image = Properties.Resources.silnik_2_praca;
             }
             else if (bit_awaria == true)
             {
-                name.BackColor = Color.Red;
+                name.Image = Properties.Resources.silnik_2_alarm;
             }
             else
             {
-                name.BackColor = Color.Silver;
+                name.Image = Properties.Resources.silnik_2;
             }
         }
+      
         private async Task napelnienie(string zmienna, PictureBox name)
         {
             bool var = await PLC.readBool(zmienna);
@@ -452,12 +456,6 @@ namespace PLC_SIEMENS
             window.Show();           
         }
 
-        private void R1_Click(object sender, EventArgs e)
-        {
-            R1 window = new R1();
-            window.Show();
-        }
-
         private void wyloguj_button_Click(object sender, EventArgs e)
         {
             this.Enabled = false;
@@ -490,6 +488,40 @@ namespace PLC_SIEMENS
             Auto1 auto1_window = new Auto1();
             auto1_window.Show();
             tryb_pracy_panel.Height = 60;
+        }
+        private void Wb1_Click(object sender, EventArgs e)
+        {
+            var window = new Wb1();
+            window.Show();
+        }
+
+        private void Wb2_Click(object sender, EventArgs e)
+        {
+            var window = new Wb2();
+            window.Show();
+        }     
+
+        private void Wb3_Click(object sender, EventArgs e)
+        {
+            var window = new Wb3();
+            window.Show();
+        }
+
+        private async void recipe_button_Click(object sender, EventArgs e)
+        {
+            //Połączenie z bazą danych sql server
+            var conn = new SqlConnection("Data Source = DESKTOP-2LGV1R3; Initial Catalog = Mieszalnia; Integrated Security = true");
+            try
+            {
+                await conn.OpenAsync();
+                var window = new Windows.Recipes.Main(conn);
+                window.Show();
+            }
+            catch
+            {
+                conn.Dispose();
+                MessageBox.Show("Brak połączenia z bazą danych.", "Błąd");
+            }
         }
     }
 }

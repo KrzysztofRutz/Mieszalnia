@@ -91,7 +91,6 @@
             // cycle_stany
             // 
             this.cycle_stany.Enabled = true;
-            this.cycle_stany.Interval = 500;
             this.cycle_stany.Tick += new System.EventHandler(this.cycle_Tick);
             // 
             // ze1
