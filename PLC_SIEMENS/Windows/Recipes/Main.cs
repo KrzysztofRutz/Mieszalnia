@@ -1,5 +1,8 @@
-﻿using System;
+﻿using PLC_SIEMENS.Definitions;
+using System;
 using System.Data.SqlClient;
+using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace PLC_SIEMENS.Windows.Recipes
@@ -10,8 +13,10 @@ namespace PLC_SIEMENS.Windows.Recipes
         public Main(SqlConnection connection)
         {
             InitializeComponent();
+            main_timer.Start();
             conn = connection;
             SqlCommand SHOW_first_recipe = new SqlCommand("SELECT TOP 1 * FROM Recipes ORDER BY ID", conn);
+            SqlCommand SHOW_record_count = new SqlCommand("SELECT COUNT(id) FROM Recipes", conn);
 
             SqlDataReader first_recipe = SHOW_first_recipe.ExecuteReader();
             using (first_recipe)
@@ -27,11 +32,23 @@ namespace PLC_SIEMENS.Windows.Recipes
                     rekord_box.Text = "1";
                 }
             }
+            SqlDataReader record_count = SHOW_record_count.ExecuteReader();
+            using (record_count)
+            {
+                while (record_count.Read()) rekord_count_textbox.Text = record_count.GetInt32(0).ToString();              
+            }
+
+            //Wpisanie nazw silosów 
+            string filepath = "OpisyZ.txt";
+            string[] name = new string[2];
+            name = File.ReadAllLines(filepath).ToArray();
+            Z1_name_textBox.Text = name[0];
+            Z2_name_textBox.Text = name[1];
         }
 
         private void add_recipe_Click(object sender, EventArgs e)
         {
-            var window = new Add_recipe(conn);            
+            var window = new Add_recipe(conn, this);            
             window.Show();
         }
 
@@ -203,6 +220,47 @@ namespace PLC_SIEMENS.Windows.Recipes
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
         {
             conn.Close();
+        }
+
+        private async void loadPLC_button_Click(object sender, EventArgs e)
+        {
+            if (cykle_SV_textBox.Text != string.Empty & waga_SV_textBox.Text != string.Empty & skl1_waga_textbox.Text != "0" & skl2_waga_textbox.Text != "0")
+            {
+                await PLC.analog_write("DB20.DBW2", short.Parse(cykle_SV_textBox.Text));
+                await PLC.analog_write("DB20.DBD4", float.Parse(waga_SV_textBox.Text));
+                await PLC.analog_write("DB20.DBD8", float.Parse(skl1_waga_textbox.Text));
+                await PLC.analog_write("DB20.DBD12", float.Parse(skl2_waga_textbox.Text));
+
+                MessageBox.Show("Pomyślnie załadowano wartości do sterownika.", "Correct", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Błąd podczas ładowania. Uzupełnij zadany wsad wagi oraz cykle lub sprawdź poprawność zapisu.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }    
+
+        private void main_timer_Tick(object sender, EventArgs e)
+        {
+            if (waga_SV_textBox.Text != string.Empty)
+            {
+                double skl1_weight = CalculateWeight(int.Parse(skladnik1_zawartosc.Text));
+                double skl2_weight = CalculateWeight(int.Parse(skladnik2_zawartosc.Text));
+                skl1_waga_textbox.Text = skl1_weight.ToString();
+                skl2_waga_textbox.Text = skl2_weight.ToString();
+            }
+        }
+
+        private double CalculateWeight(int procent)
+        {
+            try
+            {
+                double procent_double = procent / 100;
+                double weightAll = double.Parse(waga_SV_textBox.Text);
+
+                double weightElement = (weightAll * procent)/100;
+                return weightElement;
+            }
+            catch { return 0; }
         }
     }
 }

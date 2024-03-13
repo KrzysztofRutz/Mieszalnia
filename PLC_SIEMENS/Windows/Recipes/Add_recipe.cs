@@ -7,10 +7,12 @@ namespace PLC_SIEMENS.Windows.Recipes
     public partial class Add_recipe : Form
     {
         private readonly SqlConnection conn;
-        public Add_recipe(SqlConnection connection)
+        private readonly Main MainWindow;
+        public Add_recipe(SqlConnection connection, Main main_window)
         {
             InitializeComponent();
             conn = connection;
+            MainWindow = main_window;
         }
 
         public void skl1_zaw_TextChanged(object sender, EventArgs e)  // podczas zmiany wartości zawartości składnika pasek globalnej wartości podnosi się o podaną wartość. Max 100kg 
@@ -77,6 +79,17 @@ namespace PLC_SIEMENS.Windows.Recipes
                     alarm_text.Visible = true;
                     content_level.Value = 100;
                 }
+            }
+        }
+
+        private void Add_recipe_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            SqlCommand SHOW_record_count = new SqlCommand("SELECT COUNT(id) FROM Recipes", conn);
+          
+            SqlDataReader record_count = SHOW_record_count.ExecuteReader();
+            using (record_count)
+            {
+                while (record_count.Read()) MainWindow.rekord_count_textbox.Text = record_count.GetInt32(0).ToString();
             }
         }
     }

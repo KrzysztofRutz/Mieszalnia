@@ -45,16 +45,16 @@ namespace PLC_SIEMENS.Definitions
             else await connect();
         }
 
-        public static async Task<double> analog_read(int nr_DB, int zmienna, VarType type)
+        public static async Task<object> analog_read(int nr_DB, int zmienna, VarType type)
         {
-            short variable = new short();
-            if (plc.IsConnected) variable =  Convert.ToInt16(await plc.ReadAsync(DataType.DataBlock, nr_DB, zmienna, type, 1));
+            var variable = new object();
+            if (plc.IsConnected) variable =  await plc.ReadAsync(DataType.DataBlock, nr_DB, zmienna, type, 1);
             else await connect();
 
             return variable;
         }
 
-        public static async Task analog_write(string variable, short value)
+        public static async Task analog_write(string variable, object value)
         {
             if (plc.IsConnected) await plc.WriteAsync(variable, value);
             else await connect();

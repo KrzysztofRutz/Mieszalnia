@@ -90,13 +90,12 @@ namespace PLC_SIEMENS
                 await opr_dr_tech();
                 await auto();
                 await alarm_obiekt();
-                //analog_read(40, p1_prad_text, "A");
-                var weight = await PLC.analog_read(10, 0, S7.Net.VarType.Real);
+       
+                var weight =Convert.ToDouble(await PLC.analog_read(10, 0, S7.Net.VarType.Real));
                 weight_label.Text = $"{weight.ToString("0.##")} kg";
-                //analog_write(18, r1_predkosc_text, "%");
+
                 await napelnienie("DB6.DBX4.0", Z1_pelny);
                 await napelnienie("DB6.DBX4.1", Z2_pelny);
-                //redler("DB6.DBX0.0", "DB6.DBX0.1", R1);
 
                 await wibro("DB6.DBX0.2", "DB6.DBX0.3", Wb1);
                 await wibro("DB6.DBX0.4", "DB6.DBX0.5", Wb2);

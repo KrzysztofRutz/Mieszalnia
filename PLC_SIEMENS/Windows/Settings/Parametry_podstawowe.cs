@@ -15,8 +15,8 @@ namespace PLC_SIEMENS
 
         private async void InitValue()
         {
-            var t_ze = await PLC.analog_read(11, 4, VarType.Int) / 1000;
-            var t_re = await PLC.analog_read(11, 6, VarType.Int) / 1000;
+            var t_ze =  Convert.ToDouble(await PLC.analog_read(11, 4, VarType.Int)) / 1000;
+            var t_re = Convert.ToDouble(await PLC.analog_read(11, 6, VarType.Int)) / 1000;
             var t_nap = await PLC.analog_read(11, 8, VarType.Int);
             var t_opr_dr = await PLC.analog_read(11, 0, VarType.Int);
 

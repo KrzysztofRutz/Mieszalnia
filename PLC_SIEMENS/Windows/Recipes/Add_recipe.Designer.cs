@@ -267,6 +267,7 @@
             this.Name = "Add_recipe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add_recipe";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Add_recipe_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
