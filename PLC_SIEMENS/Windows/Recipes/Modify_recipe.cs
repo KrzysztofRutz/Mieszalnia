@@ -29,7 +29,6 @@ namespace PLC_SIEMENS.Windows.Recipes
 
         public void modify_recipe_button_Click(object sender, EventArgs e)
         {
-            Main main = new Main(conn);
             // Odczyt wartości zadanych z textboxów do zmiennych lokalnych
             int id = int.Parse(id_box.Text);
             string skladnik1_name = skl1_name.Text;

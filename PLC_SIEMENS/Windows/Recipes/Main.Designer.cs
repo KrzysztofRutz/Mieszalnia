@@ -67,6 +67,8 @@
             this.rekord_count_textbox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.main_timer = new System.Windows.Forms.Timer(this.components);
+            this.label11 = new System.Windows.Forms.Label();
+            this.recipe_on_label = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -122,12 +124,12 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(558, 30);
+            this.label6.Location = new System.Drawing.Point(541, 30);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(119, 52);
+            this.label6.Size = new System.Drawing.Size(152, 52);
             this.label6.TabIndex = 51;
-            this.label6.Text = "Zawartość procentowa:";
+            this.label6.Text = "Zawartość procentowa [%]:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // next_recipe_button
@@ -392,12 +394,12 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(719, 43);
+            this.label7.Location = new System.Drawing.Point(722, 30);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(153, 26);
+            this.label7.Size = new System.Drawing.Size(147, 52);
             this.label7.TabIndex = 60;
-            this.label7.Text = "Waga składnika:";
+            this.label7.Text = "Waga składnika [kg]:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Z2_name_textBox
@@ -548,12 +550,38 @@
             this.main_timer.Interval = 500;
             this.main_timer.Tick += new System.EventHandler(this.main_timer_Tick);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.DarkGray;
+            this.label11.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label11.Location = new System.Drawing.Point(997, 9);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(33, 26);
+            this.label11.TabIndex = 67;
+            this.label11.Text = "kg";
+            // 
+            // recipe_on_label
+            // 
+            this.recipe_on_label.AutoSize = true;
+            this.recipe_on_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.recipe_on_label.ForeColor = System.Drawing.Color.Red;
+            this.recipe_on_label.Location = new System.Drawing.Point(946, 377);
+            this.recipe_on_label.Name = "recipe_on_label";
+            this.recipe_on_label.Size = new System.Drawing.Size(296, 48);
+            this.recipe_on_label.TabIndex = 68;
+            this.recipe_on_label.Text = "Nie można załadować receptury \r\npodczas uruchomionej mieszanki!";
+            this.recipe_on_label.Visible = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(1248, 439);
+            this.Controls.Add(this.recipe_on_label);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.rekord_count_textbox);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.loadPLC_button);
@@ -630,5 +658,7 @@
         public System.Windows.Forms.TextBox rekord_count_textbox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Timer main_timer;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label recipe_on_label;
     }
 }

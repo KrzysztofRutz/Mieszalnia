@@ -15,112 +15,51 @@ namespace PLC_SIEMENS
 
         private async void InitValue()
         {
-            var t_ze =  Convert.ToDouble(await PLC.analog_read(11, 4, VarType.Int)) / 1000;
-            var t_re = Convert.ToDouble(await PLC.analog_read(11, 6, VarType.Int)) / 1000;
-            var t_nap = await PLC.analog_read(11, 8, VarType.Int);
-            var t_opr_dr = await PLC.analog_read(11, 0, VarType.Int);
+            var t_mieszania = await PLC.analog_read(11, 0, VarType.Int);
+            var weight_start_W1 = await PLC.analog_read(11, 4, VarType.Real);
 
-            t_ze_text.Text = t_ze.ToString();
-            t_re_text.Text = t_re.ToString();
-            t_nap_text.Text = t_nap.ToString();
-            t_opr_dr_text.Text = t_opr_dr.ToString();
+            t_mieszania_text.Text = t_mieszania.ToString();
+            weight_start_W1_text.Text = weight_start_W1.ToString();
         }
 
-        private async void t_ze_text_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (t_ze_text.TextLength == 0)
+        private async void t_mieszania_text_KeyPress(object sender, KeyPressEventArgs e)
+        {           
+            if (t_mieszania_text.TextLength != 0)
             {
-                return;
-            }
-            else
-            {
-                short t_ze = Convert.ToInt16(t_ze_text.Text);
-                int t_ze_pom = t_ze * 1000;
-                if (t_ze_pom > 15000 & t_ze_text.TextLength != 0)
+                short t_mieszania = Convert.ToInt16(t_mieszania_text.Text);
+                if (t_mieszania > 20)
                 {
-                    t_ze_pom = 15000;
-                    t_ze_text.Text = "15";
+                    t_mieszania = 20;
+                    t_mieszania_text.Text = "20";
                 }
-                else if (t_ze_pom < 1000 & t_ze_text.TextLength != 0)
+                else if (t_mieszania < 1)
                 {
-                    t_ze_pom = 1000;
-                    t_ze_text.Text = "1";                    
+                    t_mieszania = 1;
+                    t_mieszania_text.Text = "1";                    
                 }             
-                short t_ze_pom1 = Convert.ToInt16(t_ze_pom);
-                await PLC.analog_write("DB11.DBW4", t_ze_pom1);
+                short t_mieszania_pom1 = Convert.ToInt16(t_mieszania);
+                await PLC.analog_write("DB11.DBW0", t_mieszania_pom1);
             }
         }
 
-        private async void t_re_text_KeyPress(object sender, KeyPressEventArgs e)
+        private async void weight_start_W1_text_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (t_re_text.TextLength == 0)
+            if (weight_start_W1_text.TextLength != 0)
             {
-                return;
-            }
-            else
-            {
-                short t_re = Convert.ToInt16(t_re_text.Text);
-                int t_re_pom = t_re * 1000;
-                if (t_re_pom > 7000 & t_re_text.TextLength != 0)
+                float weight_start_W1 = Convert.ToSingle(weight_start_W1_text.Text);
+                if (weight_start_W1 > 2)
                 {
-                    t_re_pom = 7000;
-                    t_re_text.Text = "7";                   
+                    //weight_start_W1 = 2;
+                    weight_start_W1_text.Text = "2";                   
                 }           
-                else if (t_re_pom < 1000 & t_re_text.TextLength != 0)
+                else if (weight_start_W1 < 0.1)
                 {
-                    t_re_pom = 1000;
-                    t_re_text.Text = "1";                                        
-                }               
-                short t_re_pom1 = Convert.ToInt16(t_re_pom);
-                await PLC.analog_write("DB11.DBW6", t_re_pom1);
+                    //weight_start_W1 = 0.1;
+                    weight_start_W1_text.Text = "0,1";                                        
+                }
+                float weight_start_W1_pom1 = Convert.ToSingle(weight_start_W1);
+                await PLC.analog_write("DB11.DBD4", weight_start_W1_pom1);
             }           
-        }
-
-        private async void t_nap_text_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (t_nap_text.TextLength == 0)
-            {
-                return;
-            }
-            else
-            {
-                short t_nap = Convert.ToInt16(t_nap_text.Text);
-                if (t_nap > 60 & t_nap_text.TextLength != 0)
-                {
-                    t_nap = 60;
-                    t_nap_text.Text = (t_nap).ToString();
-                }
-                else if (t_nap < 1 & t_nap_text.TextLength != 0)
-                {
-                    t_nap = 1;
-                    t_nap_text.Text = (t_nap).ToString();
-                }
-                await PLC.analog_write("DB11.DBW8", t_nap);
-            }
-        }
-
-        private async void opr_dr_text_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-            if (t_opr_dr_text.TextLength == 0)
-            {
-                t_opr_dr_text.Text = string.Empty; 
-            }
-            else
-            {
-                short t_opr = Convert.ToInt16(t_opr_dr_text.Text);
-                if (t_opr > 600 & t_opr_dr_text.TextLength != 0)
-                {
-                    t_opr = 600;
-                    t_opr_dr_text.Text = (t_opr).ToString();
-                }
-                else if (t_opr < 10 & t_opr_dr_text.TextLength != 0)
-                {
-                    t_opr = 10;
-                    t_opr_dr_text.Text = (t_opr).ToString();
-                }
-                await PLC.analog_write("DB11.DBW0", t_opr);
-            }
-        }
+        }       
     }
 }

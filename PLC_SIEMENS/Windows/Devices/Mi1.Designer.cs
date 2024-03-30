@@ -1,6 +1,6 @@
 ﻿namespace PLC_SIEMENS.Windows.Devices
 {
-    partial class Wb2
+    partial class Mi1
     {
         /// <summary>
         /// Required designer variable.
@@ -85,7 +85,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(232, 34);
             this.label2.TabIndex = 25;
-            this.label2.Text = "Silnik wibracyjny Wb2";
+            this.label2.Text = "Mieszadło Mi1";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cycle_stany
@@ -94,7 +94,7 @@
             this.cycle_stany.Interval = 300;
             this.cycle_stany.Tick += new System.EventHandler(this.cycle_stany_Tick);
             // 
-            // Wb2
+            // Mi1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -106,9 +106,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Wb2";
+            this.Name = "Mi1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Wb2";
+            this.Text = "Mi1";
             this.ResumeLayout(false);
 
         }

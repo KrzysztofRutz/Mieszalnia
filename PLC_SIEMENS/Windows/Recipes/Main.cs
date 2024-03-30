@@ -10,10 +10,12 @@ namespace PLC_SIEMENS.Windows.Recipes
     public partial class Main : Form
     {
         private readonly SqlConnection conn;
-        public Main(SqlConnection connection)
+        private readonly PLC_SIEMENS.Main MainApp;
+        public Main(SqlConnection connection, PLC_SIEMENS.Main main)
         {
             InitializeComponent();
             main_timer.Start();
+            MainApp = main;
             conn = connection;
             SqlCommand SHOW_first_recipe = new SqlCommand("SELECT TOP 1 * FROM Recipes ORDER BY ID", conn);
             SqlCommand SHOW_record_count = new SqlCommand("SELECT COUNT(id) FROM Recipes", conn);
@@ -44,6 +46,16 @@ namespace PLC_SIEMENS.Windows.Recipes
             name = File.ReadAllLines(filepath).ToArray();
             Z1_name_textBox.Text = name[0];
             Z2_name_textBox.Text = name[1];
+
+            init();
+        }
+
+        private async void init()
+        {
+            var cykle_sv = Convert.ToInt32(await PLC.analog_read(20, 2, S7.Net.VarType.Int));
+            cykle_SV_textBox.Text = cykle_sv.ToString();
+            var wsad_sv = Convert.ToDouble(await PLC.analog_read(20, 4, S7.Net.VarType.Real));
+            waga_SV_textBox.Text = wsad_sv.ToString();
         }
 
         private void add_recipe_Click(object sender, EventArgs e)
@@ -224,12 +236,17 @@ namespace PLC_SIEMENS.Windows.Recipes
 
         private async void loadPLC_button_Click(object sender, EventArgs e)
         {
-            if (cykle_SV_textBox.Text != string.Empty & waga_SV_textBox.Text != string.Empty & skl1_waga_textbox.Text != "0" & skl2_waga_textbox.Text != "0")
+            if (cykle_SV_textBox.Text != string.Empty & waga_SV_textBox.Text != string.Empty)
             {
                 await PLC.analog_write("DB20.DBW2", short.Parse(cykle_SV_textBox.Text));
                 await PLC.analog_write("DB20.DBD4", float.Parse(waga_SV_textBox.Text));
                 await PLC.analog_write("DB20.DBD8", float.Parse(skl1_waga_textbox.Text));
                 await PLC.analog_write("DB20.DBD12", float.Parse(skl2_waga_textbox.Text));
+                await PLC.analog_write("DB20.DBW38", short.Parse(id_box.Text));
+
+                MainApp.cykle_SV_label.Text = cykle_SV_textBox.Text;
+                MainApp.weight_SV_label.Text = waga_SV_textBox.Text;
+                MainApp.recipe_name_label.Text = miesz_name.Text;
 
                 MessageBox.Show("Pomyślnie załadowano wartości do sterownika.", "Correct", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -239,7 +256,7 @@ namespace PLC_SIEMENS.Windows.Recipes
             }
         }    
 
-        private void main_timer_Tick(object sender, EventArgs e)
+        private async void main_timer_Tick(object sender, EventArgs e)
         {
             if (waga_SV_textBox.Text != string.Empty)
             {
@@ -248,6 +265,19 @@ namespace PLC_SIEMENS.Windows.Recipes
                 skl1_waga_textbox.Text = skl1_weight.ToString();
                 skl2_waga_textbox.Text = skl2_weight.ToString();
             }
+
+            bool recipe_on = await PLC.readBool("DB20.DBX32.1");
+
+            if (recipe_on)
+            {
+                recipe_on_label.Visible = true;
+                loadPLC_button.Visible = false;
+            }
+            else
+            {
+                recipe_on_label.Visible = false;
+                loadPLC_button.Visible = true;
+            }              
         }
 
         private double CalculateWeight(int procent)

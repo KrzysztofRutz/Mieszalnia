@@ -6,8 +6,10 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Media;
 using PLC_SIEMENS.Definitions;
 using PLC_SIEMENS.Windows.Devices;
+using PLC_SIEMENS.Windows;
 
 namespace PLC_SIEMENS
 {
@@ -17,7 +19,8 @@ namespace PLC_SIEMENS
         public Main()
         {
             InitializeComponent();
-            instance = this;
+            instance = this;           
+            
             //Wpisanie nazw silosów 
             string filepath = "OpisyZ.txt";
             string[] name = new string[2];
@@ -28,16 +31,55 @@ namespace PLC_SIEMENS
             //Załączenie tickerów odczytu danych w czasie rzeczywistym
             main_timer.Start();
             program_cycle.Start();
-        }
 
-        public async void main_timer_Tick(object sender, EventArgs e)
+            init();
+        }
+      
+        private async void init()
+        {
+            var cykle_sv = Convert.ToInt32(await PLC.analog_read(20, 2, S7.Net.VarType.Int));
+            cykle_SV_label.Text = cykle_sv.ToString();
+            var wsad_sv = Convert.ToDouble(await PLC.analog_read(20, 4, S7.Net.VarType.Real));
+            weight_SV_label.Text = wsad_sv.ToString();
+            var cykle_pv = Convert.ToInt32(await PLC.analog_read(20, 0, S7.Net.VarType.Int));
+            cykle_PV_label.Text = cykle_pv.ToString();
+            var id = Convert.ToInt32(await PLC.analog_read(20, 38, S7.Net.VarType.Int));
+            bool isconnect = false;
+            //Połączenie z bazą danych sql server
+            var conn = new SqlConnection("Data Source = DESKTOP-2LGV1R3; Initial Catalog = Mieszalnia; Integrated Security = true");
+            try
+            {
+                await conn.OpenAsync();
+                isconnect = true;
+            }
+            catch
+            {
+                conn.Dispose();
+                isconnect = false;
+            }
+
+            if (isconnect)
+            {
+                var command = new SqlCommand($"SELECT RecipeName FROM Recipes WHERE id={id};", conn);
+                var reader = await command.ExecuteReaderAsync();
+                using (reader)
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        recipe_name_label.Text = reader.GetString(0);
+                    }
+                }
+                conn.Close();
+            }
+        }
+        private async void main_timer_Tick(object sender, EventArgs e)
         {
             //Odświeżanie daty i godziny na wizualizacji 
             actual_time.Text = DateTime.Now.ToLongTimeString();
             actual_date.Text = DateTime.Now.ToLongDateString();
 
             //Jeśli wystąpił nowy alarm to wykonujemy funkcje dodania go do bazy 
-            if (await PLC.readBool("DB8.DBX1.0")) await active_alarm();
+            if (await PLC.readBool("DB8.DBX1.0")) await active_alarm();          
         }
 
         private async Task active_alarm()
@@ -85,24 +127,37 @@ namespace PLC_SIEMENS
         {
             if (PLC.plc.IsConnected)
             {
-                await Task.WhenAll();
                 await dzwonek();
                 await opr_dr_tech();
                 await auto();
                 await alarm_obiekt();
-       
-                var weight =Convert.ToDouble(await PLC.analog_read(10, 0, S7.Net.VarType.Real));
+                await status_line();
+
+                await read_weight_SV(8, skl1_weight_SV_label);
+                await read_weight_SV(12, skl2_weight_SV_label);
+
+                var cykle_PV = Convert.ToDouble(await PLC.analog_read(20, 0, S7.Net.VarType.Int));
+                cykle_PV_label.Text = cykle_PV.ToString();
+                var weight = Convert.ToDouble(await PLC.analog_read(10, 0, S7.Net.VarType.Real));
                 weight_label.Text = $"{weight.ToString("0.##")} kg";
+                var weight_skl = Convert.ToDouble(await PLC.analog_read(20, 34, S7.Net.VarType.Real));
+                skl_weight_PV_label.Text = $"{weight_skl.ToString("0.##")} kg";
+                var weight_PV = Convert.ToDouble(await PLC.analog_read(20, 24, S7.Net.VarType.Real));
+                weight_PV_label.Text = $"{weight_PV.ToString("0.##")} kg";
+
+                await time_mieszania();
 
                 await napelnienie("DB6.DBX4.0", Z1_pelny);
                 await napelnienie("DB6.DBX4.1", Z2_pelny);
 
+                await screw("DB6.DBX0.0", "DB6.DBX0.1", Mi1);
                 await wibro("DB6.DBX0.2", "DB6.DBX0.3", Wb1);
                 await wibro("DB6.DBX0.4", "DB6.DBX0.5", Wb2);
                 await wibro("DB6.DBX0.6", "DB6.DBX0.7", Wb3);
+
                 await zasuwa("DB6.DBX2.0", "DB6.DBX2.1", "DB6.DBX2.2", ZE1);
                 await zasuwa("DB6.DBX2.3", "DB6.DBX2.4", "DB6.DBX2.5", ZE2);
-                await zasuwa("DB6.DBX2.6", "DB6.DBX2.7", "DB6.DBX3.0", ZE3);               
+                await zasuwa("DB6.DBX2.6", "DB6.DBX2.7", "DB6.DBX3.0", ZE3);
 
                 await drogi("DB5.DBX0.0", odc1_label1);
                 await drogi("DB5.DBX0.0", odc1_label2);
@@ -111,7 +166,8 @@ namespace PLC_SIEMENS
                 await drogi("DB5.DBX0.1", odc2_label2);
                 await drogi("DB5.DBX0.1", odc2_label3);
                 await drogi("DB5.DBX0.2", odc3_label);
-            }            
+            }
+            else await PLC.connect();
         }
 
         private void close_app_button_Click(object sender, EventArgs e)
@@ -239,19 +295,6 @@ namespace PLC_SIEMENS
                 bez_blokad_label.Visible = true;
             }
         }
-
-        private async Task kontrola_off(string zmienna, TextBox label)
-        {
-            bool kontrola_off = await PLC.readBool(zmienna);
-            if (kontrola_off == true)
-            {
-                label.Visible = true;
-            }
-            else
-            {
-                label.Visible = false;
-            }
-        }
         
         private async Task alarm_obiekt()
         {
@@ -308,7 +351,22 @@ namespace PLC_SIEMENS
                 name.Image = Properties.Resources.silnik_2;
             }
         }
-      
+
+        private async Task screw(string on, string awaria, PictureBox name)
+        {
+            bool bit_on = await PLC.readBool(on);
+            bool bit_awaria = await PLC.readBool(awaria);
+
+            if (bit_on == true && bit_awaria == false)
+            {
+                name.Image = Properties.Resources.PSADM_G_pion;
+            }            
+            else
+            {
+                name.Image = Properties.Resources.NW_PSADM_pion;
+            }
+        }
+
         private async Task napelnienie(string zmienna, PictureBox name)
         {
             bool var = await PLC.readBool(zmienna);
@@ -329,72 +387,42 @@ namespace PLC_SIEMENS
 
             if (var == true)
             {
-                name.BackColor = Color.LimeGreen;
+                name.BackColor = System.Drawing.Color.LimeGreen;
             }
             else
             {
-                name.BackColor = Color.Gray;
+                name.BackColor = System.Drawing.Color.Gray;
             }
         }
 
         private void tryb_pracy_button_Click(object sender, EventArgs e)
         {
-            if (tryb_pracy_panel.Height == 60)
-            {
-                tryb_pracy_panel.Height = 122;
-            }
-            else
-            {
-                tryb_pracy_panel.Height = 60;
-            }
+            if (tryb_pracy_panel.Height == 60) tryb_pracy_panel.Height = 122;
+            else tryb_pracy_panel.Height = 60;
         }
 
         private void ustawienia_button_Click(object sender, EventArgs e)
         {
-            if (ustawienia_panel.Height == 60)
-            {
-                ustawienia_panel.Height = 123;
-            }
-            else
-            {
-                ustawienia_panel.Height = 60;
-            }
+            if (ustawienia_panel.Height == 60) ustawienia_panel.Height = 123;
+            else ustawienia_panel.Height = 60;
         }
 
         private void alarmy_button_Click(object sender, EventArgs e)
         {
-            if (alarmy_panel.Height == 60)
-            {
-                alarmy_panel.Height = 124;
-            }
-            else
-            {
-                alarmy_panel.Height = 60;
-            }
+            if (alarmy_panel.Height == 60) alarmy_panel.Height = 124;
+            else alarmy_panel.Height = 60;
         }
 
         private void uzytkownik_button_Click(object sender, EventArgs e)
         {
-            if (uzytkownik_panel.Height == 60)
-            {
-                uzytkownik_panel.Height = 123;
-            }
-            else
-            {
-                uzytkownik_panel.Height = 60;
-            }
+            if (uzytkownik_panel.Height == 60) uzytkownik_panel.Height = 123;
+            else uzytkownik_panel.Height = 60;
         }
 
         private void pomoc_button_Click(object sender, EventArgs e)
         {
-            if (pomoc_panel.Height == 60)
-            {
-                pomoc_panel.Height = 123;
-            }
-            else
-            {
-                pomoc_panel.Height = 60;
-            }
+            if (pomoc_panel.Height == 60) pomoc_panel.Height = 123;
+            else pomoc_panel.Height = 60;
         }
 
         private void parametry_podstawowe_button_Click(object sender, EventArgs e)
@@ -407,8 +435,7 @@ namespace PLC_SIEMENS
         private void serwis_button_Click(object sender, EventArgs e)
         {
             Serwis window = new Serwis();
-            window.Show();
-            
+            window.Show();            
             ustawienia_panel.Height = 60;
         }
 
@@ -513,7 +540,7 @@ namespace PLC_SIEMENS
             try
             {
                 await conn.OpenAsync();
-                var window = new Windows.Recipes.Main(conn);
+                var window = new Windows.Recipes.Main(conn, this);
                 window.Show();
             }
             catch
@@ -521,6 +548,76 @@ namespace PLC_SIEMENS
                 conn.Dispose();
                 MessageBox.Show("Brak połączenia z bazą danych.", "Błąd");
             }
+        }
+
+        private async Task read_weight_SV(int variable, Label label)
+        {
+            var weight_SV = Convert.ToDouble(await PLC.analog_read(20, variable, S7.Net.VarType.Real));
+
+            if (weight_SV > 0)
+            {
+                label.Visible = true;
+                label.Text = $"{weight_SV.ToString("0.##")} kg";
+            }
+            else label.Visible = false;
+        }
+
+        private async Task status_line()
+        {
+            var status_var = Convert.ToInt16(await PLC.analog_read(20, 28, S7.Net.VarType.Int));
+
+            switch (status_var)
+            {
+                case 0:
+                    status_auto_label.Text = "Zatrzymana";
+                    break;
+                case 1:
+                    status_auto_label.Text = "Naważanie składnika nr.1 (z zbiornika Z1)";
+                    break;
+                case 2:
+                    status_auto_label.Text = "Naważanie składnika nr.2 (z zbiornika Z2)";
+                    break;
+                case 3:
+                    status_auto_label.Text = "Mieszanie...";
+                    break;
+                case 4:
+                    status_auto_label.Text = "Wysyp mieszanki z wagi W1";
+                    break;
+            }
+        }
+
+        private async void start_autorecipe_button_Click(object sender, EventArgs e)
+        {
+            await PLC.writeBool("DB20.DBX32.2", true);
+        }
+
+        private async void stop_autorecipe_button_ClickAsync(object sender, EventArgs e)
+        {
+            await PLC.writeBool("DB20.DBX32.3", true);
+        }        
+
+        private async Task time_mieszania()
+        {
+            var time = Convert.ToInt32(await PLC.analog_read(10, 4, S7.Net.VarType.Int));
+
+            if (time > 0)
+            {
+                t_mieszania_label.Visible = true;
+                t_mieszania_elapsed_label.Visible = true;
+
+                t_mieszania_elapsed_label.Text = $"{time} s";
+            }
+            else
+            {
+                t_mieszania_label.Visible = false;
+                t_mieszania_elapsed_label.Visible = false;
+            }
+        }
+
+        private void Mi1_Click(object sender, EventArgs e)
+        {
+            var window = new Mi1();
+            window.Show();
         }
     }
 }

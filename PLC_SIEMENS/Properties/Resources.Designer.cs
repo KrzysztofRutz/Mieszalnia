@@ -73,6 +73,26 @@ namespace PLC_SIEMENS.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap NW_PSADM_pion {
+            get {
+                object obj = ResourceManager.GetObject("NW_PSADM_pion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PSADM_G_pion {
+            get {
+                object obj = ResourceManager.GetObject("PSADM_G_pion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap R4_srod1 {
             get {
                 object obj = ResourceManager.GetObject("R4_srod1", resourceCulture);

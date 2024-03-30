@@ -51,6 +51,8 @@
             System.Windows.Forms.Button schemat_button;
             System.Windows.Forms.Button instrukcja_button;
             System.Windows.Forms.Button recipe_button;
+            System.Windows.Forms.Button start_autorecipe_button;
+            System.Windows.Forms.Button stop_autorecipe_button;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.close_app_button = new System.Windows.Forms.Button();
             this.main_timer = new System.Windows.Forms.Timer(this.components);
@@ -87,6 +89,30 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.skl1_weight_SV_label = new System.Windows.Forms.Label();
+            this.skl2_weight_SV_label = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.weight_PV_label = new System.Windows.Forms.Label();
+            this.skl_weight_PV_label = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.weight_SV_label = new System.Windows.Forms.Label();
+            this.cykle_PV_label = new System.Windows.Forms.Label();
+            this.cykle_SV_label = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.recipe_name_label = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label = new System.Windows.Forms.Label();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.status_auto_label = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.t_mieszania_label = new System.Windows.Forms.Label();
+            this.t_mieszania_elapsed_label = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.Mi1 = new System.Windows.Forms.PictureBox();
             this.Wb3 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.ZE3 = new System.Windows.Forms.PictureBox();
@@ -130,11 +156,18 @@
             schemat_button = new System.Windows.Forms.Button();
             instrukcja_button = new System.Windows.Forms.Button();
             recipe_button = new System.Windows.Forms.Button();
+            start_autorecipe_button = new System.Windows.Forms.Button();
+            stop_autorecipe_button = new System.Windows.Forms.Button();
             this.tryb_pracy_panel.SuspendLayout();
             this.ustawienia_panel.SuspendLayout();
             this.alarmy_panel.SuspendLayout();
             this.uzytkownik_panel.SuspendLayout();
             this.pomoc_panel.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Mi1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Wb3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ZE3)).BeginInit();
@@ -543,6 +576,45 @@
             recipe_button.UseVisualStyleBackColor = false;
             recipe_button.Click += new System.EventHandler(this.recipe_button_Click);
             // 
+            // start_autorecipe_button
+            // 
+            start_autorecipe_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            start_autorecipe_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            start_autorecipe_button.Dock = System.Windows.Forms.DockStyle.Left;
+            start_autorecipe_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            start_autorecipe_button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            start_autorecipe_button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            start_autorecipe_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            start_autorecipe_button.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            start_autorecipe_button.ForeColor = System.Drawing.SystemColors.WindowText;
+            start_autorecipe_button.Location = new System.Drawing.Point(0, 0);
+            start_autorecipe_button.Name = "start_autorecipe_button";
+            start_autorecipe_button.Size = new System.Drawing.Size(122, 39);
+            start_autorecipe_button.TabIndex = 171;
+            start_autorecipe_button.Text = "Start";
+            start_autorecipe_button.UseMnemonic = false;
+            start_autorecipe_button.UseVisualStyleBackColor = false;
+            start_autorecipe_button.Click += new System.EventHandler(this.start_autorecipe_button_Click);
+            // 
+            // stop_autorecipe_button
+            // 
+            stop_autorecipe_button.BackColor = System.Drawing.Color.Red;
+            stop_autorecipe_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            stop_autorecipe_button.Dock = System.Windows.Forms.DockStyle.Right;
+            stop_autorecipe_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            stop_autorecipe_button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            stop_autorecipe_button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            stop_autorecipe_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            stop_autorecipe_button.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            stop_autorecipe_button.ForeColor = System.Drawing.SystemColors.WindowText;
+            stop_autorecipe_button.Location = new System.Drawing.Point(194, 0);
+            stop_autorecipe_button.Name = "stop_autorecipe_button";
+            stop_autorecipe_button.Size = new System.Drawing.Size(122, 39);
+            stop_autorecipe_button.TabIndex = 172;
+            stop_autorecipe_button.Text = "Stop";
+            stop_autorecipe_button.UseVisualStyleBackColor = false;
+            stop_autorecipe_button.Click += new System.EventHandler(this.stop_autorecipe_button_ClickAsync);
+            // 
             // close_app_button
             // 
             this.close_app_button.BackColor = System.Drawing.Color.Red;
@@ -705,7 +777,7 @@
             // program_cycle
             // 
             this.program_cycle.Enabled = true;
-            this.program_cycle.Interval = 500;
+            this.program_cycle.Interval = 1000;
             this.program_cycle.Tick += new System.EventHandler(this.program_cycle_Tick);
             // 
             // label2
@@ -906,6 +978,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label6.Location = new System.Drawing.Point(772, 437);
@@ -923,6 +996,317 @@
             this.label7.Size = new System.Drawing.Size(32, 13);
             this.label7.TabIndex = 162;
             this.label7.Text = "Wb3";
+            // 
+            // skl1_weight_SV_label
+            // 
+            this.skl1_weight_SV_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.skl1_weight_SV_label.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.skl1_weight_SV_label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.skl1_weight_SV_label.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.skl1_weight_SV_label.Location = new System.Drawing.Point(605, 446);
+            this.skl1_weight_SV_label.Name = "skl1_weight_SV_label";
+            this.skl1_weight_SV_label.Size = new System.Drawing.Size(53, 16);
+            this.skl1_weight_SV_label.TabIndex = 164;
+            this.skl1_weight_SV_label.Text = "--,-- kg";
+            this.skl1_weight_SV_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.skl1_weight_SV_label.Visible = false;
+            // 
+            // skl2_weight_SV_label
+            // 
+            this.skl2_weight_SV_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.skl2_weight_SV_label.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.skl2_weight_SV_label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.skl2_weight_SV_label.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.skl2_weight_SV_label.Location = new System.Drawing.Point(1028, 446);
+            this.skl2_weight_SV_label.Name = "skl2_weight_SV_label";
+            this.skl2_weight_SV_label.Size = new System.Drawing.Size(53, 16);
+            this.skl2_weight_SV_label.TabIndex = 165;
+            this.skl2_weight_SV_label.Text = "--,-- kg";
+            this.skl2_weight_SV_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.skl2_weight_SV_label.Visible = false;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.10101F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.89899F));
+            this.tableLayoutPanel1.Controls.Add(this.weight_PV_label, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.skl_weight_PV_label, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label9, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label8, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(957, 755);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 50);
+            this.tableLayoutPanel1.TabIndex = 166;
+            // 
+            // weight_PV_label
+            // 
+            this.weight_PV_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.weight_PV_label.AutoSize = true;
+            this.weight_PV_label.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.weight_PV_label.Location = new System.Drawing.Point(135, 30);
+            this.weight_PV_label.Name = "weight_PV_label";
+            this.weight_PV_label.Size = new System.Drawing.Size(47, 13);
+            this.weight_PV_label.TabIndex = 170;
+            this.weight_PV_label.Text = "--,-- kg";
+            // 
+            // skl_weight_PV_label
+            // 
+            this.skl_weight_PV_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.skl_weight_PV_label.AutoSize = true;
+            this.skl_weight_PV_label.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.skl_weight_PV_label.Location = new System.Drawing.Point(135, 6);
+            this.skl_weight_PV_label.Name = "skl_weight_PV_label";
+            this.skl_weight_PV_label.Size = new System.Drawing.Size(47, 13);
+            this.skl_weight_PV_label.TabIndex = 169;
+            this.skl_weight_PV_label.Text = "--,-- kg";
+            // 
+            // label9
+            // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label9.Location = new System.Drawing.Point(5, 30);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(110, 13);
+            this.label9.TabIndex = 168;
+            this.label9.Text = "Naważono łącznie:";
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label8.Location = new System.Drawing.Point(10, 6);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(100, 13);
+            this.label8.TabIndex = 167;
+            this.label8.Text = "Waga składnika:";
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.weight_SV_label, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.cykle_PV_label, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.cykle_SV_label, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label13, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.label12, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.label11, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.recipe_name_label, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label10, 0, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(12, 88);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 4;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(318, 145);
+            this.tableLayoutPanel2.TabIndex = 167;
+            // 
+            // weight_SV_label
+            // 
+            this.weight_SV_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.weight_SV_label.AutoSize = true;
+            this.weight_SV_label.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.weight_SV_label.Location = new System.Drawing.Point(229, 115);
+            this.weight_SV_label.Name = "weight_SV_label";
+            this.weight_SV_label.Size = new System.Drawing.Size(18, 19);
+            this.weight_SV_label.TabIndex = 170;
+            this.weight_SV_label.Text = "0";
+            this.weight_SV_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cykle_PV_label
+            // 
+            this.cykle_PV_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cykle_PV_label.AutoSize = true;
+            this.cykle_PV_label.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cykle_PV_label.Location = new System.Drawing.Point(229, 79);
+            this.cykle_PV_label.Name = "cykle_PV_label";
+            this.cykle_PV_label.Size = new System.Drawing.Size(18, 19);
+            this.cykle_PV_label.TabIndex = 170;
+            this.cykle_PV_label.Text = "0";
+            this.cykle_PV_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cykle_SV_label
+            // 
+            this.cykle_SV_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cykle_SV_label.AutoSize = true;
+            this.cykle_SV_label.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cykle_SV_label.Location = new System.Drawing.Point(229, 44);
+            this.cykle_SV_label.Name = "cykle_SV_label";
+            this.cykle_SV_label.Size = new System.Drawing.Size(18, 19);
+            this.cykle_SV_label.TabIndex = 170;
+            this.cykle_SV_label.Text = "0";
+            this.cykle_SV_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label13
+            // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label13.Location = new System.Drawing.Point(20, 116);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(120, 17);
+            this.label13.TabIndex = 171;
+            this.label13.Text = "Wsad wagi [kg]:";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label12.Location = new System.Drawing.Point(17, 80);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(125, 17);
+            this.label12.TabIndex = 170;
+            this.label12.Text = "Cykle wykonane:";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label11.Location = new System.Drawing.Point(28, 45);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(103, 17);
+            this.label11.TabIndex = 169;
+            this.label11.Text = "Cykle zadane:";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // recipe_name_label
+            // 
+            this.recipe_name_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.recipe_name_label.AutoSize = true;
+            this.recipe_name_label.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.recipe_name_label.Location = new System.Drawing.Point(179, 9);
+            this.recipe_name_label.Name = "recipe_name_label";
+            this.recipe_name_label.Size = new System.Drawing.Size(117, 19);
+            this.recipe_name_label.TabIndex = 169;
+            this.recipe_name_label.Text = "------------------";
+            this.recipe_name_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label10.Location = new System.Drawing.Point(15, 10);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(130, 17);
+            this.label10.TabIndex = 168;
+            this.label10.Text = "Nazwa receptury:";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label.Location = new System.Drawing.Point(5, 2);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(311, 22);
+            this.label.TabIndex = 168;
+            this.label.Text = "Status linii:";
+            this.label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.status_auto_label, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.label, 0, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(719, 154);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(321, 51);
+            this.tableLayoutPanel3.TabIndex = 169;
+            // 
+            // status_auto_label
+            // 
+            this.status_auto_label.AutoSize = true;
+            this.status_auto_label.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.status_auto_label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.status_auto_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.status_auto_label.Location = new System.Drawing.Point(5, 26);
+            this.status_auto_label.Name = "status_auto_label";
+            this.status_auto_label.Size = new System.Drawing.Size(311, 23);
+            this.status_auto_label.TabIndex = 170;
+            this.status_auto_label.Text = "------";
+            this.status_auto_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(stop_autorecipe_button);
+            this.panel1.Controls.Add(start_autorecipe_button);
+            this.panel1.Location = new System.Drawing.Point(12, 233);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(318, 41);
+            this.panel1.TabIndex = 170;
+            // 
+            // t_mieszania_label
+            // 
+            this.t_mieszania_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.t_mieszania_label.AutoSize = true;
+            this.t_mieszania_label.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.t_mieszania_label.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.t_mieszania_label.Location = new System.Drawing.Point(652, 775);
+            this.t_mieszania_label.Name = "t_mieszania_label";
+            this.t_mieszania_label.Size = new System.Drawing.Size(115, 17);
+            this.t_mieszania_label.TabIndex = 171;
+            this.t_mieszania_label.Text = "Czas mieszania:";
+            this.t_mieszania_label.Visible = false;
+            // 
+            // t_mieszania_elapsed_label
+            // 
+            this.t_mieszania_elapsed_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.t_mieszania_elapsed_label.AutoSize = true;
+            this.t_mieszania_elapsed_label.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.t_mieszania_elapsed_label.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.t_mieszania_elapsed_label.Location = new System.Drawing.Point(767, 775);
+            this.t_mieszania_elapsed_label.Name = "t_mieszania_elapsed_label";
+            this.t_mieszania_elapsed_label.Size = new System.Drawing.Size(31, 17);
+            this.t_mieszania_elapsed_label.TabIndex = 172;
+            this.t_mieszania_elapsed_label.Text = "-- s";
+            this.t_mieszania_elapsed_label.Visible = false;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label16.Location = new System.Drawing.Point(823, 775);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(27, 13);
+            this.label16.TabIndex = 174;
+            this.label16.Text = "Mi1";
+            // 
+            // Mi1
+            // 
+            this.Mi1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Mi1.Image = global::PLC_SIEMENS.Properties.Resources.NW_PSADM_pion;
+            this.Mi1.Location = new System.Drawing.Point(826, 678);
+            this.Mi1.Margin = new System.Windows.Forms.Padding(2);
+            this.Mi1.Name = "Mi1";
+            this.Mi1.Size = new System.Drawing.Size(16, 90);
+            this.Mi1.TabIndex = 173;
+            this.Mi1.TabStop = false;
+            this.Mi1.Click += new System.EventHandler(this.Mi1_Click);
             // 
             // Wb3
             // 
@@ -1026,7 +1410,7 @@
             // W1_pelny
             // 
             this.W1_pelny.Image = global::PLC_SIEMENS.Properties.Resources.Do_silos_czesc_D_Nap;
-            this.W1_pelny.Location = new System.Drawing.Point(793, 711);
+            this.W1_pelny.Location = new System.Drawing.Point(793, 713);
             this.W1_pelny.Margin = new System.Windows.Forms.Padding(2);
             this.W1_pelny.Name = "W1_pelny";
             this.W1_pelny.Size = new System.Drawing.Size(165, 27);
@@ -1041,7 +1425,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(793, 690);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(165, 48);
+            this.pictureBox1.Size = new System.Drawing.Size(165, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 147;
             this.pictureBox1.TabStop = false;
@@ -1161,6 +1545,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.Mi1);
+            this.Controls.Add(this.t_mieszania_elapsed_label);
+            this.Controls.Add(this.t_mieszania_label);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.tableLayoutPanel3);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.skl2_weight_SV_label);
+            this.Controls.Add(this.skl1_weight_SV_label);
             this.Controls.Add(recipe_button);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -1219,18 +1612,27 @@
             this.Controls.Add(this.actual_time);
             this.Controls.Add(this.close_app_button);
             this.Controls.Add(this.odc2_label3);
+            this.Controls.Add(this.tableLayoutPanel2);
             this.ForeColor = System.Drawing.SystemColors.WindowText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Main";
+            this.Text = "++";
             this.tryb_pracy_panel.ResumeLayout(false);
             this.ustawienia_panel.ResumeLayout(false);
             this.alarmy_panel.ResumeLayout(false);
             this.uzytkownik_panel.ResumeLayout(false);
             this.pomoc_panel.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Mi1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Wb3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ZE3)).EndInit();
@@ -1314,6 +1716,30 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label skl1_weight_SV_label;
+        private System.Windows.Forms.Label skl2_weight_SV_label;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label weight_PV_label;
+        private System.Windows.Forms.Label skl_weight_PV_label;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label cykle_PV_label;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        public System.Windows.Forms.Label weight_SV_label;
+        public System.Windows.Forms.Label cykle_SV_label;
+        public System.Windows.Forms.Label recipe_name_label;
+        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Label status_auto_label;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label t_mieszania_label;
+        private System.Windows.Forms.Label t_mieszania_elapsed_label;
+        private System.Windows.Forms.PictureBox Mi1;
+        private System.Windows.Forms.Label label16;
     }
 }
 
