@@ -1,15 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Media;
 using PLC_SIEMENS.Definitions;
 using PLC_SIEMENS.Windows.Devices;
 using PLC_SIEMENS.Windows;
+using System.Windows.Media;
+using System.Drawing;
 
 namespace PLC_SIEMENS
 {
@@ -132,6 +131,8 @@ namespace PLC_SIEMENS
                 await auto();
                 await alarm_obiekt();
                 await status_line();
+                await permission();
+                await work_auto_recipe();
 
                 await read_weight_SV(8, skl1_weight_SV_label);
                 await read_weight_SV(12, skl2_weight_SV_label);
@@ -144,6 +145,8 @@ namespace PLC_SIEMENS
                 skl_weight_PV_label.Text = $"{weight_skl.ToString("0.##")} kg";
                 var weight_PV = Convert.ToDouble(await PLC.analog_read(20, 24, S7.Net.VarType.Real));
                 weight_PV_label.Text = $"{weight_PV.ToString("0.##")} kg";
+                var mieszanki_counter = Convert.ToDouble(await PLC.analog_read(20, 30, S7.Net.VarType.Int));
+                mieszanki_count_label.Text = mieszanki_counter.ToString();
 
                 await time_mieszania();
 
@@ -618,6 +621,27 @@ namespace PLC_SIEMENS
         {
             var window = new Mi1();
             window.Show();
+        }
+
+        private async Task permission()
+        {
+            bool permission = await PLC.readBool("DB20.DBX32.0");
+            if (permission)
+            {
+                permission_label.Text = "Zezwolono na uruchomienie";
+                permission_label.ForeColor = System.Drawing.Color.Blue;
+            }
+            else
+            {
+                permission_label.Text = "Brak zezwolenia na uruchomienie";
+                permission_label.ForeColor = System.Drawing.Color.Red;
+            }
+        }
+        private async Task work_auto_recipe()
+        {
+            bool work = await PLC.readBool("DB20.DBX32.1");
+            if (work) work_label.Text = "Pracuje";
+            else work_label.Text = "Zatrzymana";
         }
     }
 }

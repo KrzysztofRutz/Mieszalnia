@@ -134,6 +134,10 @@
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.dzwonek_image = new System.Windows.Forms.PictureBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.mieszanki_count_label = new System.Windows.Forms.Label();
+            this.permission_label = new System.Windows.Forms.Label();
+            this.work_label = new System.Windows.Forms.Label();
             STOP_button = new System.Windows.Forms.Button();
             dzwonek_OFF_button = new System.Windows.Forms.Button();
             kasuj_alarmy_button = new System.Windows.Forms.Button();
@@ -1094,6 +1098,8 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.mieszanki_count_label, 1, 4);
+            this.tableLayoutPanel2.Controls.Add(this.label17, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.weight_SV_label, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.cykle_PV_label, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.cykle_SV_label, 1, 1);
@@ -1104,13 +1110,13 @@
             this.tableLayoutPanel2.Controls.Add(this.label10, 0, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(12, 88);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 4;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(318, 145);
+            this.tableLayoutPanel2.RowCount = 5;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(318, 156);
             this.tableLayoutPanel2.TabIndex = 167;
             // 
             // weight_SV_label
@@ -1118,7 +1124,7 @@
             this.weight_SV_label.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.weight_SV_label.AutoSize = true;
             this.weight_SV_label.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.weight_SV_label.Location = new System.Drawing.Point(229, 115);
+            this.weight_SV_label.Location = new System.Drawing.Point(229, 96);
             this.weight_SV_label.Name = "weight_SV_label";
             this.weight_SV_label.Size = new System.Drawing.Size(18, 19);
             this.weight_SV_label.TabIndex = 170;
@@ -1130,7 +1136,7 @@
             this.cykle_PV_label.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cykle_PV_label.AutoSize = true;
             this.cykle_PV_label.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cykle_PV_label.Location = new System.Drawing.Point(229, 79);
+            this.cykle_PV_label.Location = new System.Drawing.Point(229, 66);
             this.cykle_PV_label.Name = "cykle_PV_label";
             this.cykle_PV_label.Size = new System.Drawing.Size(18, 19);
             this.cykle_PV_label.TabIndex = 170;
@@ -1142,7 +1148,7 @@
             this.cykle_SV_label.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cykle_SV_label.AutoSize = true;
             this.cykle_SV_label.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cykle_SV_label.Location = new System.Drawing.Point(229, 44);
+            this.cykle_SV_label.Location = new System.Drawing.Point(229, 36);
             this.cykle_SV_label.Name = "cykle_SV_label";
             this.cykle_SV_label.Size = new System.Drawing.Size(18, 19);
             this.cykle_SV_label.TabIndex = 170;
@@ -1154,7 +1160,7 @@
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label13.Location = new System.Drawing.Point(20, 116);
+            this.label13.Location = new System.Drawing.Point(20, 97);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(120, 17);
             this.label13.TabIndex = 171;
@@ -1166,7 +1172,7 @@
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label12.Location = new System.Drawing.Point(17, 80);
+            this.label12.Location = new System.Drawing.Point(17, 67);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(125, 17);
             this.label12.TabIndex = 170;
@@ -1178,7 +1184,7 @@
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label11.Location = new System.Drawing.Point(28, 45);
+            this.label11.Location = new System.Drawing.Point(28, 37);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(103, 17);
             this.label11.TabIndex = 169;
@@ -1190,7 +1196,7 @@
             this.recipe_name_label.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.recipe_name_label.AutoSize = true;
             this.recipe_name_label.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.recipe_name_label.Location = new System.Drawing.Point(179, 9);
+            this.recipe_name_label.Location = new System.Drawing.Point(179, 6);
             this.recipe_name_label.Name = "recipe_name_label";
             this.recipe_name_label.Size = new System.Drawing.Size(117, 19);
             this.recipe_name_label.TabIndex = 169;
@@ -1202,7 +1208,7 @@
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label10.Location = new System.Drawing.Point(15, 10);
+            this.label10.Location = new System.Drawing.Point(15, 7);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(130, 17);
             this.label10.TabIndex = 168;
@@ -1255,7 +1261,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(stop_autorecipe_button);
             this.panel1.Controls.Add(start_autorecipe_button);
-            this.panel1.Location = new System.Drawing.Point(12, 233);
+            this.panel1.Location = new System.Drawing.Point(12, 314);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(318, 41);
             this.panel1.TabIndex = 170;
@@ -1539,12 +1545,64 @@
             this.dzwonek_image.TabStop = false;
             this.dzwonek_image.Visible = false;
             // 
+            // label17
+            // 
+            this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label17.Location = new System.Drawing.Point(7, 130);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(146, 16);
+            this.label17.TabIndex = 175;
+            this.label17.Text = "Wykonane mieszanki:";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // mieszanki_count_label
+            // 
+            this.mieszanki_count_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.mieszanki_count_label.AutoSize = true;
+            this.mieszanki_count_label.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.mieszanki_count_label.Location = new System.Drawing.Point(229, 128);
+            this.mieszanki_count_label.Name = "mieszanki_count_label";
+            this.mieszanki_count_label.Size = new System.Drawing.Size(18, 19);
+            this.mieszanki_count_label.TabIndex = 175;
+            this.mieszanki_count_label.Text = "0";
+            this.mieszanki_count_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // permission_label
+            // 
+            this.permission_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.permission_label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.permission_label.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.permission_label.ForeColor = System.Drawing.Color.Red;
+            this.permission_label.Location = new System.Drawing.Point(12, 244);
+            this.permission_label.Name = "permission_label";
+            this.permission_label.Size = new System.Drawing.Size(318, 36);
+            this.permission_label.TabIndex = 176;
+            this.permission_label.Text = "Brak zezwolenia na uruchomienie";
+            this.permission_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // work_label
+            // 
+            this.work_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.work_label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.work_label.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.work_label.ForeColor = System.Drawing.Color.Black;
+            this.work_label.Location = new System.Drawing.Point(12, 279);
+            this.work_label.Name = "work_label";
+            this.work_label.Size = new System.Drawing.Size(318, 36);
+            this.work_label.TabIndex = 177;
+            this.work_label.Text = "Zatrzymana";
+            this.work_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.work_label);
+            this.Controls.Add(this.permission_label);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.Mi1);
             this.Controls.Add(this.t_mieszania_elapsed_label);
@@ -1740,6 +1798,10 @@
         private System.Windows.Forms.Label t_mieszania_elapsed_label;
         private System.Windows.Forms.PictureBox Mi1;
         private System.Windows.Forms.Label label16;
+        public System.Windows.Forms.Label mieszanki_count_label;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label permission_label;
+        private System.Windows.Forms.Label work_label;
     }
 }
 
