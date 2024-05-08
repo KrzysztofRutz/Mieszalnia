@@ -123,6 +123,7 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Definitions\ActiveAlarm.cs" />
     <Compile Include="Windows\Alarms\Alarmy_aktywne.cs">
       <SubType>Form</SubType>
     </Compile>

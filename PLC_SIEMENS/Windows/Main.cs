@@ -75,63 +75,9 @@ namespace PLC_SIEMENS
             ActualDate_textbox.Text = DateTime.Now.ToLongDateString();
 
             //Jeśli wystąpił nowy alarm to wykonujemy funkcje dodania go do bazy 
-            if (await PLC.readBool("DB8.DBX1.0")) await ActiveAlarm();          
+            if (await PLC.readBool("DB8.DBX1.0")) await ActiveAlarm.Detect();
         }
-
-        private async Task ActiveAlarm()
-        {
-            await PLC.writeBool("DB8.DBX0.7", true);
-            bool isconnect = false;
-
-            //Połączenie z bazą danych sql server
-            var conn = new SqlConnection("Data Source = DESKTOP-2LGV1R3; Initial Catalog = Mieszalnia; Integrated Security = true");
-            try
-            {
-                await conn.OpenAsync();
-                isconnect = true;
-            }
-            catch
-            {
-                conn.Dispose();
-                isconnect = false;
-            }
-
-            if (isconnect)
-            {
-                await Task.Run(async () =>
-                {
-                    for (int row = 0; row < DefinitionAlarm.Variable.Count(); row++)
-                    {
-                        string zmienna = DefinitionAlarm.Variable[row];
-                        bool variable_al = await PLC.readBool(zmienna);
-                        if (variable_al)
-                        {
-                            var datestart = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-                            string alarm_name = DefinitionAlarm.Text[row];
-                            var check_alarm = new SqlCommand($"SELECT id FROM Alarm WHERE Descrip='{alarm_name}' AND DateEnd is NULL;", conn);
-                            var reader_check_alarm = await check_alarm.ExecuteReaderAsync();
-                            int id = 0;
-                            using (reader_check_alarm)
-                            {
-                                while (await reader_check_alarm.ReadAsync())
-                                {
-                                    id = reader_check_alarm.GetInt32(0);
-                                }
-                            }
-
-                            if (id == 0)
-                            {
-                                var command = new SqlCommand($"INSERT INTO Alarm (DateStart, Descrip) VALUES ('{datestart}', '{alarm_name}');", conn);
-                                using (command) await command.ExecuteNonQueryAsync();
-                            }
-                        }
-                        else continue;
-                    }
-                    conn.Close();
-                });                              
-            }
-        }
-
+      
         private async void program_cycle_Tick(object sender, EventArgs e)
         {
             if (PLC.plc.IsConnected)
@@ -208,57 +154,8 @@ namespace PLC_SIEMENS
         {
             await PLC.writeBool("DB8.DBX0.4", true);
             bool new_alarm = await PLC.readBool("DB8.DBX1.0");
-            bool isconnect = false;
 
-            //Połączenie z bazą danych sql server
-            var conn = new SqlConnection("Data Source = DESKTOP-2LGV1R3; Initial Catalog = Mieszalnia; Integrated Security = true");
-            try
-            {
-                await conn.OpenAsync();
-                isconnect = true;
-            }
-            catch
-            {
-                conn.Dispose();
-                isconnect = false;
-            }
-
-            if (isconnect)
-            {
-                await Task.Run(async () =>
-                {
-                    for (int row = 0; row < DefinitionAlarm.Variable.Count(); row++)
-                    {
-                        string zmienna = DefinitionAlarm.Variable[row];
-                        bool variable_al = await PLC.readBool(zmienna);
-                        if (!variable_al)
-                        {
-                            var datestart = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-                            string column = "C" + row;
-                            string alarm_name = DefinitionAlarm.Text[row];
-
-                            var command_check = new SqlCommand($"SELECT id FROM Alarm WHERE DateEnd is NULL AND Descrip = '{alarm_name}';", conn);
-                            var reader_check = await command_check.ExecuteReaderAsync();
-                            int check = 0;
-                            using (reader_check)
-                            {
-                                while (await reader_check.ReadAsync())
-                                {
-                                    check = reader_check.GetInt32(0);
-                                }
-                            }
-
-                            if (check != 0)
-                            {
-                                var command = new SqlCommand($"UPDATE Alarm SET DateEnd = '{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}' WHERE DateEnd is NULL AND Descrip = '{alarm_name}';", conn);
-                                using (command) await command.ExecuteNonQueryAsync();
-                            }
-                        }
-                        else continue;
-                    }
-                    conn.Close();
-                });                              
-            }
+            await ActiveAlarm.Delete();           
         }
 
         private async void bez_blokad_button_Click(object sender, EventArgs e)
