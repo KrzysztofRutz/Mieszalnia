@@ -23,8 +23,8 @@ namespace PLC_SIEMENS
 
         private void Opisy_Z_Load(object sender, EventArgs e)
         {
-            Z1_textbox.Text = Main.instance.z1_name.Text;
-            Z2_textbox.Text = Main.instance.z2_name.Text;           
+            Z1_textbox.Text = Main.instance.Z1_name_textbox.Text;
+            Z2_textbox.Text = Main.instance.Z2_name_textbox.Text;           
         }
 
         public void save_button_Click(object sender, EventArgs e)
@@ -45,8 +45,8 @@ namespace PLC_SIEMENS
                 sw.WriteLine(name[i]);
             }
 
-            Main.instance.z1_name.Text = name[0];
-            Main.instance.z2_name.Text = name[1];           
+            Main.instance.Z1_name_textbox.Text = name[0];
+            Main.instance.Z2_name_textbox.Text = name[1];           
             sw.Close();      
         }
 

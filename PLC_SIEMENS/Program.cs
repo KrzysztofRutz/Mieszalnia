@@ -1,10 +1,6 @@
-﻿using S7.Net;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing;
 using PLC_SIEMENS.Definitions;
 
 namespace PLC_SIEMENS

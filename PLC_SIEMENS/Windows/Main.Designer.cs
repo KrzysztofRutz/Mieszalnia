@@ -29,41 +29,37 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Button STOP_button;
-            System.Windows.Forms.Button dzwonek_OFF_button;
-            System.Windows.Forms.Button kasuj_alarmy_button;
-            System.Windows.Forms.Button ustawienia_button;
-            System.Windows.Forms.Button tryb_pracy_button;
+            System.Windows.Forms.Button StopAll_button;
+            System.Windows.Forms.Button BellOFF_button;
+            System.Windows.Forms.Button DeleteAlarms_button;
+            System.Windows.Forms.Button Settings_button;
+            System.Windows.Forms.Button WorkMode_button;
             System.Windows.Forms.Button alarmy_button;
-            System.Windows.Forms.Button pomoc_button;
-            System.Windows.Forms.Button uzytkownik_button;
-            System.Windows.Forms.Button bez_blokad_button;
-            System.Windows.Forms.Button z_blokadami_button;
-            System.Windows.Forms.Button zezwolenie_lok_button;
-            System.Windows.Forms.Button auto1_button;
-            System.Windows.Forms.Button button5;
+            System.Windows.Forms.Button Help_button;
+            System.Windows.Forms.Button User_button;
+            System.Windows.Forms.Button HandWork_button;
+            System.Windows.Forms.Button AutoWork_button;
             System.Windows.Forms.Button parametry_podstawowe_button;
             System.Windows.Forms.Button serwis_button;
             System.Windows.Forms.Button alarmy_aktywne_button;
             System.Windows.Forms.Button alarmy_hist_button;
             System.Windows.Forms.Button przelacz_user_button;
-            System.Windows.Forms.Button wyloguj_button;
+            System.Windows.Forms.Button Logout_button;
             System.Windows.Forms.Button schemat_button;
             System.Windows.Forms.Button instrukcja_button;
-            System.Windows.Forms.Button recipe_button;
+            System.Windows.Forms.Button Recipes_button;
             System.Windows.Forms.Button start_autorecipe_button;
             System.Windows.Forms.Button stop_autorecipe_button;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            this.close_app_button = new System.Windows.Forms.Button();
+            this.CloseApp_button = new System.Windows.Forms.Button();
             this.main_timer = new System.Windows.Forms.Timer(this.components);
-            this.actual_time = new System.Windows.Forms.TextBox();
-            this.actual_date = new System.Windows.Forms.TextBox();
-            this.alarm_obiekt_box = new System.Windows.Forms.TextBox();
-            this.tryb_pracy_box = new System.Windows.Forms.TextBox();
-            this.bez_blokad_label = new System.Windows.Forms.Label();
-            this.z_blokadami_label = new System.Windows.Forms.Label();
-            this.opr_dr_tech_label = new System.Windows.Forms.TextBox();
-            this.tryb_pracy_panel = new System.Windows.Forms.Panel();
+            this.ActualTime_textbox = new System.Windows.Forms.TextBox();
+            this.ActualDate_textbox = new System.Windows.Forms.TextBox();
+            this.AlarmObject_textbox = new System.Windows.Forms.TextBox();
+            this.WorkMode_textbox = new System.Windows.Forms.TextBox();
+            this.HandWork_label = new System.Windows.Forms.Label();
+            this.AutoWork_label = new System.Windows.Forms.Label();
+            this.WorkMode_panel = new System.Windows.Forms.Panel();
             this.ustawienia_panel = new System.Windows.Forms.Panel();
             this.alarmy_panel = new System.Windows.Forms.Panel();
             this.uzytkownik_panel = new System.Windows.Forms.Panel();
@@ -71,211 +67,219 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.z1_name = new System.Windows.Forms.TextBox();
-            this.z2_name = new System.Windows.Forms.TextBox();
+            this.Z1_name_textbox = new System.Windows.Forms.TextBox();
+            this.Z2_name_textbox = new System.Windows.Forms.TextBox();
             this.pomoc_panel = new System.Windows.Forms.Panel();
             this.odc2_label2 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.ERROR_PLC_label = new System.Windows.Forms.Label();
             this.odc2_label1 = new System.Windows.Forms.Label();
             this.odc1_label1 = new System.Windows.Forms.Label();
             this.odc1_label2 = new System.Windows.Forms.Label();
             this.odc2_label3 = new System.Windows.Forms.Label();
             this.odc1_label3 = new System.Windows.Forms.Label();
-            this.weight_label = new System.Windows.Forms.Label();
+            this.Weight_label = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.odc3_label = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.skl1_weight_SV_label = new System.Windows.Forms.Label();
-            this.skl2_weight_SV_label = new System.Windows.Forms.Label();
+            this.Z1_weightSV_label = new System.Windows.Forms.Label();
+            this.Z2_weightSV_label = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.weight_PV_label = new System.Windows.Forms.Label();
-            this.skl_weight_PV_label = new System.Windows.Forms.Label();
+            this.weightPV_label = new System.Windows.Forms.Label();
+            this.IngredientWeightPV_label = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.weight_SV_label = new System.Windows.Forms.Label();
-            this.cykle_PV_label = new System.Windows.Forms.Label();
-            this.cykle_SV_label = new System.Windows.Forms.Label();
+            this.MixturesCounter_label = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.weightSV_label = new System.Windows.Forms.Label();
+            this.cyclesPV_label = new System.Windows.Forms.Label();
+            this.cyclesSV_label = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.recipe_name_label = new System.Windows.Forms.Label();
+            this.RecipeName_label = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.status_auto_label = new System.Windows.Forms.Label();
+            this.StatusLine_tablelayoutpanel = new System.Windows.Forms.TableLayoutPanel();
+            this.StatusAutoLine_label = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.t_mieszania_label = new System.Windows.Forms.Label();
-            this.t_mieszania_elapsed_label = new System.Windows.Forms.Label();
+            this.t_mixer_label = new System.Windows.Forms.Label();
+            this.t_mixer_elapsed_label = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.Mi1 = new System.Windows.Forms.PictureBox();
+            this.Mi1_picturebox = new System.Windows.Forms.PictureBox();
             this.Wb3 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.ZE3 = new System.Windows.Forms.PictureBox();
-            this.ZE1 = new System.Windows.Forms.PictureBox();
-            this.ZE2 = new System.Windows.Forms.PictureBox();
+            this.ZE3_picturebox = new System.Windows.Forms.PictureBox();
+            this.ZE1_picturebox = new System.Windows.Forms.PictureBox();
+            this.ZE2_picturebox = new System.Windows.Forms.PictureBox();
             this.Wb2 = new System.Windows.Forms.PictureBox();
             this.Wb1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.W1_pelny = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Z1_pelny = new System.Windows.Forms.PictureBox();
+            this.Z1_empty_picturebox = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.Z2_pelny = new System.Windows.Forms.PictureBox();
+            this.Z2_empty_picturebox = new System.Windows.Forms.PictureBox();
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
-            this.dzwonek_image = new System.Windows.Forms.PictureBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.mieszanki_count_label = new System.Windows.Forms.Label();
+            this.Bell_picturebox = new System.Windows.Forms.PictureBox();
             this.permission_label = new System.Windows.Forms.Label();
             this.work_label = new System.Windows.Forms.Label();
-            STOP_button = new System.Windows.Forms.Button();
-            dzwonek_OFF_button = new System.Windows.Forms.Button();
-            kasuj_alarmy_button = new System.Windows.Forms.Button();
-            ustawienia_button = new System.Windows.Forms.Button();
-            tryb_pracy_button = new System.Windows.Forms.Button();
+            this.ze1_lock_elapsed_label = new System.Windows.Forms.Label();
+            this.ze1_lock_label = new System.Windows.Forms.Label();
+            this.ze2_lock_elapsed_label = new System.Windows.Forms.Label();
+            this.Z1_emptyInfo_label = new System.Windows.Forms.Label();
+            this.ze3_lock_elapsed_label = new System.Windows.Forms.Label();
+            this.ze3_lock_label = new System.Windows.Forms.Label();
+            this.ze2_lock_label = new System.Windows.Forms.Label();
+            this.Z1_emptyInfo_button = new System.Windows.Forms.Button();
+            this.Z1_emptyInfo_panel = new System.Windows.Forms.Panel();
+            this.Z2_emptyInfo_panel = new System.Windows.Forms.Panel();
+            this.Z2_emptyInfo_label = new System.Windows.Forms.Label();
+            this.Z2_emptyInfo_button = new System.Windows.Forms.Button();
+            StopAll_button = new System.Windows.Forms.Button();
+            BellOFF_button = new System.Windows.Forms.Button();
+            DeleteAlarms_button = new System.Windows.Forms.Button();
+            Settings_button = new System.Windows.Forms.Button();
+            WorkMode_button = new System.Windows.Forms.Button();
             alarmy_button = new System.Windows.Forms.Button();
-            pomoc_button = new System.Windows.Forms.Button();
-            uzytkownik_button = new System.Windows.Forms.Button();
-            bez_blokad_button = new System.Windows.Forms.Button();
-            z_blokadami_button = new System.Windows.Forms.Button();
-            zezwolenie_lok_button = new System.Windows.Forms.Button();
-            auto1_button = new System.Windows.Forms.Button();
-            button5 = new System.Windows.Forms.Button();
+            Help_button = new System.Windows.Forms.Button();
+            User_button = new System.Windows.Forms.Button();
+            HandWork_button = new System.Windows.Forms.Button();
+            AutoWork_button = new System.Windows.Forms.Button();
             parametry_podstawowe_button = new System.Windows.Forms.Button();
             serwis_button = new System.Windows.Forms.Button();
             alarmy_aktywne_button = new System.Windows.Forms.Button();
             alarmy_hist_button = new System.Windows.Forms.Button();
             przelacz_user_button = new System.Windows.Forms.Button();
-            wyloguj_button = new System.Windows.Forms.Button();
+            Logout_button = new System.Windows.Forms.Button();
             schemat_button = new System.Windows.Forms.Button();
             instrukcja_button = new System.Windows.Forms.Button();
-            recipe_button = new System.Windows.Forms.Button();
+            Recipes_button = new System.Windows.Forms.Button();
             start_autorecipe_button = new System.Windows.Forms.Button();
             stop_autorecipe_button = new System.Windows.Forms.Button();
-            this.tryb_pracy_panel.SuspendLayout();
+            this.WorkMode_panel.SuspendLayout();
             this.ustawienia_panel.SuspendLayout();
             this.alarmy_panel.SuspendLayout();
             this.uzytkownik_panel.SuspendLayout();
             this.pomoc_panel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
+            this.StatusLine_tablelayoutpanel.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Mi1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mi1_picturebox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Wb3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ZE3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ZE1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ZE2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ZE3_picturebox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ZE1_picturebox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ZE2_picturebox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Wb2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Wb1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.W1_pelny)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Z1_pelny)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Z1_empty_picturebox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Z2_pelny)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Z2_empty_picturebox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dzwonek_image)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Bell_picturebox)).BeginInit();
+            this.Z1_emptyInfo_panel.SuspendLayout();
+            this.Z2_emptyInfo_panel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // STOP_button
+            // StopAll_button
             // 
-            STOP_button.BackColor = System.Drawing.Color.Red;
-            STOP_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            STOP_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            STOP_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            STOP_button.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            STOP_button.ForeColor = System.Drawing.Color.Yellow;
-            STOP_button.Location = new System.Drawing.Point(1802, 1018);
-            STOP_button.Name = "STOP_button";
-            STOP_button.Size = new System.Drawing.Size(118, 60);
-            STOP_button.TabIndex = 17;
-            STOP_button.Text = "STOP";
-            STOP_button.UseVisualStyleBackColor = false;
-            STOP_button.Click += new System.EventHandler(this.STOP_button_Click);
+            StopAll_button.BackColor = System.Drawing.Color.Red;
+            StopAll_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            StopAll_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            StopAll_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            StopAll_button.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            StopAll_button.ForeColor = System.Drawing.Color.Yellow;
+            StopAll_button.Location = new System.Drawing.Point(1802, 1018);
+            StopAll_button.Name = "StopAll_button";
+            StopAll_button.Size = new System.Drawing.Size(118, 60);
+            StopAll_button.TabIndex = 17;
+            StopAll_button.Text = "STOP";
+            StopAll_button.UseVisualStyleBackColor = false;
+            StopAll_button.Click += new System.EventHandler(this.STOP_button_Click);
             // 
-            // dzwonek_OFF_button
+            // BellOFF_button
             // 
-            dzwonek_OFF_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            dzwonek_OFF_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            dzwonek_OFF_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            dzwonek_OFF_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            dzwonek_OFF_button.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dzwonek_OFF_button.ForeColor = System.Drawing.SystemColors.WindowText;
-            dzwonek_OFF_button.Location = new System.Drawing.Point(930, 1);
-            dzwonek_OFF_button.Name = "dzwonek_OFF_button";
-            dzwonek_OFF_button.Size = new System.Drawing.Size(118, 60);
-            dzwonek_OFF_button.TabIndex = 19;
-            dzwonek_OFF_button.Text = "Wyłącz dzwonek";
-            dzwonek_OFF_button.UseVisualStyleBackColor = false;
-            dzwonek_OFF_button.Click += new System.EventHandler(this.dzwonek_OFF_button_Click);
+            BellOFF_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            BellOFF_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            BellOFF_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            BellOFF_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            BellOFF_button.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            BellOFF_button.ForeColor = System.Drawing.SystemColors.WindowText;
+            BellOFF_button.Location = new System.Drawing.Point(930, 1);
+            BellOFF_button.Name = "BellOFF_button";
+            BellOFF_button.Size = new System.Drawing.Size(118, 60);
+            BellOFF_button.TabIndex = 19;
+            BellOFF_button.Text = "Wyłącz dzwonek";
+            BellOFF_button.UseVisualStyleBackColor = false;
+            BellOFF_button.Click += new System.EventHandler(this.dzwonek_OFF_button_Click);
             // 
-            // kasuj_alarmy_button
+            // DeleteAlarms_button
             // 
-            kasuj_alarmy_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            kasuj_alarmy_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            kasuj_alarmy_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            kasuj_alarmy_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            kasuj_alarmy_button.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            kasuj_alarmy_button.ForeColor = System.Drawing.SystemColors.WindowText;
-            kasuj_alarmy_button.Location = new System.Drawing.Point(813, 1);
-            kasuj_alarmy_button.Name = "kasuj_alarmy_button";
-            kasuj_alarmy_button.Size = new System.Drawing.Size(118, 60);
-            kasuj_alarmy_button.TabIndex = 20;
-            kasuj_alarmy_button.Text = "Kasuj alarmy";
-            kasuj_alarmy_button.UseVisualStyleBackColor = false;
-            kasuj_alarmy_button.Click += new System.EventHandler(this.kasuj_alarmy_button_Click);
+            DeleteAlarms_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            DeleteAlarms_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            DeleteAlarms_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            DeleteAlarms_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            DeleteAlarms_button.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            DeleteAlarms_button.ForeColor = System.Drawing.SystemColors.WindowText;
+            DeleteAlarms_button.Location = new System.Drawing.Point(813, 1);
+            DeleteAlarms_button.Name = "DeleteAlarms_button";
+            DeleteAlarms_button.Size = new System.Drawing.Size(118, 60);
+            DeleteAlarms_button.TabIndex = 20;
+            DeleteAlarms_button.Text = "Kasuj alarmy";
+            DeleteAlarms_button.UseVisualStyleBackColor = false;
+            DeleteAlarms_button.Click += new System.EventHandler(this.kasuj_alarmy_button_Click);
             // 
-            // ustawienia_button
+            // Settings_button
             // 
-            ustawienia_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            ustawienia_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            ustawienia_button.Dock = System.Windows.Forms.DockStyle.Top;
-            ustawienia_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            ustawienia_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            ustawienia_button.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            ustawienia_button.ForeColor = System.Drawing.SystemColors.WindowText;
-            ustawienia_button.Location = new System.Drawing.Point(0, 0);
-            ustawienia_button.Name = "ustawienia_button";
-            ustawienia_button.Size = new System.Drawing.Size(118, 60);
-            ustawienia_button.TabIndex = 23;
-            ustawienia_button.Text = "Ustawienia";
-            ustawienia_button.UseVisualStyleBackColor = false;
-            ustawienia_button.Click += new System.EventHandler(this.ustawienia_button_Click);
+            Settings_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            Settings_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            Settings_button.Dock = System.Windows.Forms.DockStyle.Top;
+            Settings_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            Settings_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            Settings_button.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            Settings_button.ForeColor = System.Drawing.SystemColors.WindowText;
+            Settings_button.Location = new System.Drawing.Point(0, 0);
+            Settings_button.Name = "Settings_button";
+            Settings_button.Size = new System.Drawing.Size(118, 60);
+            Settings_button.TabIndex = 23;
+            Settings_button.Text = "Ustawienia";
+            Settings_button.UseVisualStyleBackColor = false;
+            Settings_button.Click += new System.EventHandler(this.ustawienia_button_Click);
             // 
-            // tryb_pracy_button
+            // WorkMode_button
             // 
-            tryb_pracy_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            tryb_pracy_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            tryb_pracy_button.Dock = System.Windows.Forms.DockStyle.Top;
-            tryb_pracy_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            tryb_pracy_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            tryb_pracy_button.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            tryb_pracy_button.ForeColor = System.Drawing.SystemColors.WindowText;
-            tryb_pracy_button.Location = new System.Drawing.Point(0, 0);
-            tryb_pracy_button.Name = "tryb_pracy_button";
-            tryb_pracy_button.Size = new System.Drawing.Size(118, 60);
-            tryb_pracy_button.TabIndex = 27;
-            tryb_pracy_button.Text = "Tryb pracy";
-            tryb_pracy_button.UseVisualStyleBackColor = false;
-            tryb_pracy_button.Click += new System.EventHandler(this.tryb_pracy_button_Click);
+            WorkMode_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            WorkMode_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            WorkMode_button.Dock = System.Windows.Forms.DockStyle.Top;
+            WorkMode_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            WorkMode_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            WorkMode_button.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            WorkMode_button.ForeColor = System.Drawing.SystemColors.WindowText;
+            WorkMode_button.Location = new System.Drawing.Point(0, 0);
+            WorkMode_button.Name = "WorkMode_button";
+            WorkMode_button.Size = new System.Drawing.Size(118, 60);
+            WorkMode_button.TabIndex = 27;
+            WorkMode_button.Text = "Tryb pracy";
+            WorkMode_button.UseVisualStyleBackColor = false;
+            WorkMode_button.Click += new System.EventHandler(this.tryb_pracy_button_Click);
             // 
             // alarmy_button
             // 
@@ -296,129 +300,77 @@
             alarmy_button.UseVisualStyleBackColor = false;
             alarmy_button.Click += new System.EventHandler(this.alarmy_button_Click);
             // 
-            // pomoc_button
+            // Help_button
             // 
-            pomoc_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            pomoc_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            pomoc_button.Dock = System.Windows.Forms.DockStyle.Top;
-            pomoc_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            pomoc_button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            pomoc_button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            pomoc_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            pomoc_button.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            pomoc_button.ForeColor = System.Drawing.SystemColors.WindowText;
-            pomoc_button.Location = new System.Drawing.Point(0, 0);
-            pomoc_button.Name = "pomoc_button";
-            pomoc_button.Size = new System.Drawing.Size(118, 60);
-            pomoc_button.TabIndex = 30;
-            pomoc_button.Text = "Pomoc";
-            pomoc_button.UseVisualStyleBackColor = false;
-            pomoc_button.Click += new System.EventHandler(this.pomoc_button_Click);
+            Help_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            Help_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            Help_button.Dock = System.Windows.Forms.DockStyle.Top;
+            Help_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            Help_button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            Help_button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            Help_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            Help_button.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            Help_button.ForeColor = System.Drawing.SystemColors.WindowText;
+            Help_button.Location = new System.Drawing.Point(0, 0);
+            Help_button.Name = "Help_button";
+            Help_button.Size = new System.Drawing.Size(118, 60);
+            Help_button.TabIndex = 30;
+            Help_button.Text = "Pomoc";
+            Help_button.UseVisualStyleBackColor = false;
+            Help_button.Click += new System.EventHandler(this.pomoc_button_Click);
             // 
-            // uzytkownik_button
+            // User_button
             // 
-            uzytkownik_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            uzytkownik_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            uzytkownik_button.Dock = System.Windows.Forms.DockStyle.Top;
-            uzytkownik_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            uzytkownik_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            uzytkownik_button.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            uzytkownik_button.ForeColor = System.Drawing.SystemColors.WindowText;
-            uzytkownik_button.Location = new System.Drawing.Point(0, 0);
-            uzytkownik_button.Name = "uzytkownik_button";
-            uzytkownik_button.Size = new System.Drawing.Size(118, 60);
-            uzytkownik_button.TabIndex = 31;
-            uzytkownik_button.Text = "Użytkownik";
-            uzytkownik_button.UseVisualStyleBackColor = false;
-            uzytkownik_button.Click += new System.EventHandler(this.uzytkownik_button_Click);
+            User_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            User_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            User_button.Dock = System.Windows.Forms.DockStyle.Top;
+            User_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            User_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            User_button.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            User_button.ForeColor = System.Drawing.SystemColors.WindowText;
+            User_button.Location = new System.Drawing.Point(0, 0);
+            User_button.Name = "User_button";
+            User_button.Size = new System.Drawing.Size(118, 60);
+            User_button.TabIndex = 31;
+            User_button.Text = "Użytkownik";
+            User_button.UseVisualStyleBackColor = false;
+            User_button.Click += new System.EventHandler(this.uzytkownik_button_Click);
             // 
-            // bez_blokad_button
+            // HandWork_button
             // 
-            bez_blokad_button.BackColor = System.Drawing.Color.White;
-            bez_blokad_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            bez_blokad_button.Dock = System.Windows.Forms.DockStyle.Top;
-            bez_blokad_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            bez_blokad_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            bez_blokad_button.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            bez_blokad_button.ForeColor = System.Drawing.SystemColors.WindowText;
-            bez_blokad_button.Location = new System.Drawing.Point(0, 60);
-            bez_blokad_button.Name = "bez_blokad_button";
-            bez_blokad_button.Size = new System.Drawing.Size(118, 31);
-            bez_blokad_button.TabIndex = 28;
-            bez_blokad_button.Text = "Bez blokad";
-            bez_blokad_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            bez_blokad_button.UseVisualStyleBackColor = false;
-            bez_blokad_button.Click += new System.EventHandler(this.bez_blokad_button_Click);
+            HandWork_button.BackColor = System.Drawing.Color.White;
+            HandWork_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            HandWork_button.Dock = System.Windows.Forms.DockStyle.Top;
+            HandWork_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            HandWork_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            HandWork_button.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            HandWork_button.ForeColor = System.Drawing.SystemColors.WindowText;
+            HandWork_button.Location = new System.Drawing.Point(0, 60);
+            HandWork_button.Name = "HandWork_button";
+            HandWork_button.Size = new System.Drawing.Size(118, 31);
+            HandWork_button.TabIndex = 28;
+            HandWork_button.Text = "Ręczny";
+            HandWork_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            HandWork_button.UseVisualStyleBackColor = false;
+            HandWork_button.Click += new System.EventHandler(this.bez_blokad_button_Click);
             // 
-            // z_blokadami_button
+            // AutoWork_button
             // 
-            z_blokadami_button.BackColor = System.Drawing.Color.White;
-            z_blokadami_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            z_blokadami_button.Dock = System.Windows.Forms.DockStyle.Top;
-            z_blokadami_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            z_blokadami_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            z_blokadami_button.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            z_blokadami_button.ForeColor = System.Drawing.SystemColors.WindowText;
-            z_blokadami_button.Location = new System.Drawing.Point(0, 91);
-            z_blokadami_button.Name = "z_blokadami_button";
-            z_blokadami_button.Size = new System.Drawing.Size(118, 31);
-            z_blokadami_button.TabIndex = 29;
-            z_blokadami_button.Text = "Z blokadami";
-            z_blokadami_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            z_blokadami_button.UseVisualStyleBackColor = false;
-            z_blokadami_button.Click += new System.EventHandler(this.z_blokadami_button_Click);
-            // 
-            // zezwolenie_lok_button
-            // 
-            zezwolenie_lok_button.BackColor = System.Drawing.Color.White;
-            zezwolenie_lok_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            zezwolenie_lok_button.Dock = System.Windows.Forms.DockStyle.Top;
-            zezwolenie_lok_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            zezwolenie_lok_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            zezwolenie_lok_button.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            zezwolenie_lok_button.ForeColor = System.Drawing.SystemColors.WindowText;
-            zezwolenie_lok_button.Location = new System.Drawing.Point(0, 122);
-            zezwolenie_lok_button.Name = "zezwolenie_lok_button";
-            zezwolenie_lok_button.Size = new System.Drawing.Size(118, 31);
-            zezwolenie_lok_button.TabIndex = 30;
-            zezwolenie_lok_button.Text = "Zezwolenie na lok.";
-            zezwolenie_lok_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            zezwolenie_lok_button.UseVisualStyleBackColor = false;
-            // 
-            // auto1_button
-            // 
-            auto1_button.BackColor = System.Drawing.Color.White;
-            auto1_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            auto1_button.Dock = System.Windows.Forms.DockStyle.Top;
-            auto1_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            auto1_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            auto1_button.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            auto1_button.ForeColor = System.Drawing.SystemColors.WindowText;
-            auto1_button.Location = new System.Drawing.Point(0, 153);
-            auto1_button.Name = "auto1_button";
-            auto1_button.Size = new System.Drawing.Size(118, 31);
-            auto1_button.TabIndex = 31;
-            auto1_button.Text = "Auto ... ";
-            auto1_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            auto1_button.UseVisualStyleBackColor = false;
-            auto1_button.Click += new System.EventHandler(this.auto1_button_Click);
-            // 
-            // button5
-            // 
-            button5.BackColor = System.Drawing.Color.White;
-            button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            button5.Dock = System.Windows.Forms.DockStyle.Top;
-            button5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            button5.ForeColor = System.Drawing.SystemColors.WindowText;
-            button5.Location = new System.Drawing.Point(0, 184);
-            button5.Name = "button5";
-            button5.Size = new System.Drawing.Size(118, 31);
-            button5.TabIndex = 32;
-            button5.Text = "Auto ... ";
-            button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            button5.UseVisualStyleBackColor = false;
+            AutoWork_button.BackColor = System.Drawing.Color.White;
+            AutoWork_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            AutoWork_button.Dock = System.Windows.Forms.DockStyle.Top;
+            AutoWork_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            AutoWork_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            AutoWork_button.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            AutoWork_button.ForeColor = System.Drawing.SystemColors.WindowText;
+            AutoWork_button.Location = new System.Drawing.Point(0, 91);
+            AutoWork_button.Name = "AutoWork_button";
+            AutoWork_button.Size = new System.Drawing.Size(118, 31);
+            AutoWork_button.TabIndex = 29;
+            AutoWork_button.Text = "Automatyczny";
+            AutoWork_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            AutoWork_button.UseVisualStyleBackColor = false;
+            AutoWork_button.Click += new System.EventHandler(this.z_blokadami_button_Click);
             // 
             // parametry_podstawowe_button
             // 
@@ -510,23 +462,23 @@
             przelacz_user_button.UseVisualStyleBackColor = false;
             przelacz_user_button.Click += new System.EventHandler(this.przelacz_user_button_Click);
             // 
-            // wyloguj_button
+            // Logout_button
             // 
-            wyloguj_button.BackColor = System.Drawing.Color.White;
-            wyloguj_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            wyloguj_button.Dock = System.Windows.Forms.DockStyle.Top;
-            wyloguj_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            wyloguj_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            wyloguj_button.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            wyloguj_button.ForeColor = System.Drawing.SystemColors.WindowText;
-            wyloguj_button.Location = new System.Drawing.Point(0, 91);
-            wyloguj_button.Name = "wyloguj_button";
-            wyloguj_button.Size = new System.Drawing.Size(118, 31);
-            wyloguj_button.TabIndex = 33;
-            wyloguj_button.Text = "Wyloguj";
-            wyloguj_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            wyloguj_button.UseVisualStyleBackColor = false;
-            wyloguj_button.Click += new System.EventHandler(this.wyloguj_button_Click);
+            Logout_button.BackColor = System.Drawing.Color.White;
+            Logout_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            Logout_button.Dock = System.Windows.Forms.DockStyle.Top;
+            Logout_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            Logout_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            Logout_button.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            Logout_button.ForeColor = System.Drawing.SystemColors.WindowText;
+            Logout_button.Location = new System.Drawing.Point(0, 91);
+            Logout_button.Name = "Logout_button";
+            Logout_button.Size = new System.Drawing.Size(118, 31);
+            Logout_button.TabIndex = 33;
+            Logout_button.Text = "Wyloguj";
+            Logout_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            Logout_button.UseVisualStyleBackColor = false;
+            Logout_button.Click += new System.EventHandler(this.wyloguj_button_Click);
             // 
             // schemat_button
             // 
@@ -564,21 +516,21 @@
             instrukcja_button.UseVisualStyleBackColor = false;
             instrukcja_button.Click += new System.EventHandler(this.instrukcja_button_Click);
             // 
-            // recipe_button
+            // Recipes_button
             // 
-            recipe_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            recipe_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            recipe_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            recipe_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            recipe_button.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            recipe_button.ForeColor = System.Drawing.SystemColors.WindowText;
-            recipe_button.Location = new System.Drawing.Point(349, 1);
-            recipe_button.Name = "recipe_button";
-            recipe_button.Size = new System.Drawing.Size(118, 60);
-            recipe_button.TabIndex = 163;
-            recipe_button.Text = "Receptury";
-            recipe_button.UseVisualStyleBackColor = false;
-            recipe_button.Click += new System.EventHandler(this.recipe_button_Click);
+            Recipes_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            Recipes_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            Recipes_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            Recipes_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            Recipes_button.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            Recipes_button.ForeColor = System.Drawing.SystemColors.WindowText;
+            Recipes_button.Location = new System.Drawing.Point(349, 1);
+            Recipes_button.Name = "Recipes_button";
+            Recipes_button.Size = new System.Drawing.Size(118, 60);
+            Recipes_button.TabIndex = 163;
+            Recipes_button.Text = "Receptury";
+            Recipes_button.UseVisualStyleBackColor = false;
+            Recipes_button.Click += new System.EventHandler(this.recipe_button_Click);
             // 
             // start_autorecipe_button
             // 
@@ -619,21 +571,21 @@
             stop_autorecipe_button.UseVisualStyleBackColor = false;
             stop_autorecipe_button.Click += new System.EventHandler(this.stop_autorecipe_button_ClickAsync);
             // 
-            // close_app_button
+            // CloseApp_button
             // 
-            this.close_app_button.BackColor = System.Drawing.Color.Red;
-            this.close_app_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.close_app_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.close_app_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.close_app_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.close_app_button.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.close_app_button.Location = new System.Drawing.Point(1884, -2);
-            this.close_app_button.Name = "close_app_button";
-            this.close_app_button.Size = new System.Drawing.Size(36, 35);
-            this.close_app_button.TabIndex = 3;
-            this.close_app_button.Text = "X";
-            this.close_app_button.UseVisualStyleBackColor = false;
-            this.close_app_button.Click += new System.EventHandler(this.close_app_button_Click);
+            this.CloseApp_button.BackColor = System.Drawing.Color.Red;
+            this.CloseApp_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CloseApp_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.CloseApp_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CloseApp_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.CloseApp_button.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.CloseApp_button.Location = new System.Drawing.Point(1884, -2);
+            this.CloseApp_button.Name = "CloseApp_button";
+            this.CloseApp_button.Size = new System.Drawing.Size(36, 35);
+            this.CloseApp_button.TabIndex = 3;
+            this.CloseApp_button.Text = "X";
+            this.CloseApp_button.UseVisualStyleBackColor = false;
+            this.CloseApp_button.Click += new System.EventHandler(this.close_app_button_Click);
             // 
             // main_timer
             // 
@@ -641,118 +593,100 @@
             this.main_timer.Interval = 500;
             this.main_timer.Tick += new System.EventHandler(this.main_timer_Tick);
             // 
-            // actual_time
+            // ActualTime_textbox
             // 
-            this.actual_time.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.actual_time.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.actual_time.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.actual_time.Location = new System.Drawing.Point(1800, 1);
-            this.actual_time.Name = "actual_time";
-            this.actual_time.ReadOnly = true;
-            this.actual_time.Size = new System.Drawing.Size(85, 30);
-            this.actual_time.TabIndex = 4;
-            this.actual_time.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ActualTime_textbox.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ActualTime_textbox.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.ActualTime_textbox.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ActualTime_textbox.Location = new System.Drawing.Point(1800, 1);
+            this.ActualTime_textbox.Name = "ActualTime_textbox";
+            this.ActualTime_textbox.ReadOnly = true;
+            this.ActualTime_textbox.Size = new System.Drawing.Size(85, 30);
+            this.ActualTime_textbox.TabIndex = 4;
+            this.ActualTime_textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // actual_date
+            // ActualDate_textbox
             // 
-            this.actual_date.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.actual_date.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.actual_date.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.actual_date.Location = new System.Drawing.Point(1527, 1);
-            this.actual_date.Name = "actual_date";
-            this.actual_date.ReadOnly = true;
-            this.actual_date.Size = new System.Drawing.Size(274, 30);
-            this.actual_date.TabIndex = 5;
-            this.actual_date.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ActualDate_textbox.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ActualDate_textbox.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.ActualDate_textbox.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ActualDate_textbox.Location = new System.Drawing.Point(1527, 1);
+            this.ActualDate_textbox.Name = "ActualDate_textbox";
+            this.ActualDate_textbox.ReadOnly = true;
+            this.ActualDate_textbox.Size = new System.Drawing.Size(274, 30);
+            this.ActualDate_textbox.TabIndex = 5;
+            this.ActualDate_textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // alarm_obiekt_box
+            // AlarmObject_textbox
             // 
-            this.alarm_obiekt_box.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.alarm_obiekt_box.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.alarm_obiekt_box.Enabled = false;
-            this.alarm_obiekt_box.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.alarm_obiekt_box.ForeColor = System.Drawing.Color.Red;
-            this.alarm_obiekt_box.Location = new System.Drawing.Point(1527, 30);
-            this.alarm_obiekt_box.Name = "alarm_obiekt_box";
-            this.alarm_obiekt_box.ReadOnly = true;
-            this.alarm_obiekt_box.Size = new System.Drawing.Size(393, 30);
-            this.alarm_obiekt_box.TabIndex = 6;
-            this.alarm_obiekt_box.Text = "ALARM !!!";
-            this.alarm_obiekt_box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.AlarmObject_textbox.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.AlarmObject_textbox.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.AlarmObject_textbox.Enabled = false;
+            this.AlarmObject_textbox.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.AlarmObject_textbox.ForeColor = System.Drawing.Color.Red;
+            this.AlarmObject_textbox.Location = new System.Drawing.Point(1527, 30);
+            this.AlarmObject_textbox.Name = "AlarmObject_textbox";
+            this.AlarmObject_textbox.ReadOnly = true;
+            this.AlarmObject_textbox.Size = new System.Drawing.Size(393, 30);
+            this.AlarmObject_textbox.TabIndex = 6;
+            this.AlarmObject_textbox.Text = "ALARM !!!";
+            this.AlarmObject_textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // tryb_pracy_box
+            // WorkMode_textbox
             // 
-            this.tryb_pracy_box.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tryb_pracy_box.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.tryb_pracy_box.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tryb_pracy_box.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.tryb_pracy_box.Location = new System.Drawing.Point(1527, 59);
-            this.tryb_pracy_box.Name = "tryb_pracy_box";
-            this.tryb_pracy_box.ReadOnly = true;
-            this.tryb_pracy_box.Size = new System.Drawing.Size(393, 30);
-            this.tryb_pracy_box.TabIndex = 7;
-            this.tryb_pracy_box.Text = "TRYB PRACY:";
+            this.WorkMode_textbox.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.WorkMode_textbox.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.WorkMode_textbox.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.WorkMode_textbox.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.WorkMode_textbox.Location = new System.Drawing.Point(1527, 59);
+            this.WorkMode_textbox.Name = "WorkMode_textbox";
+            this.WorkMode_textbox.ReadOnly = true;
+            this.WorkMode_textbox.Size = new System.Drawing.Size(393, 30);
+            this.WorkMode_textbox.TabIndex = 7;
+            this.WorkMode_textbox.Text = "TRYB PRACY:";
             // 
-            // bez_blokad_label
+            // HandWork_label
             // 
-            this.bez_blokad_label.AutoSize = true;
-            this.bez_blokad_label.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.bez_blokad_label.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.bez_blokad_label.ForeColor = System.Drawing.Color.Red;
-            this.bez_blokad_label.Location = new System.Drawing.Point(1651, 63);
-            this.bez_blokad_label.Name = "bez_blokad_label";
-            this.bez_blokad_label.Size = new System.Drawing.Size(120, 23);
-            this.bez_blokad_label.TabIndex = 8;
-            this.bez_blokad_label.Text = "Bez blokad ";
-            this.bez_blokad_label.Visible = false;
+            this.HandWork_label.AutoSize = true;
+            this.HandWork_label.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.HandWork_label.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.HandWork_label.ForeColor = System.Drawing.Color.Red;
+            this.HandWork_label.Location = new System.Drawing.Point(1651, 63);
+            this.HandWork_label.Name = "HandWork_label";
+            this.HandWork_label.Size = new System.Drawing.Size(78, 23);
+            this.HandWork_label.TabIndex = 8;
+            this.HandWork_label.Text = "Ręczny";
+            this.HandWork_label.Visible = false;
             // 
-            // z_blokadami_label
+            // AutoWork_label
             // 
-            this.z_blokadami_label.AutoSize = true;
-            this.z_blokadami_label.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.z_blokadami_label.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.z_blokadami_label.ForeColor = System.Drawing.Color.Blue;
-            this.z_blokadami_label.Location = new System.Drawing.Point(1649, 63);
-            this.z_blokadami_label.Name = "z_blokadami_label";
-            this.z_blokadami_label.Size = new System.Drawing.Size(127, 23);
-            this.z_blokadami_label.TabIndex = 9;
-            this.z_blokadami_label.Text = "Z blokadami";
-            this.z_blokadami_label.Visible = false;
+            this.AutoWork_label.AutoSize = true;
+            this.AutoWork_label.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.AutoWork_label.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.AutoWork_label.ForeColor = System.Drawing.Color.Blue;
+            this.AutoWork_label.Location = new System.Drawing.Point(1649, 63);
+            this.AutoWork_label.Name = "AutoWork_label";
+            this.AutoWork_label.Size = new System.Drawing.Size(146, 23);
+            this.AutoWork_label.TabIndex = 9;
+            this.AutoWork_label.Text = "Automatyczny";
+            this.AutoWork_label.Visible = false;
             // 
-            // opr_dr_tech_label
+            // WorkMode_panel
             // 
-            this.opr_dr_tech_label.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.opr_dr_tech_label.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.opr_dr_tech_label.Enabled = false;
-            this.opr_dr_tech_label.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.opr_dr_tech_label.ForeColor = System.Drawing.Color.Blue;
-            this.opr_dr_tech_label.Location = new System.Drawing.Point(1527, 88);
-            this.opr_dr_tech_label.Name = "opr_dr_tech_label";
-            this.opr_dr_tech_label.ReadOnly = true;
-            this.opr_dr_tech_label.Size = new System.Drawing.Size(393, 27);
-            this.opr_dr_tech_label.TabIndex = 10;
-            this.opr_dr_tech_label.Text = "Opróżnianie dróg technologicznych";
-            this.opr_dr_tech_label.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tryb_pracy_panel
-            // 
-            this.tryb_pracy_panel.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tryb_pracy_panel.Controls.Add(button5);
-            this.tryb_pracy_panel.Controls.Add(auto1_button);
-            this.tryb_pracy_panel.Controls.Add(zezwolenie_lok_button);
-            this.tryb_pracy_panel.Controls.Add(z_blokadami_button);
-            this.tryb_pracy_panel.Controls.Add(bez_blokad_button);
-            this.tryb_pracy_panel.Controls.Add(tryb_pracy_button);
-            this.tryb_pracy_panel.Location = new System.Drawing.Point(233, 1);
-            this.tryb_pracy_panel.Name = "tryb_pracy_panel";
-            this.tryb_pracy_panel.Size = new System.Drawing.Size(118, 60);
-            this.tryb_pracy_panel.TabIndex = 32;
+            this.WorkMode_panel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.WorkMode_panel.Controls.Add(AutoWork_button);
+            this.WorkMode_panel.Controls.Add(HandWork_button);
+            this.WorkMode_panel.Controls.Add(WorkMode_button);
+            this.WorkMode_panel.Location = new System.Drawing.Point(233, 1);
+            this.WorkMode_panel.Name = "WorkMode_panel";
+            this.WorkMode_panel.Size = new System.Drawing.Size(118, 60);
+            this.WorkMode_panel.TabIndex = 32;
             // 
             // ustawienia_panel
             // 
             this.ustawienia_panel.Controls.Add(serwis_button);
             this.ustawienia_panel.Controls.Add(parametry_podstawowe_button);
-            this.ustawienia_panel.Controls.Add(ustawienia_button);
+            this.ustawienia_panel.Controls.Add(Settings_button);
             this.ustawienia_panel.Location = new System.Drawing.Point(-1, 1);
             this.ustawienia_panel.Name = "ustawienia_panel";
             this.ustawienia_panel.Size = new System.Drawing.Size(118, 60);
@@ -770,9 +704,9 @@
             // 
             // uzytkownik_panel
             // 
-            this.uzytkownik_panel.Controls.Add(wyloguj_button);
+            this.uzytkownik_panel.Controls.Add(Logout_button);
             this.uzytkownik_panel.Controls.Add(przelacz_user_button);
-            this.uzytkownik_panel.Controls.Add(uzytkownik_button);
+            this.uzytkownik_panel.Controls.Add(User_button);
             this.uzytkownik_panel.Location = new System.Drawing.Point(698, 1);
             this.uzytkownik_panel.Name = "uzytkownik_panel";
             this.uzytkownik_panel.Size = new System.Drawing.Size(118, 60);
@@ -818,41 +752,41 @@
             this.label3.TabIndex = 98;
             this.label3.Text = "Z2";
             // 
-            // z1_name
+            // Z1_name_textbox
             // 
-            this.z1_name.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.z1_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.z1_name.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.z1_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.z1_name.Location = new System.Drawing.Point(605, 399);
-            this.z1_name.Name = "z1_name";
-            this.z1_name.ReadOnly = true;
-            this.z1_name.Size = new System.Drawing.Size(119, 26);
-            this.z1_name.TabIndex = 109;
-            this.z1_name.Text = "z1";
-            this.z1_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.z1_name.Click += new System.EventHandler(this.z1_name_Click);
+            this.Z1_name_textbox.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.Z1_name_textbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Z1_name_textbox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Z1_name_textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Z1_name_textbox.Location = new System.Drawing.Point(605, 399);
+            this.Z1_name_textbox.Name = "Z1_name_textbox";
+            this.Z1_name_textbox.ReadOnly = true;
+            this.Z1_name_textbox.Size = new System.Drawing.Size(119, 26);
+            this.Z1_name_textbox.TabIndex = 109;
+            this.Z1_name_textbox.Text = "z1";
+            this.Z1_name_textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Z1_name_textbox.Click += new System.EventHandler(this.z1_name_Click);
             // 
-            // z2_name
+            // Z2_name_textbox
             // 
-            this.z2_name.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.z2_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.z2_name.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.z2_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.z2_name.Location = new System.Drawing.Point(1028, 399);
-            this.z2_name.Name = "z2_name";
-            this.z2_name.ReadOnly = true;
-            this.z2_name.Size = new System.Drawing.Size(119, 26);
-            this.z2_name.TabIndex = 110;
-            this.z2_name.Text = "z1";
-            this.z2_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.z2_name.Click += new System.EventHandler(this.z2_name_Click);
+            this.Z2_name_textbox.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.Z2_name_textbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Z2_name_textbox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Z2_name_textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Z2_name_textbox.Location = new System.Drawing.Point(1028, 399);
+            this.Z2_name_textbox.Name = "Z2_name_textbox";
+            this.Z2_name_textbox.ReadOnly = true;
+            this.Z2_name_textbox.Size = new System.Drawing.Size(119, 26);
+            this.Z2_name_textbox.TabIndex = 110;
+            this.Z2_name_textbox.Text = "z1";
+            this.Z2_name_textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Z2_name_textbox.Click += new System.EventHandler(this.z2_name_Click);
             // 
             // pomoc_panel
             // 
             this.pomoc_panel.Controls.Add(instrukcja_button);
             this.pomoc_panel.Controls.Add(schemat_button);
-            this.pomoc_panel.Controls.Add(pomoc_button);
+            this.pomoc_panel.Controls.Add(Help_button);
             this.pomoc_panel.Location = new System.Drawing.Point(583, 1);
             this.pomoc_panel.Name = "pomoc_panel";
             this.pomoc_panel.Size = new System.Drawing.Size(118, 60);
@@ -885,18 +819,6 @@
             this.label15.Size = new System.Drawing.Size(27, 13);
             this.label15.TabIndex = 130;
             this.label15.Text = "ze3";
-            // 
-            // ERROR_PLC_label
-            // 
-            this.ERROR_PLC_label.AutoSize = true;
-            this.ERROR_PLC_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.ERROR_PLC_label.ForeColor = System.Drawing.Color.Red;
-            this.ERROR_PLC_label.Location = new System.Drawing.Point(1153, 92);
-            this.ERROR_PLC_label.Name = "ERROR_PLC_label";
-            this.ERROR_PLC_label.Size = new System.Drawing.Size(358, 33);
-            this.ERROR_PLC_label.TabIndex = 132;
-            this.ERROR_PLC_label.Text = "Brak połączenia z PLC!!!";
-            this.ERROR_PLC_label.Visible = false;
             // 
             // odc2_label1
             // 
@@ -938,17 +860,17 @@
             this.odc1_label3.Size = new System.Drawing.Size(5, 100);
             this.odc1_label3.TabIndex = 150;
             // 
-            // weight_label
+            // Weight_label
             // 
-            this.weight_label.BackColor = System.Drawing.Color.GhostWhite;
-            this.weight_label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.weight_label.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.weight_label.Location = new System.Drawing.Point(662, 703);
-            this.weight_label.Name = "weight_label";
-            this.weight_label.Size = new System.Drawing.Size(120, 37);
-            this.weight_label.TabIndex = 151;
-            this.weight_label.Text = "label1";
-            this.weight_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Weight_label.BackColor = System.Drawing.Color.GhostWhite;
+            this.Weight_label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Weight_label.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Weight_label.Location = new System.Drawing.Point(662, 703);
+            this.Weight_label.Name = "Weight_label";
+            this.Weight_label.Size = new System.Drawing.Size(120, 37);
+            this.Weight_label.TabIndex = 151;
+            this.Weight_label.Text = "label1";
+            this.Weight_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
@@ -1001,33 +923,33 @@
             this.label7.TabIndex = 162;
             this.label7.Text = "Wb3";
             // 
-            // skl1_weight_SV_label
+            // Z1_weightSV_label
             // 
-            this.skl1_weight_SV_label.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.skl1_weight_SV_label.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.skl1_weight_SV_label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.skl1_weight_SV_label.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.skl1_weight_SV_label.Location = new System.Drawing.Point(605, 446);
-            this.skl1_weight_SV_label.Name = "skl1_weight_SV_label";
-            this.skl1_weight_SV_label.Size = new System.Drawing.Size(53, 16);
-            this.skl1_weight_SV_label.TabIndex = 164;
-            this.skl1_weight_SV_label.Text = "--,-- kg";
-            this.skl1_weight_SV_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.skl1_weight_SV_label.Visible = false;
+            this.Z1_weightSV_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Z1_weightSV_label.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Z1_weightSV_label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Z1_weightSV_label.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Z1_weightSV_label.Location = new System.Drawing.Point(605, 446);
+            this.Z1_weightSV_label.Name = "Z1_weightSV_label";
+            this.Z1_weightSV_label.Size = new System.Drawing.Size(53, 16);
+            this.Z1_weightSV_label.TabIndex = 164;
+            this.Z1_weightSV_label.Text = "--,-- kg";
+            this.Z1_weightSV_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Z1_weightSV_label.Visible = false;
             // 
-            // skl2_weight_SV_label
+            // Z2_weightSV_label
             // 
-            this.skl2_weight_SV_label.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.skl2_weight_SV_label.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.skl2_weight_SV_label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.skl2_weight_SV_label.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.skl2_weight_SV_label.Location = new System.Drawing.Point(1028, 446);
-            this.skl2_weight_SV_label.Name = "skl2_weight_SV_label";
-            this.skl2_weight_SV_label.Size = new System.Drawing.Size(53, 16);
-            this.skl2_weight_SV_label.TabIndex = 165;
-            this.skl2_weight_SV_label.Text = "--,-- kg";
-            this.skl2_weight_SV_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.skl2_weight_SV_label.Visible = false;
+            this.Z2_weightSV_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Z2_weightSV_label.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Z2_weightSV_label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Z2_weightSV_label.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Z2_weightSV_label.Location = new System.Drawing.Point(1028, 446);
+            this.Z2_weightSV_label.Name = "Z2_weightSV_label";
+            this.Z2_weightSV_label.Size = new System.Drawing.Size(53, 16);
+            this.Z2_weightSV_label.TabIndex = 165;
+            this.Z2_weightSV_label.Text = "--,-- kg";
+            this.Z2_weightSV_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Z2_weightSV_label.Visible = false;
             // 
             // tableLayoutPanel1
             // 
@@ -1036,8 +958,8 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.10101F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.89899F));
-            this.tableLayoutPanel1.Controls.Add(this.weight_PV_label, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.skl_weight_PV_label, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.weightPV_label, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.IngredientWeightPV_label, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label9, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label8, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(957, 755);
@@ -1048,27 +970,27 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 50);
             this.tableLayoutPanel1.TabIndex = 166;
             // 
-            // weight_PV_label
+            // weightPV_label
             // 
-            this.weight_PV_label.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.weight_PV_label.AutoSize = true;
-            this.weight_PV_label.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.weight_PV_label.Location = new System.Drawing.Point(135, 30);
-            this.weight_PV_label.Name = "weight_PV_label";
-            this.weight_PV_label.Size = new System.Drawing.Size(47, 13);
-            this.weight_PV_label.TabIndex = 170;
-            this.weight_PV_label.Text = "--,-- kg";
+            this.weightPV_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.weightPV_label.AutoSize = true;
+            this.weightPV_label.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.weightPV_label.Location = new System.Drawing.Point(135, 30);
+            this.weightPV_label.Name = "weightPV_label";
+            this.weightPV_label.Size = new System.Drawing.Size(47, 13);
+            this.weightPV_label.TabIndex = 170;
+            this.weightPV_label.Text = "--,-- kg";
             // 
-            // skl_weight_PV_label
+            // IngredientWeightPV_label
             // 
-            this.skl_weight_PV_label.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.skl_weight_PV_label.AutoSize = true;
-            this.skl_weight_PV_label.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.skl_weight_PV_label.Location = new System.Drawing.Point(135, 6);
-            this.skl_weight_PV_label.Name = "skl_weight_PV_label";
-            this.skl_weight_PV_label.Size = new System.Drawing.Size(47, 13);
-            this.skl_weight_PV_label.TabIndex = 169;
-            this.skl_weight_PV_label.Text = "--,-- kg";
+            this.IngredientWeightPV_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.IngredientWeightPV_label.AutoSize = true;
+            this.IngredientWeightPV_label.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.IngredientWeightPV_label.Location = new System.Drawing.Point(135, 6);
+            this.IngredientWeightPV_label.Name = "IngredientWeightPV_label";
+            this.IngredientWeightPV_label.Size = new System.Drawing.Size(47, 13);
+            this.IngredientWeightPV_label.TabIndex = 169;
+            this.IngredientWeightPV_label.Text = "--,-- kg";
             // 
             // label9
             // 
@@ -1098,15 +1020,15 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.mieszanki_count_label, 1, 4);
+            this.tableLayoutPanel2.Controls.Add(this.MixturesCounter_label, 1, 4);
             this.tableLayoutPanel2.Controls.Add(this.label17, 0, 4);
-            this.tableLayoutPanel2.Controls.Add(this.weight_SV_label, 1, 3);
-            this.tableLayoutPanel2.Controls.Add(this.cykle_PV_label, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.cykle_SV_label, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.weightSV_label, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.cyclesPV_label, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.cyclesSV_label, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.label13, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.label12, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.label11, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.recipe_name_label, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.RecipeName_label, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.label10, 0, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(12, 88);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -1119,41 +1041,65 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(318, 156);
             this.tableLayoutPanel2.TabIndex = 167;
             // 
-            // weight_SV_label
+            // MixturesCounter_label
             // 
-            this.weight_SV_label.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.weight_SV_label.AutoSize = true;
-            this.weight_SV_label.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.weight_SV_label.Location = new System.Drawing.Point(229, 96);
-            this.weight_SV_label.Name = "weight_SV_label";
-            this.weight_SV_label.Size = new System.Drawing.Size(18, 19);
-            this.weight_SV_label.TabIndex = 170;
-            this.weight_SV_label.Text = "0";
-            this.weight_SV_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.MixturesCounter_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.MixturesCounter_label.AutoSize = true;
+            this.MixturesCounter_label.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.MixturesCounter_label.Location = new System.Drawing.Point(229, 128);
+            this.MixturesCounter_label.Name = "MixturesCounter_label";
+            this.MixturesCounter_label.Size = new System.Drawing.Size(18, 19);
+            this.MixturesCounter_label.TabIndex = 175;
+            this.MixturesCounter_label.Text = "0";
+            this.MixturesCounter_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // cykle_PV_label
+            // label17
             // 
-            this.cykle_PV_label.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cykle_PV_label.AutoSize = true;
-            this.cykle_PV_label.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cykle_PV_label.Location = new System.Drawing.Point(229, 66);
-            this.cykle_PV_label.Name = "cykle_PV_label";
-            this.cykle_PV_label.Size = new System.Drawing.Size(18, 19);
-            this.cykle_PV_label.TabIndex = 170;
-            this.cykle_PV_label.Text = "0";
-            this.cykle_PV_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label17.Location = new System.Drawing.Point(7, 130);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(146, 16);
+            this.label17.TabIndex = 175;
+            this.label17.Text = "Wykonane mieszanki:";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // cykle_SV_label
+            // weightSV_label
             // 
-            this.cykle_SV_label.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cykle_SV_label.AutoSize = true;
-            this.cykle_SV_label.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cykle_SV_label.Location = new System.Drawing.Point(229, 36);
-            this.cykle_SV_label.Name = "cykle_SV_label";
-            this.cykle_SV_label.Size = new System.Drawing.Size(18, 19);
-            this.cykle_SV_label.TabIndex = 170;
-            this.cykle_SV_label.Text = "0";
-            this.cykle_SV_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.weightSV_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.weightSV_label.AutoSize = true;
+            this.weightSV_label.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.weightSV_label.Location = new System.Drawing.Point(229, 96);
+            this.weightSV_label.Name = "weightSV_label";
+            this.weightSV_label.Size = new System.Drawing.Size(18, 19);
+            this.weightSV_label.TabIndex = 170;
+            this.weightSV_label.Text = "0";
+            this.weightSV_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cyclesPV_label
+            // 
+            this.cyclesPV_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cyclesPV_label.AutoSize = true;
+            this.cyclesPV_label.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cyclesPV_label.Location = new System.Drawing.Point(229, 66);
+            this.cyclesPV_label.Name = "cyclesPV_label";
+            this.cyclesPV_label.Size = new System.Drawing.Size(18, 19);
+            this.cyclesPV_label.TabIndex = 170;
+            this.cyclesPV_label.Text = "0";
+            this.cyclesPV_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cyclesSV_label
+            // 
+            this.cyclesSV_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cyclesSV_label.AutoSize = true;
+            this.cyclesSV_label.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cyclesSV_label.Location = new System.Drawing.Point(229, 36);
+            this.cyclesSV_label.Name = "cyclesSV_label";
+            this.cyclesSV_label.Size = new System.Drawing.Size(18, 19);
+            this.cyclesSV_label.TabIndex = 170;
+            this.cyclesSV_label.Text = "0";
+            this.cyclesSV_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label13
             // 
@@ -1191,17 +1137,17 @@
             this.label11.Text = "Cykle zadane:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // recipe_name_label
+            // RecipeName_label
             // 
-            this.recipe_name_label.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.recipe_name_label.AutoSize = true;
-            this.recipe_name_label.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.recipe_name_label.Location = new System.Drawing.Point(179, 6);
-            this.recipe_name_label.Name = "recipe_name_label";
-            this.recipe_name_label.Size = new System.Drawing.Size(117, 19);
-            this.recipe_name_label.TabIndex = 169;
-            this.recipe_name_label.Text = "------------------";
-            this.recipe_name_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RecipeName_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.RecipeName_label.AutoSize = true;
+            this.RecipeName_label.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RecipeName_label.Location = new System.Drawing.Point(179, 6);
+            this.RecipeName_label.Name = "RecipeName_label";
+            this.RecipeName_label.Size = new System.Drawing.Size(117, 19);
+            this.RecipeName_label.TabIndex = 169;
+            this.RecipeName_label.Text = "------------------";
+            this.RecipeName_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label10
             // 
@@ -1228,33 +1174,33 @@
             this.label.Text = "Status linii:";
             this.label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // tableLayoutPanel3
+            // StatusLine_tablelayoutpanel
             // 
-            this.tableLayoutPanel3.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
-            this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.status_auto_label, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.label, 0, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(719, 154);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(321, 51);
-            this.tableLayoutPanel3.TabIndex = 169;
+            this.StatusLine_tablelayoutpanel.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
+            this.StatusLine_tablelayoutpanel.ColumnCount = 1;
+            this.StatusLine_tablelayoutpanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.StatusLine_tablelayoutpanel.Controls.Add(this.StatusAutoLine_label, 0, 1);
+            this.StatusLine_tablelayoutpanel.Controls.Add(this.label, 0, 0);
+            this.StatusLine_tablelayoutpanel.Location = new System.Drawing.Point(719, 154);
+            this.StatusLine_tablelayoutpanel.Name = "StatusLine_tablelayoutpanel";
+            this.StatusLine_tablelayoutpanel.RowCount = 2;
+            this.StatusLine_tablelayoutpanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.StatusLine_tablelayoutpanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.StatusLine_tablelayoutpanel.Size = new System.Drawing.Size(321, 51);
+            this.StatusLine_tablelayoutpanel.TabIndex = 169;
             // 
-            // status_auto_label
+            // StatusAutoLine_label
             // 
-            this.status_auto_label.AutoSize = true;
-            this.status_auto_label.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.status_auto_label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.status_auto_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.status_auto_label.Location = new System.Drawing.Point(5, 26);
-            this.status_auto_label.Name = "status_auto_label";
-            this.status_auto_label.Size = new System.Drawing.Size(311, 23);
-            this.status_auto_label.TabIndex = 170;
-            this.status_auto_label.Text = "------";
-            this.status_auto_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.StatusAutoLine_label.AutoSize = true;
+            this.StatusAutoLine_label.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.StatusAutoLine_label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.StatusAutoLine_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.StatusAutoLine_label.Location = new System.Drawing.Point(5, 26);
+            this.StatusAutoLine_label.Name = "StatusAutoLine_label";
+            this.StatusAutoLine_label.Size = new System.Drawing.Size(311, 23);
+            this.StatusAutoLine_label.TabIndex = 170;
+            this.StatusAutoLine_label.Text = "------";
+            this.StatusAutoLine_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
@@ -1266,53 +1212,53 @@
             this.panel1.Size = new System.Drawing.Size(318, 41);
             this.panel1.TabIndex = 170;
             // 
-            // t_mieszania_label
+            // t_mixer_label
             // 
-            this.t_mieszania_label.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.t_mieszania_label.AutoSize = true;
-            this.t_mieszania_label.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.t_mieszania_label.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.t_mieszania_label.Location = new System.Drawing.Point(652, 775);
-            this.t_mieszania_label.Name = "t_mieszania_label";
-            this.t_mieszania_label.Size = new System.Drawing.Size(115, 17);
-            this.t_mieszania_label.TabIndex = 171;
-            this.t_mieszania_label.Text = "Czas mieszania:";
-            this.t_mieszania_label.Visible = false;
+            this.t_mixer_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.t_mixer_label.AutoSize = true;
+            this.t_mixer_label.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.t_mixer_label.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.t_mixer_label.Location = new System.Drawing.Point(643, 743);
+            this.t_mixer_label.Name = "t_mixer_label";
+            this.t_mixer_label.Size = new System.Drawing.Size(115, 17);
+            this.t_mixer_label.TabIndex = 171;
+            this.t_mixer_label.Text = "Czas mieszania:";
+            this.t_mixer_label.Visible = false;
             // 
-            // t_mieszania_elapsed_label
+            // t_mixer_elapsed_label
             // 
-            this.t_mieszania_elapsed_label.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.t_mieszania_elapsed_label.AutoSize = true;
-            this.t_mieszania_elapsed_label.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.t_mieszania_elapsed_label.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.t_mieszania_elapsed_label.Location = new System.Drawing.Point(767, 775);
-            this.t_mieszania_elapsed_label.Name = "t_mieszania_elapsed_label";
-            this.t_mieszania_elapsed_label.Size = new System.Drawing.Size(31, 17);
-            this.t_mieszania_elapsed_label.TabIndex = 172;
-            this.t_mieszania_elapsed_label.Text = "-- s";
-            this.t_mieszania_elapsed_label.Visible = false;
+            this.t_mixer_elapsed_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.t_mixer_elapsed_label.AutoSize = true;
+            this.t_mixer_elapsed_label.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.t_mixer_elapsed_label.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.t_mixer_elapsed_label.Location = new System.Drawing.Point(758, 743);
+            this.t_mixer_elapsed_label.Name = "t_mixer_elapsed_label";
+            this.t_mixer_elapsed_label.Size = new System.Drawing.Size(31, 17);
+            this.t_mixer_elapsed_label.TabIndex = 172;
+            this.t_mixer_elapsed_label.Text = "-- s";
+            this.t_mixer_elapsed_label.Visible = false;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label16.Location = new System.Drawing.Point(823, 775);
+            this.label16.Location = new System.Drawing.Point(823, 661);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(27, 13);
             this.label16.TabIndex = 174;
             this.label16.Text = "Mi1";
             // 
-            // Mi1
+            // Mi1_picturebox
             // 
-            this.Mi1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Mi1.Image = global::PLC_SIEMENS.Properties.Resources.NW_PSADM_pion;
-            this.Mi1.Location = new System.Drawing.Point(826, 678);
-            this.Mi1.Margin = new System.Windows.Forms.Padding(2);
-            this.Mi1.Name = "Mi1";
-            this.Mi1.Size = new System.Drawing.Size(16, 90);
-            this.Mi1.TabIndex = 173;
-            this.Mi1.TabStop = false;
-            this.Mi1.Click += new System.EventHandler(this.Mi1_Click);
+            this.Mi1_picturebox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Mi1_picturebox.Image = global::PLC_SIEMENS.Properties.Resources.NW_PSADM_pion;
+            this.Mi1_picturebox.Location = new System.Drawing.Point(826, 678);
+            this.Mi1_picturebox.Margin = new System.Windows.Forms.Padding(2);
+            this.Mi1_picturebox.Name = "Mi1_picturebox";
+            this.Mi1_picturebox.Size = new System.Drawing.Size(16, 90);
+            this.Mi1_picturebox.TabIndex = 173;
+            this.Mi1_picturebox.TabStop = false;
+            this.Mi1_picturebox.Click += new System.EventHandler(this.Mi1_Click);
             // 
             // Wb3
             // 
@@ -1336,38 +1282,38 @@
             this.pictureBox5.TabIndex = 159;
             this.pictureBox5.TabStop = false;
             // 
-            // ZE3
+            // ZE3_picturebox
             // 
-            this.ZE3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ZE3.Image = global::PLC_SIEMENS.Properties.Resources.ZE;
-            this.ZE3.Location = new System.Drawing.Point(860, 767);
-            this.ZE3.Name = "ZE3";
-            this.ZE3.Size = new System.Drawing.Size(33, 12);
-            this.ZE3.TabIndex = 129;
-            this.ZE3.TabStop = false;
-            this.ZE3.Click += new System.EventHandler(this.ZE3_Click);
+            this.ZE3_picturebox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ZE3_picturebox.Image = global::PLC_SIEMENS.Properties.Resources.ZE;
+            this.ZE3_picturebox.Location = new System.Drawing.Point(860, 767);
+            this.ZE3_picturebox.Name = "ZE3_picturebox";
+            this.ZE3_picturebox.Size = new System.Drawing.Size(33, 12);
+            this.ZE3_picturebox.TabIndex = 129;
+            this.ZE3_picturebox.TabStop = false;
+            this.ZE3_picturebox.Click += new System.EventHandler(this.ZE3_Click);
             // 
-            // ZE1
+            // ZE1_picturebox
             // 
-            this.ZE1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ZE1.Image = global::PLC_SIEMENS.Properties.Resources.ZE;
-            this.ZE1.Location = new System.Drawing.Point(650, 481);
-            this.ZE1.Name = "ZE1";
-            this.ZE1.Size = new System.Drawing.Size(33, 12);
-            this.ZE1.TabIndex = 39;
-            this.ZE1.TabStop = false;
-            this.ZE1.Click += new System.EventHandler(this.ZE1_Click);
+            this.ZE1_picturebox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ZE1_picturebox.Image = global::PLC_SIEMENS.Properties.Resources.ZE;
+            this.ZE1_picturebox.Location = new System.Drawing.Point(650, 481);
+            this.ZE1_picturebox.Name = "ZE1_picturebox";
+            this.ZE1_picturebox.Size = new System.Drawing.Size(33, 12);
+            this.ZE1_picturebox.TabIndex = 39;
+            this.ZE1_picturebox.TabStop = false;
+            this.ZE1_picturebox.Click += new System.EventHandler(this.ZE1_Click);
             // 
-            // ZE2
+            // ZE2_picturebox
             // 
-            this.ZE2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ZE2.Image = global::PLC_SIEMENS.Properties.Resources.ZE;
-            this.ZE2.Location = new System.Drawing.Point(1072, 481);
-            this.ZE2.Name = "ZE2";
-            this.ZE2.Size = new System.Drawing.Size(33, 12);
-            this.ZE2.TabIndex = 127;
-            this.ZE2.TabStop = false;
-            this.ZE2.Click += new System.EventHandler(this.ZE2_Click);
+            this.ZE2_picturebox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ZE2_picturebox.Image = global::PLC_SIEMENS.Properties.Resources.ZE;
+            this.ZE2_picturebox.Location = new System.Drawing.Point(1072, 481);
+            this.ZE2_picturebox.Name = "ZE2_picturebox";
+            this.ZE2_picturebox.Size = new System.Drawing.Size(33, 12);
+            this.ZE2_picturebox.TabIndex = 127;
+            this.ZE2_picturebox.TabStop = false;
+            this.ZE2_picturebox.Click += new System.EventHandler(this.ZE2_Click);
             // 
             // Wb2
             // 
@@ -1413,18 +1359,6 @@
             this.pictureBox3.TabIndex = 154;
             this.pictureBox3.TabStop = false;
             // 
-            // W1_pelny
-            // 
-            this.W1_pelny.Image = global::PLC_SIEMENS.Properties.Resources.Do_silos_czesc_D_Nap;
-            this.W1_pelny.Location = new System.Drawing.Point(793, 713);
-            this.W1_pelny.Margin = new System.Windows.Forms.Padding(2);
-            this.W1_pelny.Name = "W1_pelny";
-            this.W1_pelny.Size = new System.Drawing.Size(165, 27);
-            this.W1_pelny.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.W1_pelny.TabIndex = 148;
-            this.W1_pelny.TabStop = false;
-            this.W1_pelny.Visible = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -1436,17 +1370,17 @@
             this.pictureBox1.TabIndex = 147;
             this.pictureBox1.TabStop = false;
             // 
-            // Z1_pelny
+            // Z1_empty_picturebox
             // 
-            this.Z1_pelny.Image = global::PLC_SIEMENS.Properties.Resources.Do_silos_czesc_D_Nap;
-            this.Z1_pelny.Location = new System.Drawing.Point(605, 435);
-            this.Z1_pelny.Margin = new System.Windows.Forms.Padding(2);
-            this.Z1_pelny.Name = "Z1_pelny";
-            this.Z1_pelny.Size = new System.Drawing.Size(119, 27);
-            this.Z1_pelny.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Z1_pelny.TabIndex = 96;
-            this.Z1_pelny.TabStop = false;
-            this.Z1_pelny.Visible = false;
+            this.Z1_empty_picturebox.Image = global::PLC_SIEMENS.Properties.Resources.Do_silos_czesc_D_Nap;
+            this.Z1_empty_picturebox.Location = new System.Drawing.Point(605, 435);
+            this.Z1_empty_picturebox.Margin = new System.Windows.Forms.Padding(2);
+            this.Z1_empty_picturebox.Name = "Z1_empty_picturebox";
+            this.Z1_empty_picturebox.Size = new System.Drawing.Size(119, 27);
+            this.Z1_empty_picturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Z1_empty_picturebox.TabIndex = 96;
+            this.Z1_empty_picturebox.TabStop = false;
+            this.Z1_empty_picturebox.Visible = false;
             // 
             // pictureBox10
             // 
@@ -1479,17 +1413,17 @@
             this.pictureBox12.TabIndex = 141;
             this.pictureBox12.TabStop = false;
             // 
-            // Z2_pelny
+            // Z2_empty_picturebox
             // 
-            this.Z2_pelny.Image = global::PLC_SIEMENS.Properties.Resources.Do_silos_czesc_D_Nap;
-            this.Z2_pelny.Location = new System.Drawing.Point(1028, 435);
-            this.Z2_pelny.Margin = new System.Windows.Forms.Padding(2);
-            this.Z2_pelny.Name = "Z2_pelny";
-            this.Z2_pelny.Size = new System.Drawing.Size(119, 27);
-            this.Z2_pelny.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Z2_pelny.TabIndex = 95;
-            this.Z2_pelny.TabStop = false;
-            this.Z2_pelny.Visible = false;
+            this.Z2_empty_picturebox.Image = global::PLC_SIEMENS.Properties.Resources.Do_silos_czesc_D_Nap;
+            this.Z2_empty_picturebox.Location = new System.Drawing.Point(1028, 435);
+            this.Z2_empty_picturebox.Margin = new System.Windows.Forms.Padding(2);
+            this.Z2_empty_picturebox.Name = "Z2_empty_picturebox";
+            this.Z2_empty_picturebox.Size = new System.Drawing.Size(119, 27);
+            this.Z2_empty_picturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Z2_empty_picturebox.TabIndex = 95;
+            this.Z2_empty_picturebox.TabStop = false;
+            this.Z2_empty_picturebox.Visible = false;
             // 
             // pictureBox20
             // 
@@ -1533,41 +1467,17 @@
             this.pictureBox17.TabIndex = 131;
             this.pictureBox17.TabStop = false;
             // 
-            // dzwonek_image
+            // Bell_picturebox
             // 
-            this.dzwonek_image.ErrorImage = null;
-            this.dzwonek_image.Image = ((System.Drawing.Image)(resources.GetObject("dzwonek_image.Image")));
-            this.dzwonek_image.InitialImage = null;
-            this.dzwonek_image.Location = new System.Drawing.Point(1476, 12);
-            this.dzwonek_image.Name = "dzwonek_image";
-            this.dzwonek_image.Size = new System.Drawing.Size(35, 42);
-            this.dzwonek_image.TabIndex = 21;
-            this.dzwonek_image.TabStop = false;
-            this.dzwonek_image.Visible = false;
-            // 
-            // label17
-            // 
-            this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label17.Location = new System.Drawing.Point(7, 130);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(146, 16);
-            this.label17.TabIndex = 175;
-            this.label17.Text = "Wykonane mieszanki:";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // mieszanki_count_label
-            // 
-            this.mieszanki_count_label.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.mieszanki_count_label.AutoSize = true;
-            this.mieszanki_count_label.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.mieszanki_count_label.Location = new System.Drawing.Point(229, 128);
-            this.mieszanki_count_label.Name = "mieszanki_count_label";
-            this.mieszanki_count_label.Size = new System.Drawing.Size(18, 19);
-            this.mieszanki_count_label.TabIndex = 175;
-            this.mieszanki_count_label.Text = "0";
-            this.mieszanki_count_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Bell_picturebox.ErrorImage = null;
+            this.Bell_picturebox.Image = ((System.Drawing.Image)(resources.GetObject("Bell_picturebox.Image")));
+            this.Bell_picturebox.InitialImage = null;
+            this.Bell_picturebox.Location = new System.Drawing.Point(1476, 12);
+            this.Bell_picturebox.Name = "Bell_picturebox";
+            this.Bell_picturebox.Size = new System.Drawing.Size(35, 42);
+            this.Bell_picturebox.TabIndex = 21;
+            this.Bell_picturebox.TabStop = false;
+            this.Bell_picturebox.Visible = false;
             // 
             // permission_label
             // 
@@ -1595,58 +1505,217 @@
             this.work_label.Text = "Zatrzymana";
             this.work_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // ze1_lock_elapsed_label
+            // 
+            this.ze1_lock_elapsed_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ze1_lock_elapsed_label.AutoSize = true;
+            this.ze1_lock_elapsed_label.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ze1_lock_elapsed_label.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ze1_lock_elapsed_label.Location = new System.Drawing.Point(610, 481);
+            this.ze1_lock_elapsed_label.Name = "ze1_lock_elapsed_label";
+            this.ze1_lock_elapsed_label.Size = new System.Drawing.Size(31, 17);
+            this.ze1_lock_elapsed_label.TabIndex = 179;
+            this.ze1_lock_elapsed_label.Text = "-- s";
+            this.ze1_lock_elapsed_label.Visible = false;
+            // 
+            // ze1_lock_label
+            // 
+            this.ze1_lock_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ze1_lock_label.AutoSize = true;
+            this.ze1_lock_label.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ze1_lock_label.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ze1_lock_label.Location = new System.Drawing.Point(479, 481);
+            this.ze1_lock_label.Name = "ze1_lock_label";
+            this.ze1_lock_label.Size = new System.Drawing.Size(131, 17);
+            this.ze1_lock_label.TabIndex = 178;
+            this.ze1_lock_label.Text = "Blokada otwarcia:";
+            this.ze1_lock_label.Visible = false;
+            // 
+            // ze2_lock_elapsed_label
+            // 
+            this.ze2_lock_elapsed_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ze2_lock_elapsed_label.AutoSize = true;
+            this.ze2_lock_elapsed_label.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ze2_lock_elapsed_label.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ze2_lock_elapsed_label.Location = new System.Drawing.Point(1032, 481);
+            this.ze2_lock_elapsed_label.Name = "ze2_lock_elapsed_label";
+            this.ze2_lock_elapsed_label.Size = new System.Drawing.Size(31, 17);
+            this.ze2_lock_elapsed_label.TabIndex = 181;
+            this.ze2_lock_elapsed_label.Text = "-- s";
+            this.ze2_lock_elapsed_label.Visible = false;
+            // 
+            // Z1_emptyInfo_label
+            // 
+            this.Z1_emptyInfo_label.BackColor = System.Drawing.SystemColors.Info;
+            this.Z1_emptyInfo_label.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Z1_emptyInfo_label.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Z1_emptyInfo_label.Location = new System.Drawing.Point(0, 0);
+            this.Z1_emptyInfo_label.Name = "Z1_emptyInfo_label";
+            this.Z1_emptyInfo_label.Size = new System.Drawing.Size(277, 75);
+            this.Z1_emptyInfo_label.TabIndex = 180;
+            this.Z1_emptyInfo_label.Text = "Brak materiału w zbiorniku. \r\nNapełnij zbiornik, aby móc \r\nkontynuować naważanie!" +
+    "";
+            this.Z1_emptyInfo_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ze3_lock_elapsed_label
+            // 
+            this.ze3_lock_elapsed_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ze3_lock_elapsed_label.AutoSize = true;
+            this.ze3_lock_elapsed_label.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ze3_lock_elapsed_label.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ze3_lock_elapsed_label.Location = new System.Drawing.Point(826, 773);
+            this.ze3_lock_elapsed_label.Name = "ze3_lock_elapsed_label";
+            this.ze3_lock_elapsed_label.Size = new System.Drawing.Size(31, 17);
+            this.ze3_lock_elapsed_label.TabIndex = 183;
+            this.ze3_lock_elapsed_label.Text = "-- s";
+            this.ze3_lock_elapsed_label.Visible = false;
+            // 
+            // ze3_lock_label
+            // 
+            this.ze3_lock_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ze3_lock_label.AutoSize = true;
+            this.ze3_lock_label.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ze3_lock_label.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ze3_lock_label.Location = new System.Drawing.Point(695, 773);
+            this.ze3_lock_label.Name = "ze3_lock_label";
+            this.ze3_lock_label.Size = new System.Drawing.Size(131, 17);
+            this.ze3_lock_label.TabIndex = 182;
+            this.ze3_lock_label.Text = "Blokada otwarcia:";
+            this.ze3_lock_label.Visible = false;
+            // 
+            // ze2_lock_label
+            // 
+            this.ze2_lock_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ze2_lock_label.AutoSize = true;
+            this.ze2_lock_label.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ze2_lock_label.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ze2_lock_label.Location = new System.Drawing.Point(901, 481);
+            this.ze2_lock_label.Name = "ze2_lock_label";
+            this.ze2_lock_label.Size = new System.Drawing.Size(131, 17);
+            this.ze2_lock_label.TabIndex = 184;
+            this.ze2_lock_label.Text = "Blokada otwarcia:";
+            this.ze2_lock_label.Visible = false;
+            // 
+            // Z1_emptyInfo_button
+            // 
+            this.Z1_emptyInfo_button.BackColor = System.Drawing.SystemColors.Highlight;
+            this.Z1_emptyInfo_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Z1_emptyInfo_button.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Z1_emptyInfo_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Z1_emptyInfo_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Z1_emptyInfo_button.Location = new System.Drawing.Point(0, 78);
+            this.Z1_emptyInfo_button.Name = "Z1_emptyInfo_button";
+            this.Z1_emptyInfo_button.Size = new System.Drawing.Size(277, 53);
+            this.Z1_emptyInfo_button.TabIndex = 185;
+            this.Z1_emptyInfo_button.Text = "Potwierdź napełnienie";
+            this.Z1_emptyInfo_button.UseVisualStyleBackColor = false;
+            this.Z1_emptyInfo_button.Click += new System.EventHandler(this.Z1_emptyInfo_button_Click);
+            // 
+            // Z1_emptyInfo_panel
+            // 
+            this.Z1_emptyInfo_panel.Controls.Add(this.Z1_emptyInfo_label);
+            this.Z1_emptyInfo_panel.Controls.Add(this.Z1_emptyInfo_button);
+            this.Z1_emptyInfo_panel.Location = new System.Drawing.Point(527, 227);
+            this.Z1_emptyInfo_panel.Name = "Z1_emptyInfo_panel";
+            this.Z1_emptyInfo_panel.Size = new System.Drawing.Size(277, 131);
+            this.Z1_emptyInfo_panel.TabIndex = 186;
+            this.Z1_emptyInfo_panel.Visible = false;
+            // 
+            // Z2_emptyInfo_panel
+            // 
+            this.Z2_emptyInfo_panel.Controls.Add(this.Z2_emptyInfo_label);
+            this.Z2_emptyInfo_panel.Controls.Add(this.Z2_emptyInfo_button);
+            this.Z2_emptyInfo_panel.Location = new System.Drawing.Point(952, 228);
+            this.Z2_emptyInfo_panel.Name = "Z2_emptyInfo_panel";
+            this.Z2_emptyInfo_panel.Size = new System.Drawing.Size(277, 131);
+            this.Z2_emptyInfo_panel.TabIndex = 187;
+            // 
+            // Z2_emptyInfo_label
+            // 
+            this.Z2_emptyInfo_label.BackColor = System.Drawing.SystemColors.Info;
+            this.Z2_emptyInfo_label.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Z2_emptyInfo_label.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Z2_emptyInfo_label.Location = new System.Drawing.Point(0, 0);
+            this.Z2_emptyInfo_label.Name = "Z2_emptyInfo_label";
+            this.Z2_emptyInfo_label.Size = new System.Drawing.Size(277, 75);
+            this.Z2_emptyInfo_label.TabIndex = 180;
+            this.Z2_emptyInfo_label.Text = "Brak materiału w zbiorniku. \r\nNapełnij zbiornik, aby móc \r\nkontynuować naważanie!" +
+    "";
+            this.Z2_emptyInfo_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Z2_emptyInfo_button
+            // 
+            this.Z2_emptyInfo_button.BackColor = System.Drawing.SystemColors.Highlight;
+            this.Z2_emptyInfo_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Z2_emptyInfo_button.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Z2_emptyInfo_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Z2_emptyInfo_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Z2_emptyInfo_button.Location = new System.Drawing.Point(0, 78);
+            this.Z2_emptyInfo_button.Name = "Z2_emptyInfo_button";
+            this.Z2_emptyInfo_button.Size = new System.Drawing.Size(277, 53);
+            this.Z2_emptyInfo_button.TabIndex = 185;
+            this.Z2_emptyInfo_button.Text = "Potwierdź napełnienie";
+            this.Z2_emptyInfo_button.UseVisualStyleBackColor = false;
+            this.Z2_emptyInfo_button.Click += new System.EventHandler(this.Z2_emptyInfo_button_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.Z2_emptyInfo_panel);
+            this.Controls.Add(this.Z1_emptyInfo_panel);
+            this.Controls.Add(this.ze2_lock_label);
+            this.Controls.Add(this.ze3_lock_elapsed_label);
+            this.Controls.Add(this.ze3_lock_label);
+            this.Controls.Add(this.ze2_lock_elapsed_label);
+            this.Controls.Add(this.ze1_lock_elapsed_label);
+            this.Controls.Add(this.ze1_lock_label);
             this.Controls.Add(this.work_label);
             this.Controls.Add(this.permission_label);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.Mi1);
-            this.Controls.Add(this.t_mieszania_elapsed_label);
-            this.Controls.Add(this.t_mieszania_label);
+            this.Controls.Add(this.Mi1_picturebox);
+            this.Controls.Add(this.t_mixer_elapsed_label);
+            this.Controls.Add(this.t_mixer_label);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.tableLayoutPanel3);
+            this.Controls.Add(this.StatusLine_tablelayoutpanel);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.skl2_weight_SV_label);
-            this.Controls.Add(this.skl1_weight_SV_label);
-            this.Controls.Add(recipe_button);
+            this.Controls.Add(this.Z2_weightSV_label);
+            this.Controls.Add(this.Z1_weightSV_label);
+            this.Controls.Add(Recipes_button);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.Wb3);
             this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.ZE3);
-            this.Controls.Add(this.ZE1);
-            this.Controls.Add(this.ZE2);
+            this.Controls.Add(this.ZE3_picturebox);
+            this.Controls.Add(this.ZE1_picturebox);
+            this.Controls.Add(this.ZE2_picturebox);
             this.Controls.Add(this.odc3_label);
             this.Controls.Add(this.Wb2);
             this.Controls.Add(this.Wb1);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.weight_label);
+            this.Controls.Add(this.Weight_label);
             this.Controls.Add(this.odc1_label3);
-            this.Controls.Add(this.W1_pelny);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.odc1_label2);
             this.Controls.Add(this.odc1_label1);
             this.Controls.Add(this.odc2_label1);
-            this.Controls.Add(this.z1_name);
+            this.Controls.Add(this.Z1_name_textbox);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Z1_pelny);
+            this.Controls.Add(this.Z1_empty_picturebox);
             this.Controls.Add(this.pictureBox10);
             this.Controls.Add(this.pictureBox11);
             this.Controls.Add(this.pictureBox12);
-            this.Controls.Add(this.Z2_pelny);
-            this.Controls.Add(this.z2_name);
+            this.Controls.Add(this.Z2_empty_picturebox);
+            this.Controls.Add(this.Z2_name_textbox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox20);
             this.Controls.Add(this.pictureBox19);
             this.Controls.Add(this.pictureBox16);
-            this.Controls.Add(this.ERROR_PLC_label);
             this.Controls.Add(this.pictureBox17);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label15);
@@ -1656,19 +1725,18 @@
             this.Controls.Add(this.uzytkownik_panel);
             this.Controls.Add(this.alarmy_panel);
             this.Controls.Add(this.ustawienia_panel);
-            this.Controls.Add(this.tryb_pracy_panel);
-            this.Controls.Add(this.dzwonek_image);
-            this.Controls.Add(kasuj_alarmy_button);
-            this.Controls.Add(dzwonek_OFF_button);
-            this.Controls.Add(STOP_button);
-            this.Controls.Add(this.opr_dr_tech_label);
-            this.Controls.Add(this.z_blokadami_label);
-            this.Controls.Add(this.bez_blokad_label);
-            this.Controls.Add(this.tryb_pracy_box);
-            this.Controls.Add(this.alarm_obiekt_box);
-            this.Controls.Add(this.actual_date);
-            this.Controls.Add(this.actual_time);
-            this.Controls.Add(this.close_app_button);
+            this.Controls.Add(this.WorkMode_panel);
+            this.Controls.Add(this.Bell_picturebox);
+            this.Controls.Add(DeleteAlarms_button);
+            this.Controls.Add(BellOFF_button);
+            this.Controls.Add(StopAll_button);
+            this.Controls.Add(this.AutoWork_label);
+            this.Controls.Add(this.HandWork_label);
+            this.Controls.Add(this.WorkMode_textbox);
+            this.Controls.Add(this.AlarmObject_textbox);
+            this.Controls.Add(this.ActualDate_textbox);
+            this.Controls.Add(this.ActualTime_textbox);
+            this.Controls.Add(this.CloseApp_button);
             this.Controls.Add(this.odc2_label3);
             this.Controls.Add(this.tableLayoutPanel2);
             this.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -1678,7 +1746,7 @@
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "++";
-            this.tryb_pracy_panel.ResumeLayout(false);
+            this.WorkMode_panel.ResumeLayout(false);
             this.ustawienia_panel.ResumeLayout(false);
             this.alarmy_panel.ResumeLayout(false);
             this.uzytkownik_panel.ResumeLayout(false);
@@ -1687,68 +1755,67 @@
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
+            this.StatusLine_tablelayoutpanel.ResumeLayout(false);
+            this.StatusLine_tablelayoutpanel.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Mi1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mi1_picturebox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Wb3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ZE3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ZE1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ZE2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ZE3_picturebox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ZE1_picturebox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ZE2_picturebox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Wb2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Wb1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.W1_pelny)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Z1_pelny)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Z1_empty_picturebox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Z2_pelny)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Z2_empty_picturebox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dzwonek_image)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Bell_picturebox)).EndInit();
+            this.Z1_emptyInfo_panel.ResumeLayout(false);
+            this.Z2_emptyInfo_panel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button close_app_button;
+        private System.Windows.Forms.Button CloseApp_button;
         public System.Windows.Forms.Timer main_timer;
-        private System.Windows.Forms.TextBox alarm_obiekt_box;
-        private System.Windows.Forms.TextBox tryb_pracy_box;
-        private System.Windows.Forms.Label bez_blokad_label;
-        private System.Windows.Forms.Label z_blokadami_label;
-        private System.Windows.Forms.TextBox opr_dr_tech_label;
-        private System.Windows.Forms.PictureBox dzwonek_image;
-        private System.Windows.Forms.Panel tryb_pracy_panel;
+        private System.Windows.Forms.TextBox AlarmObject_textbox;
+        private System.Windows.Forms.TextBox WorkMode_textbox;
+        private System.Windows.Forms.Label HandWork_label;
+        private System.Windows.Forms.Label AutoWork_label;
+        private System.Windows.Forms.PictureBox Bell_picturebox;
+        private System.Windows.Forms.Panel WorkMode_panel;
         private System.Windows.Forms.Panel ustawienia_panel;
         private System.Windows.Forms.Panel alarmy_panel;
         private System.Windows.Forms.Panel uzytkownik_panel;
-        public System.Windows.Forms.TextBox actual_time;
-        public System.Windows.Forms.TextBox actual_date;
-        public System.Windows.Forms.PictureBox ZE1;
+        public System.Windows.Forms.TextBox ActualTime_textbox;
+        public System.Windows.Forms.TextBox ActualDate_textbox;
+        public System.Windows.Forms.PictureBox ZE1_picturebox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox Z2_pelny;
-        private System.Windows.Forms.PictureBox Z1_pelny;
+        private System.Windows.Forms.PictureBox Z2_empty_picturebox;
+        private System.Windows.Forms.PictureBox Z1_empty_picturebox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.TextBox z1_name;
-        public System.Windows.Forms.TextBox z2_name;
+        public System.Windows.Forms.TextBox Z1_name_textbox;
+        public System.Windows.Forms.TextBox Z2_name_textbox;
         private System.Windows.Forms.Panel pomoc_panel;
         private System.Windows.Forms.Label odc2_label2;
-        public System.Windows.Forms.PictureBox ZE2;
+        public System.Windows.Forms.PictureBox ZE2_picturebox;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Timer program_cycle;
         private System.Windows.Forms.Label label15;
-        public System.Windows.Forms.PictureBox ZE3;
+        public System.Windows.Forms.PictureBox ZE3_picturebox;
         private System.Windows.Forms.PictureBox pictureBox17;
-        public System.Windows.Forms.Label ERROR_PLC_label;
         private System.Windows.Forms.PictureBox pictureBox16;
         private System.Windows.Forms.PictureBox pictureBox19;
         private System.Windows.Forms.PictureBox pictureBox20;
@@ -1759,10 +1826,9 @@
         private System.Windows.Forms.Label odc1_label1;
         private System.Windows.Forms.Label odc1_label2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox W1_pelny;
         private System.Windows.Forms.Label odc2_label3;
         private System.Windows.Forms.Label odc1_label3;
-        public System.Windows.Forms.Label weight_label;
+        public System.Windows.Forms.Label Weight_label;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.PictureBox Wb1;
         private System.Windows.Forms.PictureBox pictureBox3;
@@ -1774,34 +1840,46 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label skl1_weight_SV_label;
-        private System.Windows.Forms.Label skl2_weight_SV_label;
+        private System.Windows.Forms.Label Z1_weightSV_label;
+        private System.Windows.Forms.Label Z2_weightSV_label;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label weight_PV_label;
-        private System.Windows.Forms.Label skl_weight_PV_label;
+        private System.Windows.Forms.Label weightPV_label;
+        private System.Windows.Forms.Label IngredientWeightPV_label;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label cykle_PV_label;
+        private System.Windows.Forms.Label cyclesPV_label;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        public System.Windows.Forms.Label weight_SV_label;
-        public System.Windows.Forms.Label cykle_SV_label;
-        public System.Windows.Forms.Label recipe_name_label;
+        public System.Windows.Forms.Label weightSV_label;
+        public System.Windows.Forms.Label cyclesSV_label;
+        public System.Windows.Forms.Label RecipeName_label;
         private System.Windows.Forms.Label label;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Label status_auto_label;
+        private System.Windows.Forms.TableLayoutPanel StatusLine_tablelayoutpanel;
+        private System.Windows.Forms.Label StatusAutoLine_label;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label t_mieszania_label;
-        private System.Windows.Forms.Label t_mieszania_elapsed_label;
-        private System.Windows.Forms.PictureBox Mi1;
+        private System.Windows.Forms.Label t_mixer_label;
+        private System.Windows.Forms.Label t_mixer_elapsed_label;
+        private System.Windows.Forms.PictureBox Mi1_picturebox;
         private System.Windows.Forms.Label label16;
-        public System.Windows.Forms.Label mieszanki_count_label;
+        public System.Windows.Forms.Label MixturesCounter_label;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label permission_label;
         private System.Windows.Forms.Label work_label;
+        private System.Windows.Forms.Label ze1_lock_elapsed_label;
+        private System.Windows.Forms.Label ze1_lock_label;
+        private System.Windows.Forms.Label ze2_lock_elapsed_label;
+        private System.Windows.Forms.Label Z1_emptyInfo_label;
+        private System.Windows.Forms.Label ze3_lock_elapsed_label;
+        private System.Windows.Forms.Label ze3_lock_label;
+        private System.Windows.Forms.Label ze2_lock_label;
+        private System.Windows.Forms.Button Z1_emptyInfo_button;
+        private System.Windows.Forms.Panel Z1_emptyInfo_panel;
+        private System.Windows.Forms.Panel Z2_emptyInfo_panel;
+        private System.Windows.Forms.Label Z2_emptyInfo_label;
+        private System.Windows.Forms.Button Z2_emptyInfo_button;
     }
 }
 

@@ -244,9 +244,9 @@ namespace PLC_SIEMENS.Windows.Recipes
                 await PLC.analog_write("DB20.DBD12", float.Parse(skl2_waga_textbox.Text));
                 await PLC.analog_write("DB20.DBW38", short.Parse(id_box.Text));
 
-                MainApp.cykle_SV_label.Text = cykle_SV_textBox.Text;
-                MainApp.weight_SV_label.Text = waga_SV_textBox.Text;
-                MainApp.recipe_name_label.Text = miesz_name.Text;
+                MainApp.cyclesSV_label.Text = cykle_SV_textBox.Text;
+                MainApp.weightSV_label.Text = waga_SV_textBox.Text;
+                MainApp.RecipeName_label.Text = miesz_name.Text;
 
                 MessageBox.Show("Pomyślnie załadowano wartości do sterownika.", "Correct", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -262,8 +262,8 @@ namespace PLC_SIEMENS.Windows.Recipes
             {
                 double skl1_weight = CalculateWeight(int.Parse(skladnik1_zawartosc.Text));
                 double skl2_weight = CalculateWeight(int.Parse(skladnik2_zawartosc.Text));
-                skl1_waga_textbox.Text = skl1_weight.ToString();
-                skl2_waga_textbox.Text = skl2_weight.ToString();
+                skl1_waga_textbox.Text = skl1_weight.ToString("0.##");
+                skl2_waga_textbox.Text = skl2_weight.ToString("0.##");
             }
 
             bool recipe_on = await PLC.readBool("DB20.DBX32.1");

@@ -135,12 +135,6 @@
     <Compile Include="Windows\Alarms\Alarmy_historyczne.Designer.cs">
       <DependentUpon>Alarmy_historyczne.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Auto1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Windows\Auto1.Designer.cs">
-      <DependentUpon>Auto1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Definitions\DefinitionAlarm.cs" />
     <Compile Include="Windows\Devices\Mi1.cs">
       <SubType>Form</SubType>
@@ -270,9 +264,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Alarms\Alarmy_historyczne.resx">
       <DependentUpon>Alarmy_historyczne.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Auto1.resx">
-      <DependentUpon>Auto1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Devices\Mi1.resx">
       <DependentUpon>Mi1.cs</DependentUpon>
