@@ -5,9 +5,9 @@ using System.Windows.Forms;
 
 namespace PLC_SIEMENS
 {
-    public partial class Alarmy_aktywne :Form
+    public partial class ActiveAlarms :Form
     {      
-        public Alarmy_aktywne()
+        public ActiveAlarms()
         {
             InitializeComponent();           
         }

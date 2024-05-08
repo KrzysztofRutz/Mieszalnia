@@ -1,6 +1,6 @@
 ﻿namespace PLC_SIEMENS
 {
-    partial class Alarmy_historyczne
+    partial class HistoryAlarms
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistoryAlarms));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.alarmyhis_grid = new System.Windows.Forms.DataGridView();
@@ -50,7 +51,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.36752F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 189F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 227F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 159F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.alarmyhis_grid, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.search_button, 4, 0);
@@ -154,7 +155,7 @@
             this.DateEndPicker.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.DateEndPicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.DateEndPicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DateEndPicker.Location = new System.Drawing.Point(465, 4);
+            this.DateEndPicker.Location = new System.Drawing.Point(464, 4);
             this.DateEndPicker.Name = "DateEndPicker";
             this.DateEndPicker.Size = new System.Drawing.Size(128, 23);
             this.DateEndPicker.TabIndex = 10;
@@ -174,20 +175,23 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(397, 7);
+            this.label1.Location = new System.Drawing.Point(396, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 17);
             this.label1.TabIndex = 12;
             this.label1.Text = "Data do:";
             // 
-            // Alarmy_historyczne
+            // HistoryAlarms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(849, 470);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Alarmy_historyczne";
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "HistoryAlarms";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alarmy historyczne";
             this.tableLayoutPanel1.ResumeLayout(false);

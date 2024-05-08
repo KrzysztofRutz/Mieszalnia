@@ -254,18 +254,18 @@ namespace PLC_SIEMENS
             }
         }
 
-        private async Task Screw(string on, string awaria, PictureBox name)
+        private async Task Screw(string on, string alarm, PictureBox pictureBox)
         {
             bool bit_on = await PLC.readBool(on);
-            bool bit_awaria = await PLC.readBool(awaria);
+            bool bit_alarm = await PLC.readBool(alarm);
 
-            if (bit_on == true && bit_awaria == false)
+            if (bit_on == true && bit_alarm == false)
             {
-                name.Image = Properties.Resources.PSADM_G_pion;
+                pictureBox.Image = Properties.Resources.PSADM_G_pion;
             }            
             else
             {
-                name.Image = Properties.Resources.NW_PSADM_pion;
+                pictureBox.Image = Properties.Resources.NW_PSADM_pion;
             }
         }
 
@@ -277,18 +277,12 @@ namespace PLC_SIEMENS
             else pictureBox.Visible = false;
         }
 
-        private async Task Roads(string zmienna, Label name)
+        private async Task Roads(string variable, Label label)
         {
-            bool var = await PLC.readBool(zmienna);
+            bool road = await PLC.readBool(variable);
 
-            if (var == true)
-            {
-                name.BackColor = System.Drawing.Color.LimeGreen;
-            }
-            else
-            {
-                name.BackColor = System.Drawing.Color.Gray;
-            }
+            if (road) label.BackColor = System.Drawing.Color.LimeGreen;
+            else label.BackColor = System.Drawing.Color.Gray;
         }
 
         private void tryb_pracy_button_Click(object sender, EventArgs e)
@@ -297,112 +291,78 @@ namespace PLC_SIEMENS
             else WorkMode_panel.Height = 60;
         }
 
-        private void ustawienia_button_Click(object sender, EventArgs e)
-        {
-            if (ustawienia_panel.Height == 60) ustawienia_panel.Height = 123;
-            else ustawienia_panel.Height = 60;
-        }
-
         private void alarmy_button_Click(object sender, EventArgs e)
         {
-            if (alarmy_panel.Height == 60) alarmy_panel.Height = 124;
-            else alarmy_panel.Height = 60;
-        }
-
-        private void uzytkownik_button_Click(object sender, EventArgs e)
-        {
-            if (uzytkownik_panel.Height == 60) uzytkownik_panel.Height = 123;
-            else uzytkownik_panel.Height = 60;
+            if (Alarms_panel.Height == 60) Alarms_panel.Height = 124;
+            else Alarms_panel.Height = 60;
         }
 
         private void pomoc_button_Click(object sender, EventArgs e)
         {
-            if (pomoc_panel.Height == 60) pomoc_panel.Height = 123;
-            else pomoc_panel.Height = 60;
+            if (Help_panel.Height == 60) Help_panel.Height = 123;
+            else Help_panel.Height = 60;
         }
-
-        private void parametry_podstawowe_button_Click(object sender, EventArgs e)
+        private void Settings_button_Click(object sender, EventArgs e)
         {
-            Parametry_podstawowe parametry_window = new Parametry_podstawowe();
-            parametry_window.Show();
-            ustawienia_panel.Height = 60;
-        }
-
-        private void serwis_button_Click(object sender, EventArgs e)
-        {
-            Serwis window = new Serwis();
-            window.Show();            
-            ustawienia_panel.Height = 60;
+            var window = new Settings();
+            window.Show();
         }
 
         private void alarmy_aktywne_button_Click(object sender, EventArgs e)
         {
-            Alarmy_aktywne alarmy_window = new Alarmy_aktywne();
-            alarmy_window.Show();
-            alarmy_panel.Height = 60;
+            var window = new ActiveAlarms();
+            window.Show();
+            Alarms_panel.Height = 60;
         }
 
         private void alarmy_hist_button_Click(object sender, EventArgs e)
         {
-            Alarmy_historyczne alarmy_window = new Alarmy_historyczne();
-            alarmy_window.Show();
-            alarmy_panel.Height = 60;
+            var window = new HistoryAlarms();
+            window.Show();
+            Alarms_panel.Height = 60;
         }
        
         private void ZE1_Click(object sender, EventArgs e)
         {
-            ze1 window = new ze1();
+            var window = new ze1();
             window.Show();
         }
         private void ZE2_Click(object sender, EventArgs e)
         {
-            ze2 window = new ze2();
+            var window = new ze2();
             window.Show();
         }
 
         private void ZE3_Click(object sender, EventArgs e)
         {
-            ze3 window = new ze3();
+            var window = new ze3();
             window.Show();
         }
 
         private void z1_name_Click(object sender, EventArgs e)
         {
-            Opisy_Z window = new Opisy_Z();
+            var window = new Opisy_Z();
             window.Show();
         }
 
         private void z2_name_Click(object sender, EventArgs e)
         {
-            Opisy_Z window = new Opisy_Z();
+            var window = new Opisy_Z();
             window.Show();           
-        }
-
-        private void wyloguj_button_Click(object sender, EventArgs e)
-        {
-            this.Enabled = false;
-            login_main win = new login_main();
-            win.Show();
-        }
-
-        private void przelacz_user_button_Click(object sender, EventArgs e)
-        {
-            login_main win = new login_main();
-            win.Show();
         }
 
         private void schemat_button_Click(object sender, EventArgs e)
         {
-            Schemat win = new Schemat();
-            win.Show();
-            pomoc_panel.Height = 60;
+            var window = new ElectricalDiagram();
+            window.Show();
+            Help_panel.Height = 60;
         }
 
         private void instrukcja_button_Click(object sender, EventArgs e)
         {
-            Instrukcja win = new Instrukcja();
-            win.Show();
-            pomoc_panel.Height = 60;
+            var window = new UserManual();
+            window.Show();
+            Help_panel.Height = 60;
         }       
 
         private void Wb1_Click(object sender, EventArgs e)
@@ -563,6 +523,6 @@ namespace PLC_SIEMENS
         private async void Z2_emptyInfo_button_Click(object sender, EventArgs e)
         {
             await PLC.writeBool("DB8.DBX4.1", true);
-        }
+        }       
     }
 }

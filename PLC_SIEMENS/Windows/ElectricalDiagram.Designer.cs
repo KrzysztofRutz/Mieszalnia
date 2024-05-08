@@ -1,6 +1,6 @@
 ﻿namespace PLC_SIEMENS
 {
-    partial class Instrukcja
+    partial class ElectricalDiagram
     {
         /// <summary>
         /// Required designer variable.
@@ -28,38 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Instrukcja));
-            this.InstrukcjaPDF = new AxAcroPDFLib.AxAcroPDF();
-            ((System.ComponentModel.ISupportInitialize)(this.InstrukcjaPDF)).BeginInit();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ElectricalDiagram));
+            this.schematPDF = new AxAcroPDFLib.AxAcroPDF();
+            ((System.ComponentModel.ISupportInitialize)(this.schematPDF)).BeginInit();
             this.SuspendLayout();
             // 
-            // InstrukcjaPDF
+            // schematPDF
             // 
-            this.InstrukcjaPDF.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.InstrukcjaPDF.Enabled = true;
-            this.InstrukcjaPDF.Location = new System.Drawing.Point(0, 0);
-            this.InstrukcjaPDF.Name = "InstrukcjaPDF";
-            this.InstrukcjaPDF.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("InstrukcjaPDF.OcxState")));
-            this.InstrukcjaPDF.Size = new System.Drawing.Size(1904, 1041);
-            this.InstrukcjaPDF.TabIndex = 0;
+            this.schematPDF.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.schematPDF.Enabled = true;
+            this.schematPDF.Location = new System.Drawing.Point(0, 0);
+            this.schematPDF.Name = "schematPDF";
+            this.schematPDF.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("schematPDF.OcxState")));
+            this.schematPDF.Size = new System.Drawing.Size(1904, 1041);
+            this.schematPDF.TabIndex = 0;
             // 
-            // Instrukcja
+            // ElectricalDiagram
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
-            this.Controls.Add(this.InstrukcjaPDF);
-            this.Name = "Instrukcja";
+            this.Controls.Add(this.schematPDF);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "ElectricalDiagram";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Instrukcja";
-            this.Load += new System.EventHandler(this.Instrukcja_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.InstrukcjaPDF)).EndInit();
+            this.Text = "Schemat elektryczny";
+            this.Load += new System.EventHandler(this.Schemat_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.schematPDF)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private AxAcroPDFLib.AxAcroPDF InstrukcjaPDF;
+        private AxAcroPDFLib.AxAcroPDF schematPDF;
     }
 }

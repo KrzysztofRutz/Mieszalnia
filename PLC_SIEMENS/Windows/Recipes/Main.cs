@@ -60,7 +60,7 @@ namespace PLC_SIEMENS.Windows.Recipes
 
         private void add_recipe_Click(object sender, EventArgs e)
         {
-            var window = new Add_recipe(conn, this);            
+            var window = new AddRecipe(conn, this);            
             window.Show();
         }
 
@@ -208,7 +208,7 @@ namespace PLC_SIEMENS.Windows.Recipes
 
         private void modify_button_Click(object sender, EventArgs e)
         {
-            Modify_recipe modify_window = new Modify_recipe(conn, this);
+            var modify_window = new ModifyRecipe(conn, this);
 
             int id = int.Parse(id_box.Text);
             SqlCommand SHOW_current_recipe = new SqlCommand("SELECT * FROM Recipes WHERE ID=" + id, conn);

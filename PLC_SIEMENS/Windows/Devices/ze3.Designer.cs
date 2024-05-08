@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ze3));
             this.label2 = new System.Windows.Forms.Label();
             this.stan_label = new System.Windows.Forms.Label();
             this.open_button = new System.Windows.Forms.Button();
@@ -104,6 +105,7 @@
             this.Controls.Add(this.stan_label);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ze3";

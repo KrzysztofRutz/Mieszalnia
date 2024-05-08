@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PLC_SIEMENS
 {
-    public partial class Instrukcja : Form
+    public partial class UserManual : Form
     {
-        public Instrukcja()
+        public UserManual()
         {
             InitializeComponent();
         }

@@ -4,11 +4,11 @@ using System.Windows.Forms;
 
 namespace PLC_SIEMENS.Windows.Recipes
 {
-    public partial class Add_recipe : Form
+    public partial class AddRecipe : Form
     {
         private readonly SqlConnection conn;
         private readonly Main MainWindow;
-        public Add_recipe(SqlConnection connection, Main main_window)
+        public AddRecipe(SqlConnection connection, Main main_window)
         {
             InitializeComponent();
             conn = connection;

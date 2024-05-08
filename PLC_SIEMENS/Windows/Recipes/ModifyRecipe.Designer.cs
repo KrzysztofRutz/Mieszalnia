@@ -1,6 +1,6 @@
 ﻿namespace PLC_SIEMENS.Windows.Recipes
 {
-    partial class Modify_recipe
+    partial class ModifyRecipe
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModifyRecipe));
             this.modify_alarm_text = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -259,7 +260,7 @@
             this.modify_recipe_button.UseVisualStyleBackColor = false;
             this.modify_recipe_button.Click += new System.EventHandler(this.modify_recipe_button_Click);
             // 
-            // Modify_recipe
+            // ModifyRecipe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -286,11 +287,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.modify_recipe_button);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Modify_recipe";
+            this.Name = "ModifyRecipe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Modify_recipe";
+            this.Text = "Modyfikowanie receptury";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Receptury_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();

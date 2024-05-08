@@ -167,12 +167,6 @@
     <Compile Include="Windows\Error_PLC.Designer.cs">
       <DependentUpon>Error_PLC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Windows\login.Designer.cs">
-      <DependentUpon>login.cs</DependentUpon>
-    </Compile>
     <Compile Include="Definitions\PLC.cs" />
     <Compile Include="Windows\Devices\ze3.cs">
       <SubType>Form</SubType>
@@ -186,17 +180,17 @@
     <Compile Include="Windows\Devices\ze2.Designer.cs">
       <DependentUpon>ze2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Instrukcja.cs">
+    <Compile Include="Windows\UserManual.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Windows\Instrukcja.Designer.cs">
-      <DependentUpon>Instrukcja.cs</DependentUpon>
+    <Compile Include="Windows\UserManual.Designer.cs">
+      <DependentUpon>UserManual.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Recipes\Add_recipe.cs">
+    <Compile Include="Windows\Recipes\AddRecipe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Windows\Recipes\Add_recipe.Designer.cs">
-      <DependentUpon>Add_recipe.cs</DependentUpon>
+    <Compile Include="Windows\Recipes\AddRecipe.Designer.cs">
+      <DependentUpon>AddRecipe.cs</DependentUpon>
     </Compile>
     <Compile Include="Windows\Recipes\Main.cs">
       <SubType>Form</SubType>
@@ -204,35 +198,23 @@
     <Compile Include="Windows\Recipes\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Recipes\Modify_recipe.cs">
+    <Compile Include="Windows\Recipes\ModifyRecipe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Windows\Recipes\Modify_recipe.Designer.cs">
-      <DependentUpon>Modify_recipe.cs</DependentUpon>
+    <Compile Include="Windows\Recipes\ModifyRecipe.Designer.cs">
+      <DependentUpon>ModifyRecipe.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Schemat.cs">
+    <Compile Include="Windows\ElectricalDiagram.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Windows\Schemat.Designer.cs">
-      <DependentUpon>Schemat.cs</DependentUpon>
+    <Compile Include="Windows\ElectricalDiagram.Designer.cs">
+      <DependentUpon>ElectricalDiagram.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Devices\R1.cs">
+    <Compile Include="Windows\SiloNames.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Windows\Devices\R1.Designer.cs">
-      <DependentUpon>R1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\login_main.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Windows\login_main.Designer.cs">
-      <DependentUpon>login_main.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\OpisyZ.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Windows\OpisyZ.Designer.cs">
-      <DependentUpon>OpisyZ.cs</DependentUpon>
+    <Compile Include="Windows\SiloNames.Designer.cs">
+      <DependentUpon>SiloNames.cs</DependentUpon>
     </Compile>
     <Compile Include="Windows\Devices\ze1.cs">
       <SubType>Form</SubType>
@@ -240,17 +222,11 @@
     <Compile Include="Windows\Devices\ze1.Designer.cs">
       <DependentUpon>ze1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Settings\Serwis.cs">
+    <Compile Include="Windows\Settings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Windows\Settings\Serwis.Designer.cs">
-      <DependentUpon>Serwis.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\Settings\Parametry_podstawowe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Windows\Settings\Parametry_podstawowe.Designer.cs">
-      <DependentUpon>Parametry_podstawowe.cs</DependentUpon>
+    <Compile Include="Windows\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
     <Compile Include="Windows\Main.cs">
       <SubType>Form</SubType>
@@ -281,32 +257,23 @@
     <EmbeddedResource Include="Windows\Error_PLC.resx">
       <DependentUpon>Error_PLC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Instrukcja.resx">
-      <DependentUpon>Instrukcja.cs</DependentUpon>
+    <EmbeddedResource Include="Windows\UserManual.resx">
+      <DependentUpon>UserManual.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\login.resx">
-      <DependentUpon>login.cs</DependentUpon>
+    <EmbeddedResource Include="Windows\SiloNames.resx">
+      <DependentUpon>SiloNames.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Devices\R1.resx">
-      <DependentUpon>R1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Windows\login_main.resx">
-      <DependentUpon>login_main.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Windows\OpisyZ.resx">
-      <DependentUpon>OpisyZ.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Recipes\Add_recipe.resx">
-      <DependentUpon>Add_recipe.cs</DependentUpon>
+    <EmbeddedResource Include="Windows\Recipes\AddRecipe.resx">
+      <DependentUpon>AddRecipe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Recipes\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Recipes\Modify_recipe.resx">
-      <DependentUpon>Modify_recipe.cs</DependentUpon>
+    <EmbeddedResource Include="Windows\Recipes\ModifyRecipe.resx">
+      <DependentUpon>ModifyRecipe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Settings\Parametry_podstawowe.resx">
-      <DependentUpon>Parametry_podstawowe.cs</DependentUpon>
+    <EmbeddedResource Include="Windows\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -321,11 +288,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Windows\Schemat.resx">
-      <DependentUpon>Schemat.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Settings\Serwis.resx">
-      <DependentUpon>Serwis.cs</DependentUpon>
+    <EmbeddedResource Include="Windows\ElectricalDiagram.resx">
+      <DependentUpon>ElectricalDiagram.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Devices\ze3.resx">
       <DependentUpon>ze3.cs</DependentUpon>

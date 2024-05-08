@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PLC_SIEMENS
 {
-    public partial class Schemat : Form
+    public partial class ElectricalDiagram : Form
     {
-        public Schemat()
+        public ElectricalDiagram()
         {
             InitializeComponent();
         }

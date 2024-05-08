@@ -5,9 +5,9 @@ using S7.Net;
 
 namespace PLC_SIEMENS
 {
-    public partial class Parametry_podstawowe : Form
+    public partial class Settings : Form
     {         
-        public Parametry_podstawowe()
+        public Settings()
         {
             InitializeComponent();
             InitValue();            

@@ -34,17 +34,12 @@
             System.Windows.Forms.Button DeleteAlarms_button;
             System.Windows.Forms.Button Settings_button;
             System.Windows.Forms.Button WorkMode_button;
-            System.Windows.Forms.Button alarmy_button;
+            System.Windows.Forms.Button Alarms_button;
             System.Windows.Forms.Button Help_button;
-            System.Windows.Forms.Button User_button;
             System.Windows.Forms.Button HandWork_button;
             System.Windows.Forms.Button AutoWork_button;
-            System.Windows.Forms.Button parametry_podstawowe_button;
-            System.Windows.Forms.Button serwis_button;
-            System.Windows.Forms.Button alarmy_aktywne_button;
-            System.Windows.Forms.Button alarmy_hist_button;
-            System.Windows.Forms.Button przelacz_user_button;
-            System.Windows.Forms.Button Logout_button;
+            System.Windows.Forms.Button ActiveAlarms_button;
+            System.Windows.Forms.Button HistoryAlarms_button;
             System.Windows.Forms.Button schemat_button;
             System.Windows.Forms.Button instrukcja_button;
             System.Windows.Forms.Button Recipes_button;
@@ -60,16 +55,14 @@
             this.HandWork_label = new System.Windows.Forms.Label();
             this.AutoWork_label = new System.Windows.Forms.Label();
             this.WorkMode_panel = new System.Windows.Forms.Panel();
-            this.ustawienia_panel = new System.Windows.Forms.Panel();
-            this.alarmy_panel = new System.Windows.Forms.Panel();
-            this.uzytkownik_panel = new System.Windows.Forms.Panel();
+            this.Alarms_panel = new System.Windows.Forms.Panel();
             this.program_cycle = new System.Windows.Forms.Timer(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.Z1_name_textbox = new System.Windows.Forms.TextBox();
             this.Z2_name_textbox = new System.Windows.Forms.TextBox();
-            this.pomoc_panel = new System.Windows.Forms.Panel();
+            this.Help_panel = new System.Windows.Forms.Panel();
             this.odc2_label2 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -149,27 +142,20 @@
             DeleteAlarms_button = new System.Windows.Forms.Button();
             Settings_button = new System.Windows.Forms.Button();
             WorkMode_button = new System.Windows.Forms.Button();
-            alarmy_button = new System.Windows.Forms.Button();
+            Alarms_button = new System.Windows.Forms.Button();
             Help_button = new System.Windows.Forms.Button();
-            User_button = new System.Windows.Forms.Button();
             HandWork_button = new System.Windows.Forms.Button();
             AutoWork_button = new System.Windows.Forms.Button();
-            parametry_podstawowe_button = new System.Windows.Forms.Button();
-            serwis_button = new System.Windows.Forms.Button();
-            alarmy_aktywne_button = new System.Windows.Forms.Button();
-            alarmy_hist_button = new System.Windows.Forms.Button();
-            przelacz_user_button = new System.Windows.Forms.Button();
-            Logout_button = new System.Windows.Forms.Button();
+            ActiveAlarms_button = new System.Windows.Forms.Button();
+            HistoryAlarms_button = new System.Windows.Forms.Button();
             schemat_button = new System.Windows.Forms.Button();
             instrukcja_button = new System.Windows.Forms.Button();
             Recipes_button = new System.Windows.Forms.Button();
             start_autorecipe_button = new System.Windows.Forms.Button();
             stop_autorecipe_button = new System.Windows.Forms.Button();
             this.WorkMode_panel.SuspendLayout();
-            this.ustawienia_panel.SuspendLayout();
-            this.alarmy_panel.SuspendLayout();
-            this.uzytkownik_panel.SuspendLayout();
-            this.pomoc_panel.SuspendLayout();
+            this.Alarms_panel.SuspendLayout();
+            this.Help_panel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.StatusLine_tablelayoutpanel.SuspendLayout();
@@ -223,7 +209,7 @@
             BellOFF_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             BellOFF_button.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             BellOFF_button.ForeColor = System.Drawing.SystemColors.WindowText;
-            BellOFF_button.Location = new System.Drawing.Point(930, 1);
+            BellOFF_button.Location = new System.Drawing.Point(815, 1);
             BellOFF_button.Name = "BellOFF_button";
             BellOFF_button.Size = new System.Drawing.Size(118, 60);
             BellOFF_button.TabIndex = 19;
@@ -239,7 +225,7 @@
             DeleteAlarms_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             DeleteAlarms_button.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             DeleteAlarms_button.ForeColor = System.Drawing.SystemColors.WindowText;
-            DeleteAlarms_button.Location = new System.Drawing.Point(813, 1);
+            DeleteAlarms_button.Location = new System.Drawing.Point(698, 1);
             DeleteAlarms_button.Name = "DeleteAlarms_button";
             DeleteAlarms_button.Size = new System.Drawing.Size(118, 60);
             DeleteAlarms_button.TabIndex = 20;
@@ -251,18 +237,17 @@
             // 
             Settings_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             Settings_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            Settings_button.Dock = System.Windows.Forms.DockStyle.Top;
             Settings_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             Settings_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             Settings_button.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             Settings_button.ForeColor = System.Drawing.SystemColors.WindowText;
-            Settings_button.Location = new System.Drawing.Point(0, 0);
+            Settings_button.Location = new System.Drawing.Point(1, 1);
             Settings_button.Name = "Settings_button";
             Settings_button.Size = new System.Drawing.Size(118, 60);
             Settings_button.TabIndex = 23;
             Settings_button.Text = "Ustawienia";
             Settings_button.UseVisualStyleBackColor = false;
-            Settings_button.Click += new System.EventHandler(this.ustawienia_button_Click);
+            Settings_button.Click += new System.EventHandler(this.Settings_button_Click);
             // 
             // WorkMode_button
             // 
@@ -281,24 +266,24 @@
             WorkMode_button.UseVisualStyleBackColor = false;
             WorkMode_button.Click += new System.EventHandler(this.tryb_pracy_button_Click);
             // 
-            // alarmy_button
+            // Alarms_button
             // 
-            alarmy_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            alarmy_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            alarmy_button.Dock = System.Windows.Forms.DockStyle.Top;
-            alarmy_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            alarmy_button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            alarmy_button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            alarmy_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            alarmy_button.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            alarmy_button.ForeColor = System.Drawing.SystemColors.WindowText;
-            alarmy_button.Location = new System.Drawing.Point(0, 0);
-            alarmy_button.Name = "alarmy_button";
-            alarmy_button.Size = new System.Drawing.Size(118, 60);
-            alarmy_button.TabIndex = 29;
-            alarmy_button.Text = "Alarmy";
-            alarmy_button.UseVisualStyleBackColor = false;
-            alarmy_button.Click += new System.EventHandler(this.alarmy_button_Click);
+            Alarms_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            Alarms_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            Alarms_button.Dock = System.Windows.Forms.DockStyle.Top;
+            Alarms_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            Alarms_button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            Alarms_button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            Alarms_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            Alarms_button.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            Alarms_button.ForeColor = System.Drawing.SystemColors.WindowText;
+            Alarms_button.Location = new System.Drawing.Point(0, 0);
+            Alarms_button.Name = "Alarms_button";
+            Alarms_button.Size = new System.Drawing.Size(118, 60);
+            Alarms_button.TabIndex = 29;
+            Alarms_button.Text = "Alarmy";
+            Alarms_button.UseVisualStyleBackColor = false;
+            Alarms_button.Click += new System.EventHandler(this.alarmy_button_Click);
             // 
             // Help_button
             // 
@@ -318,23 +303,6 @@
             Help_button.Text = "Pomoc";
             Help_button.UseVisualStyleBackColor = false;
             Help_button.Click += new System.EventHandler(this.pomoc_button_Click);
-            // 
-            // User_button
-            // 
-            User_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            User_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            User_button.Dock = System.Windows.Forms.DockStyle.Top;
-            User_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            User_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            User_button.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            User_button.ForeColor = System.Drawing.SystemColors.WindowText;
-            User_button.Location = new System.Drawing.Point(0, 0);
-            User_button.Name = "User_button";
-            User_button.Size = new System.Drawing.Size(118, 60);
-            User_button.TabIndex = 31;
-            User_button.Text = "Użytkownik";
-            User_button.UseVisualStyleBackColor = false;
-            User_button.Click += new System.EventHandler(this.uzytkownik_button_Click);
             // 
             // HandWork_button
             // 
@@ -372,113 +340,41 @@
             AutoWork_button.UseVisualStyleBackColor = false;
             AutoWork_button.Click += new System.EventHandler(this.z_blokadami_button_Click);
             // 
-            // parametry_podstawowe_button
+            // ActiveAlarms_button
             // 
-            parametry_podstawowe_button.BackColor = System.Drawing.Color.White;
-            parametry_podstawowe_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            parametry_podstawowe_button.Dock = System.Windows.Forms.DockStyle.Top;
-            parametry_podstawowe_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            parametry_podstawowe_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            parametry_podstawowe_button.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            parametry_podstawowe_button.ForeColor = System.Drawing.SystemColors.WindowText;
-            parametry_podstawowe_button.Location = new System.Drawing.Point(0, 60);
-            parametry_podstawowe_button.Name = "parametry_podstawowe_button";
-            parametry_podstawowe_button.Size = new System.Drawing.Size(118, 31);
-            parametry_podstawowe_button.TabIndex = 34;
-            parametry_podstawowe_button.Text = "Parametry podst.";
-            parametry_podstawowe_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            parametry_podstawowe_button.UseVisualStyleBackColor = false;
-            parametry_podstawowe_button.Click += new System.EventHandler(this.parametry_podstawowe_button_Click);
+            ActiveAlarms_button.BackColor = System.Drawing.Color.White;
+            ActiveAlarms_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            ActiveAlarms_button.Dock = System.Windows.Forms.DockStyle.Top;
+            ActiveAlarms_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            ActiveAlarms_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            ActiveAlarms_button.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            ActiveAlarms_button.ForeColor = System.Drawing.SystemColors.WindowText;
+            ActiveAlarms_button.Location = new System.Drawing.Point(0, 60);
+            ActiveAlarms_button.Name = "ActiveAlarms_button";
+            ActiveAlarms_button.Size = new System.Drawing.Size(118, 31);
+            ActiveAlarms_button.TabIndex = 30;
+            ActiveAlarms_button.Text = "Alarmy aktywne";
+            ActiveAlarms_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            ActiveAlarms_button.UseVisualStyleBackColor = false;
+            ActiveAlarms_button.Click += new System.EventHandler(this.alarmy_aktywne_button_Click);
             // 
-            // serwis_button
+            // HistoryAlarms_button
             // 
-            serwis_button.BackColor = System.Drawing.Color.White;
-            serwis_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            serwis_button.Dock = System.Windows.Forms.DockStyle.Top;
-            serwis_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            serwis_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            serwis_button.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            serwis_button.ForeColor = System.Drawing.SystemColors.WindowText;
-            serwis_button.Location = new System.Drawing.Point(0, 91);
-            serwis_button.Name = "serwis_button";
-            serwis_button.Size = new System.Drawing.Size(118, 31);
-            serwis_button.TabIndex = 35;
-            serwis_button.Text = "Serwis";
-            serwis_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            serwis_button.UseVisualStyleBackColor = false;
-            serwis_button.Click += new System.EventHandler(this.serwis_button_Click);
-            // 
-            // alarmy_aktywne_button
-            // 
-            alarmy_aktywne_button.BackColor = System.Drawing.Color.White;
-            alarmy_aktywne_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            alarmy_aktywne_button.Dock = System.Windows.Forms.DockStyle.Top;
-            alarmy_aktywne_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            alarmy_aktywne_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            alarmy_aktywne_button.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            alarmy_aktywne_button.ForeColor = System.Drawing.SystemColors.WindowText;
-            alarmy_aktywne_button.Location = new System.Drawing.Point(0, 60);
-            alarmy_aktywne_button.Name = "alarmy_aktywne_button";
-            alarmy_aktywne_button.Size = new System.Drawing.Size(118, 31);
-            alarmy_aktywne_button.TabIndex = 30;
-            alarmy_aktywne_button.Text = "Alarmy aktywne";
-            alarmy_aktywne_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            alarmy_aktywne_button.UseVisualStyleBackColor = false;
-            alarmy_aktywne_button.Click += new System.EventHandler(this.alarmy_aktywne_button_Click);
-            // 
-            // alarmy_hist_button
-            // 
-            alarmy_hist_button.BackColor = System.Drawing.Color.White;
-            alarmy_hist_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            alarmy_hist_button.Dock = System.Windows.Forms.DockStyle.Top;
-            alarmy_hist_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            alarmy_hist_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            alarmy_hist_button.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            alarmy_hist_button.ForeColor = System.Drawing.SystemColors.WindowText;
-            alarmy_hist_button.Location = new System.Drawing.Point(0, 91);
-            alarmy_hist_button.Name = "alarmy_hist_button";
-            alarmy_hist_button.Size = new System.Drawing.Size(118, 31);
-            alarmy_hist_button.TabIndex = 31;
-            alarmy_hist_button.Text = "Alarmy historyczne";
-            alarmy_hist_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            alarmy_hist_button.UseVisualStyleBackColor = false;
-            alarmy_hist_button.Click += new System.EventHandler(this.alarmy_hist_button_Click);
-            // 
-            // przelacz_user_button
-            // 
-            przelacz_user_button.BackColor = System.Drawing.Color.White;
-            przelacz_user_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            przelacz_user_button.Dock = System.Windows.Forms.DockStyle.Top;
-            przelacz_user_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            przelacz_user_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            przelacz_user_button.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            przelacz_user_button.ForeColor = System.Drawing.SystemColors.WindowText;
-            przelacz_user_button.Location = new System.Drawing.Point(0, 60);
-            przelacz_user_button.Name = "przelacz_user_button";
-            przelacz_user_button.Size = new System.Drawing.Size(118, 31);
-            przelacz_user_button.TabIndex = 32;
-            przelacz_user_button.Text = "Przełącz użytk.";
-            przelacz_user_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            przelacz_user_button.UseVisualStyleBackColor = false;
-            przelacz_user_button.Click += new System.EventHandler(this.przelacz_user_button_Click);
-            // 
-            // Logout_button
-            // 
-            Logout_button.BackColor = System.Drawing.Color.White;
-            Logout_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            Logout_button.Dock = System.Windows.Forms.DockStyle.Top;
-            Logout_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            Logout_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            Logout_button.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            Logout_button.ForeColor = System.Drawing.SystemColors.WindowText;
-            Logout_button.Location = new System.Drawing.Point(0, 91);
-            Logout_button.Name = "Logout_button";
-            Logout_button.Size = new System.Drawing.Size(118, 31);
-            Logout_button.TabIndex = 33;
-            Logout_button.Text = "Wyloguj";
-            Logout_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            Logout_button.UseVisualStyleBackColor = false;
-            Logout_button.Click += new System.EventHandler(this.wyloguj_button_Click);
+            HistoryAlarms_button.BackColor = System.Drawing.Color.White;
+            HistoryAlarms_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            HistoryAlarms_button.Dock = System.Windows.Forms.DockStyle.Top;
+            HistoryAlarms_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            HistoryAlarms_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            HistoryAlarms_button.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            HistoryAlarms_button.ForeColor = System.Drawing.SystemColors.WindowText;
+            HistoryAlarms_button.Location = new System.Drawing.Point(0, 91);
+            HistoryAlarms_button.Name = "HistoryAlarms_button";
+            HistoryAlarms_button.Size = new System.Drawing.Size(118, 31);
+            HistoryAlarms_button.TabIndex = 31;
+            HistoryAlarms_button.Text = "Alarmy historyczne";
+            HistoryAlarms_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            HistoryAlarms_button.UseVisualStyleBackColor = false;
+            HistoryAlarms_button.Click += new System.EventHandler(this.alarmy_hist_button_Click);
             // 
             // schemat_button
             // 
@@ -524,7 +420,7 @@
             Recipes_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             Recipes_button.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             Recipes_button.ForeColor = System.Drawing.SystemColors.WindowText;
-            Recipes_button.Location = new System.Drawing.Point(349, 1);
+            Recipes_button.Location = new System.Drawing.Point(234, 1);
             Recipes_button.Name = "Recipes_button";
             Recipes_button.Size = new System.Drawing.Size(118, 60);
             Recipes_button.TabIndex = 163;
@@ -677,40 +573,20 @@
             this.WorkMode_panel.Controls.Add(AutoWork_button);
             this.WorkMode_panel.Controls.Add(HandWork_button);
             this.WorkMode_panel.Controls.Add(WorkMode_button);
-            this.WorkMode_panel.Location = new System.Drawing.Point(233, 1);
+            this.WorkMode_panel.Location = new System.Drawing.Point(118, 1);
             this.WorkMode_panel.Name = "WorkMode_panel";
             this.WorkMode_panel.Size = new System.Drawing.Size(118, 60);
             this.WorkMode_panel.TabIndex = 32;
             // 
-            // ustawienia_panel
+            // Alarms_panel
             // 
-            this.ustawienia_panel.Controls.Add(serwis_button);
-            this.ustawienia_panel.Controls.Add(parametry_podstawowe_button);
-            this.ustawienia_panel.Controls.Add(Settings_button);
-            this.ustawienia_panel.Location = new System.Drawing.Point(-1, 1);
-            this.ustawienia_panel.Name = "ustawienia_panel";
-            this.ustawienia_panel.Size = new System.Drawing.Size(118, 60);
-            this.ustawienia_panel.TabIndex = 34;
-            // 
-            // alarmy_panel
-            // 
-            this.alarmy_panel.Controls.Add(alarmy_hist_button);
-            this.alarmy_panel.Controls.Add(alarmy_aktywne_button);
-            this.alarmy_panel.Controls.Add(alarmy_button);
-            this.alarmy_panel.Location = new System.Drawing.Point(466, 1);
-            this.alarmy_panel.Name = "alarmy_panel";
-            this.alarmy_panel.Size = new System.Drawing.Size(118, 60);
-            this.alarmy_panel.TabIndex = 35;
-            // 
-            // uzytkownik_panel
-            // 
-            this.uzytkownik_panel.Controls.Add(Logout_button);
-            this.uzytkownik_panel.Controls.Add(przelacz_user_button);
-            this.uzytkownik_panel.Controls.Add(User_button);
-            this.uzytkownik_panel.Location = new System.Drawing.Point(698, 1);
-            this.uzytkownik_panel.Name = "uzytkownik_panel";
-            this.uzytkownik_panel.Size = new System.Drawing.Size(118, 60);
-            this.uzytkownik_panel.TabIndex = 36;
+            this.Alarms_panel.Controls.Add(HistoryAlarms_button);
+            this.Alarms_panel.Controls.Add(ActiveAlarms_button);
+            this.Alarms_panel.Controls.Add(Alarms_button);
+            this.Alarms_panel.Location = new System.Drawing.Point(351, 1);
+            this.Alarms_panel.Name = "Alarms_panel";
+            this.Alarms_panel.Size = new System.Drawing.Size(118, 60);
+            this.Alarms_panel.TabIndex = 35;
             // 
             // program_cycle
             // 
@@ -782,15 +658,15 @@
             this.Z2_name_textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Z2_name_textbox.Click += new System.EventHandler(this.z2_name_Click);
             // 
-            // pomoc_panel
+            // Help_panel
             // 
-            this.pomoc_panel.Controls.Add(instrukcja_button);
-            this.pomoc_panel.Controls.Add(schemat_button);
-            this.pomoc_panel.Controls.Add(Help_button);
-            this.pomoc_panel.Location = new System.Drawing.Point(583, 1);
-            this.pomoc_panel.Name = "pomoc_panel";
-            this.pomoc_panel.Size = new System.Drawing.Size(118, 60);
-            this.pomoc_panel.TabIndex = 121;
+            this.Help_panel.Controls.Add(instrukcja_button);
+            this.Help_panel.Controls.Add(schemat_button);
+            this.Help_panel.Controls.Add(Help_button);
+            this.Help_panel.Location = new System.Drawing.Point(468, 1);
+            this.Help_panel.Name = "Help_panel";
+            this.Help_panel.Size = new System.Drawing.Size(118, 60);
+            this.Help_panel.TabIndex = 121;
             // 
             // odc2_label2
             // 
@@ -1664,6 +1540,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(Settings_button);
             this.Controls.Add(this.Z2_emptyInfo_panel);
             this.Controls.Add(this.Z1_emptyInfo_panel);
             this.Controls.Add(this.ze2_lock_label);
@@ -1721,10 +1598,8 @@
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.odc2_label2);
-            this.Controls.Add(this.pomoc_panel);
-            this.Controls.Add(this.uzytkownik_panel);
-            this.Controls.Add(this.alarmy_panel);
-            this.Controls.Add(this.ustawienia_panel);
+            this.Controls.Add(this.Help_panel);
+            this.Controls.Add(this.Alarms_panel);
             this.Controls.Add(this.WorkMode_panel);
             this.Controls.Add(this.Bell_picturebox);
             this.Controls.Add(DeleteAlarms_button);
@@ -1741,16 +1616,15 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.ForeColor = System.Drawing.SystemColors.WindowText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "++";
             this.WorkMode_panel.ResumeLayout(false);
-            this.ustawienia_panel.ResumeLayout(false);
-            this.alarmy_panel.ResumeLayout(false);
-            this.uzytkownik_panel.ResumeLayout(false);
-            this.pomoc_panel.ResumeLayout(false);
+            this.Alarms_panel.ResumeLayout(false);
+            this.Help_panel.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -1795,9 +1669,7 @@
         private System.Windows.Forms.Label AutoWork_label;
         private System.Windows.Forms.PictureBox Bell_picturebox;
         private System.Windows.Forms.Panel WorkMode_panel;
-        private System.Windows.Forms.Panel ustawienia_panel;
-        private System.Windows.Forms.Panel alarmy_panel;
-        private System.Windows.Forms.Panel uzytkownik_panel;
+        private System.Windows.Forms.Panel Alarms_panel;
         public System.Windows.Forms.TextBox ActualTime_textbox;
         public System.Windows.Forms.TextBox ActualDate_textbox;
         public System.Windows.Forms.PictureBox ZE1_picturebox;
@@ -1808,7 +1680,7 @@
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox Z1_name_textbox;
         public System.Windows.Forms.TextBox Z2_name_textbox;
-        private System.Windows.Forms.Panel pomoc_panel;
+        private System.Windows.Forms.Panel Help_panel;
         private System.Windows.Forms.Label odc2_label2;
         public System.Windows.Forms.PictureBox ZE2_picturebox;
         private System.Windows.Forms.Label label14;

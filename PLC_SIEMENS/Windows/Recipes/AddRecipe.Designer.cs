@@ -1,6 +1,6 @@
 ﻿namespace PLC_SIEMENS.Windows.Recipes
 {
-    partial class Add_recipe
+    partial class AddRecipe
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddRecipe));
             this.alarm_text = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -237,7 +238,7 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.add_recipe_Click);
             // 
-            // Add_recipe
+            // AddRecipe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -262,11 +263,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Add_recipe";
+            this.Name = "AddRecipe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Add_recipe";
+            this.Text = "Dodawanie receptury";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Add_recipe_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();

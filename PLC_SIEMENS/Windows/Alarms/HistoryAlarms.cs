@@ -5,10 +5,10 @@ using System.Windows.Forms;
 
 namespace PLC_SIEMENS
 {
-    public partial class Alarmy_historyczne : Form
+    public partial class HistoryAlarms : Form
     {
        
-        public Alarmy_historyczne()
+        public HistoryAlarms()
         {
             InitializeComponent();
             StartDatePicker.Value = DateTime.Now.AddDays(-7);
