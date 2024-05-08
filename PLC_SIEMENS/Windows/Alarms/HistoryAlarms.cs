@@ -3,7 +3,7 @@ using System.Data.SqlClient;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PLC_SIEMENS
+namespace PLC_SIEMENS.Windows.Alarms
 {
     public partial class HistoryAlarms : Form
     {

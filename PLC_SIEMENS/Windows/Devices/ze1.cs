@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using PLC_SIEMENS.Definitions;
 
-namespace PLC_SIEMENS
+namespace PLC_SIEMENS.Windows.Devices
 {
     public partial class ze1 : Form
     {        

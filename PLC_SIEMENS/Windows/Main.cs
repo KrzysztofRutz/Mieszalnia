@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PLC_SIEMENS.Definitions;
+using PLC_SIEMENS.Windows.Alarms;
 using PLC_SIEMENS.Windows.Devices;
 
 namespace PLC_SIEMENS

@@ -1,4 +1,4 @@
-﻿namespace PLC_SIEMENS
+﻿namespace PLC_SIEMENS.Windows.Devices
 {
     partial class ze2
     {
