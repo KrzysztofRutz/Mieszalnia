@@ -1,13 +1,5 @@
-﻿using Microsoft.Office.Interop.Excel;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using System;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PLC_SIEMENS
@@ -31,12 +23,10 @@ namespace PLC_SIEMENS
         {
             string filepath = "OpisyZ.txt";
             string[] name = new string[2];
-            //List<string> line = new List<string>();
-            //line = File.ReadAllLines(filepath).ToList();
+
             File.Delete(filepath);
             StreamWriter sw = new StreamWriter(filepath);
-           
-            
+                   
             name[0] = Z1_textbox.Text;
             name[1] = Z2_textbox.Text;           
             
@@ -46,9 +36,9 @@ namespace PLC_SIEMENS
             }
 
             Main.instance.Z1_name_textbox.Text = name[0];
-            Main.instance.Z2_name_textbox.Text = name[1];           
+            Main.instance.Z2_name_textbox.Text = name[1]; 
+            
             sw.Close();      
         }
-
     }
 }

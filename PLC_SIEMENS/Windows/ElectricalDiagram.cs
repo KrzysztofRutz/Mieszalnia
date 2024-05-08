@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PLC_SIEMENS
@@ -23,8 +16,7 @@ namespace PLC_SIEMENS
             op.FileName = "C:\\SCADA\\C#_programy\\PLC_SIEMENS\\PLC_SIEMENS\\bin\\Debug\\Schemat.pdf";
                        
             op.OpenFile();
-            schematPDF.src = op.FileName;
-            
+            schematPDF.src = op.FileName;        
         }
     }
 }
