@@ -63,6 +63,36 @@ namespace PLC_SIEMENS.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BUCZEK_1 {
+            get {
+                object obj = ResourceManager.GetObject("BUCZEK_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap czyszcz_UA_l {
+            get {
+                object obj = ResourceManager.GetObject("czyszcz_UA_l", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Do_silos_czesc_D {
+            get {
+                object obj = ResourceManager.GetObject("Do_silos_czesc_D", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Do_silos_czesc_D_Nap {
             get {
                 object obj = ResourceManager.GetObject("Do_silos_czesc_D_Nap", resourceCulture);
@@ -116,6 +146,26 @@ namespace PLC_SIEMENS.Properties {
         internal static System.Drawing.Bitmap R4_srod1_praca {
             get {
                 object obj = ResourceManager.GetObject("R4_srod1_praca", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap REA_2 {
+            get {
+                object obj = ResourceManager.GetObject("REA_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap REA_2_ {
+            get {
+                object obj = ResourceManager.GetObject("REA_2_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

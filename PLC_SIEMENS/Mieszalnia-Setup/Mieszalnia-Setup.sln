@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34902.65
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Mieszalnia-Setup", "Mieszalnia-Setup.vdproj", "{B0D09740-AE03-4D10-B027-84108700F1FA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0D09740-AE03-4D10-B027-84108700F1FA}.Debug|Default.ActiveCfg = Debug
+		{B0D09740-AE03-4D10-B027-84108700F1FA}.Debug|Default.Build.0 = Debug
+		{B0D09740-AE03-4D10-B027-84108700F1FA}.Release|Default.ActiveCfg = Release
+		{B0D09740-AE03-4D10-B027-84108700F1FA}.Release|Default.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {75E9260D-8C9A-47D1-9F29-59373A0228FF}
+	EndGlobalSection
+EndGlobal

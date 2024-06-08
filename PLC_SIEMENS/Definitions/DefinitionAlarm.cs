@@ -10,8 +10,9 @@ namespace PLC_SIEMENS.Definitions
         public static string[] Text { get; private set; }
 
         public static async Task init()
-        {          
-            string file = "C:\\Users\\krzys\\OneDrive\\Pulpit\\UMG\\_Praca inżynierska\\SCADA\\PLC_SIEMENS\\PLC_SIEMENS\\Alarmy.csv";
+        {
+            //string file = "C:\\Users\\krzys\\OneDrive\\Pulpit\\UMG\\_Praca inżynierska\\SCADA\\PLC_SIEMENS\\PLC_SIEMENS\\Alarmy.csv";
+            string file = "Alarmy.csv";
             string[] variable = new string[0];
             string[] text = new string[0];
 

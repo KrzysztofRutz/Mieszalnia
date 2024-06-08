@@ -391,6 +391,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="istockphoto-1411804471-612x612.ico" />
+    <None Include="Resources\BUCZEK_1.png" />
+    <None Include="Resources\REA_2.png" />
+    <None Include="Resources\REA_2_.png" />
+    <None Include="Resources\czyszcz_UA_l.png" />
+    <None Include="Resources\Do_silos_czesc_D.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

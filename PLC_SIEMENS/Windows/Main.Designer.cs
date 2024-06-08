@@ -102,6 +102,21 @@
             this.t_mixer_label = new System.Windows.Forms.Label();
             this.t_mixer_elapsed_label = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.permission_label = new System.Windows.Forms.Label();
+            this.work_label = new System.Windows.Forms.Label();
+            this.ze1_lock_elapsed_label = new System.Windows.Forms.Label();
+            this.ze1_lock_label = new System.Windows.Forms.Label();
+            this.ze2_lock_elapsed_label = new System.Windows.Forms.Label();
+            this.Z1_emptyInfo_label = new System.Windows.Forms.Label();
+            this.ze3_lock_elapsed_label = new System.Windows.Forms.Label();
+            this.ze3_lock_label = new System.Windows.Forms.Label();
+            this.ze2_lock_label = new System.Windows.Forms.Label();
+            this.Z1_emptyInfo_button = new System.Windows.Forms.Button();
+            this.Z1_emptyInfo_panel = new System.Windows.Forms.Panel();
+            this.Z2_emptyInfo_panel = new System.Windows.Forms.Panel();
+            this.Z2_emptyInfo_label = new System.Windows.Forms.Label();
+            this.Z2_emptyInfo_button = new System.Windows.Forms.Button();
+            this.Tare_button = new System.Windows.Forms.Button();
             this.Mi1_picturebox = new System.Windows.Forms.PictureBox();
             this.Wb3 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -123,20 +138,6 @@
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.Bell_picturebox = new System.Windows.Forms.PictureBox();
-            this.permission_label = new System.Windows.Forms.Label();
-            this.work_label = new System.Windows.Forms.Label();
-            this.ze1_lock_elapsed_label = new System.Windows.Forms.Label();
-            this.ze1_lock_label = new System.Windows.Forms.Label();
-            this.ze2_lock_elapsed_label = new System.Windows.Forms.Label();
-            this.Z1_emptyInfo_label = new System.Windows.Forms.Label();
-            this.ze3_lock_elapsed_label = new System.Windows.Forms.Label();
-            this.ze3_lock_label = new System.Windows.Forms.Label();
-            this.ze2_lock_label = new System.Windows.Forms.Label();
-            this.Z1_emptyInfo_button = new System.Windows.Forms.Button();
-            this.Z1_emptyInfo_panel = new System.Windows.Forms.Panel();
-            this.Z2_emptyInfo_panel = new System.Windows.Forms.Panel();
-            this.Z2_emptyInfo_label = new System.Windows.Forms.Label();
-            this.Z2_emptyInfo_button = new System.Windows.Forms.Button();
             StopAll_button = new System.Windows.Forms.Button();
             BellOFF_button = new System.Windows.Forms.Button();
             DeleteAlarms_button = new System.Windows.Forms.Button();
@@ -160,6 +161,8 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.StatusLine_tablelayoutpanel.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.Z1_emptyInfo_panel.SuspendLayout();
+            this.Z2_emptyInfo_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Mi1_picturebox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Wb3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -181,8 +184,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bell_picturebox)).BeginInit();
-            this.Z1_emptyInfo_panel.SuspendLayout();
-            this.Z2_emptyInfo_panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // StopAll_button
@@ -745,7 +746,7 @@
             this.Weight_label.Name = "Weight_label";
             this.Weight_label.Size = new System.Drawing.Size(120, 37);
             this.Weight_label.TabIndex = 151;
-            this.Weight_label.Text = "label1";
+            this.Weight_label.Text = "-,-- kg";
             this.Weight_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
@@ -754,7 +755,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label4.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(855, 711);
+            this.label4.Location = new System.Drawing.Point(855, 713);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 25);
             this.label4.TabIndex = 152;
@@ -1124,237 +1125,6 @@
             this.label16.TabIndex = 174;
             this.label16.Text = "Mi1";
             // 
-            // Mi1_picturebox
-            // 
-            this.Mi1_picturebox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Mi1_picturebox.Image = global::PLC_SIEMENS.Properties.Resources.NW_PSADM_pion;
-            this.Mi1_picturebox.Location = new System.Drawing.Point(826, 678);
-            this.Mi1_picturebox.Margin = new System.Windows.Forms.Padding(2);
-            this.Mi1_picturebox.Name = "Mi1_picturebox";
-            this.Mi1_picturebox.Size = new System.Drawing.Size(16, 90);
-            this.Mi1_picturebox.TabIndex = 173;
-            this.Mi1_picturebox.TabStop = false;
-            this.Mi1_picturebox.Click += new System.EventHandler(this.Mi1_Click);
-            // 
-            // Wb3
-            // 
-            this.Wb3.BackColor = System.Drawing.Color.Transparent;
-            this.Wb3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Wb3.Image = global::PLC_SIEMENS.Properties.Resources.silnik_2;
-            this.Wb3.Location = new System.Drawing.Point(968, 712);
-            this.Wb3.Name = "Wb3";
-            this.Wb3.Size = new System.Drawing.Size(32, 15);
-            this.Wb3.TabIndex = 158;
-            this.Wb3.TabStop = false;
-            this.Wb3.Click += new System.EventHandler(this.Wb3_Click);
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(957, 707);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(25, 43);
-            this.pictureBox5.TabIndex = 159;
-            this.pictureBox5.TabStop = false;
-            // 
-            // ZE3_picturebox
-            // 
-            this.ZE3_picturebox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ZE3_picturebox.Image = global::PLC_SIEMENS.Properties.Resources.ZE;
-            this.ZE3_picturebox.Location = new System.Drawing.Point(860, 767);
-            this.ZE3_picturebox.Name = "ZE3_picturebox";
-            this.ZE3_picturebox.Size = new System.Drawing.Size(33, 12);
-            this.ZE3_picturebox.TabIndex = 129;
-            this.ZE3_picturebox.TabStop = false;
-            this.ZE3_picturebox.Click += new System.EventHandler(this.ZE3_Click);
-            // 
-            // ZE1_picturebox
-            // 
-            this.ZE1_picturebox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ZE1_picturebox.Image = global::PLC_SIEMENS.Properties.Resources.ZE;
-            this.ZE1_picturebox.Location = new System.Drawing.Point(650, 481);
-            this.ZE1_picturebox.Name = "ZE1_picturebox";
-            this.ZE1_picturebox.Size = new System.Drawing.Size(33, 12);
-            this.ZE1_picturebox.TabIndex = 39;
-            this.ZE1_picturebox.TabStop = false;
-            this.ZE1_picturebox.Click += new System.EventHandler(this.ZE1_Click);
-            // 
-            // ZE2_picturebox
-            // 
-            this.ZE2_picturebox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ZE2_picturebox.Image = global::PLC_SIEMENS.Properties.Resources.ZE;
-            this.ZE2_picturebox.Location = new System.Drawing.Point(1072, 481);
-            this.ZE2_picturebox.Name = "ZE2_picturebox";
-            this.ZE2_picturebox.Size = new System.Drawing.Size(33, 12);
-            this.ZE2_picturebox.TabIndex = 127;
-            this.ZE2_picturebox.TabStop = false;
-            this.ZE2_picturebox.Click += new System.EventHandler(this.ZE2_Click);
-            // 
-            // Wb2
-            // 
-            this.Wb2.BackColor = System.Drawing.Color.Transparent;
-            this.Wb2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Wb2.Image = global::PLC_SIEMENS.Properties.Resources.silnik_2;
-            this.Wb2.Location = new System.Drawing.Point(1159, 435);
-            this.Wb2.Name = "Wb2";
-            this.Wb2.Size = new System.Drawing.Size(32, 15);
-            this.Wb2.TabIndex = 156;
-            this.Wb2.TabStop = false;
-            this.Wb2.Click += new System.EventHandler(this.Wb2_Click);
-            // 
-            // Wb1
-            // 
-            this.Wb1.BackColor = System.Drawing.Color.Transparent;
-            this.Wb1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Wb1.Image = global::PLC_SIEMENS.Properties.Resources.silnik_2;
-            this.Wb1.Location = new System.Drawing.Point(734, 435);
-            this.Wb1.Name = "Wb1";
-            this.Wb1.Size = new System.Drawing.Size(32, 15);
-            this.Wb1.TabIndex = 153;
-            this.Wb1.TabStop = false;
-            this.Wb1.Click += new System.EventHandler(this.Wb1_Click);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(1146, 430);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(25, 43);
-            this.pictureBox4.TabIndex = 155;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(723, 430);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(25, 43);
-            this.pictureBox3.TabIndex = 154;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(793, 690);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(165, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 147;
-            this.pictureBox1.TabStop = false;
-            // 
-            // Z1_empty_picturebox
-            // 
-            this.Z1_empty_picturebox.Image = global::PLC_SIEMENS.Properties.Resources.Do_silos_czesc_D_Nap;
-            this.Z1_empty_picturebox.Location = new System.Drawing.Point(605, 435);
-            this.Z1_empty_picturebox.Margin = new System.Windows.Forms.Padding(2);
-            this.Z1_empty_picturebox.Name = "Z1_empty_picturebox";
-            this.Z1_empty_picturebox.Size = new System.Drawing.Size(119, 27);
-            this.Z1_empty_picturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Z1_empty_picturebox.TabIndex = 96;
-            this.Z1_empty_picturebox.TabStop = false;
-            this.Z1_empty_picturebox.Visible = false;
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(605, 309);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(119, 153);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox10.TabIndex = 143;
-            this.pictureBox10.TabStop = false;
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(605, 268);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(119, 43);
-            this.pictureBox11.TabIndex = 142;
-            this.pictureBox11.TabStop = false;
-            // 
-            // pictureBox12
-            // 
-            this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
-            this.pictureBox12.Location = new System.Drawing.Point(605, 461);
-            this.pictureBox12.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(119, 20);
-            this.pictureBox12.TabIndex = 141;
-            this.pictureBox12.TabStop = false;
-            // 
-            // Z2_empty_picturebox
-            // 
-            this.Z2_empty_picturebox.Image = global::PLC_SIEMENS.Properties.Resources.Do_silos_czesc_D_Nap;
-            this.Z2_empty_picturebox.Location = new System.Drawing.Point(1028, 435);
-            this.Z2_empty_picturebox.Margin = new System.Windows.Forms.Padding(2);
-            this.Z2_empty_picturebox.Name = "Z2_empty_picturebox";
-            this.Z2_empty_picturebox.Size = new System.Drawing.Size(119, 27);
-            this.Z2_empty_picturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Z2_empty_picturebox.TabIndex = 95;
-            this.Z2_empty_picturebox.TabStop = false;
-            this.Z2_empty_picturebox.Visible = false;
-            // 
-            // pictureBox20
-            // 
-            this.pictureBox20.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox20.Image")));
-            this.pictureBox20.Location = new System.Drawing.Point(1028, 309);
-            this.pictureBox20.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(119, 153);
-            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox20.TabIndex = 137;
-            this.pictureBox20.TabStop = false;
-            // 
-            // pictureBox19
-            // 
-            this.pictureBox19.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox19.Image")));
-            this.pictureBox19.Location = new System.Drawing.Point(1028, 268);
-            this.pictureBox19.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(119, 43);
-            this.pictureBox19.TabIndex = 136;
-            this.pictureBox19.TabStop = false;
-            // 
-            // pictureBox16
-            // 
-            this.pictureBox16.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox16.Image")));
-            this.pictureBox16.Location = new System.Drawing.Point(1028, 461);
-            this.pictureBox16.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(119, 20);
-            this.pictureBox16.TabIndex = 135;
-            this.pictureBox16.TabStop = false;
-            // 
-            // pictureBox17
-            // 
-            this.pictureBox17.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox17.Image")));
-            this.pictureBox17.Location = new System.Drawing.Point(793, 738);
-            this.pictureBox17.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(165, 30);
-            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox17.TabIndex = 131;
-            this.pictureBox17.TabStop = false;
-            // 
-            // Bell_picturebox
-            // 
-            this.Bell_picturebox.ErrorImage = null;
-            this.Bell_picturebox.Image = ((System.Drawing.Image)(resources.GetObject("Bell_picturebox.Image")));
-            this.Bell_picturebox.InitialImage = null;
-            this.Bell_picturebox.Location = new System.Drawing.Point(1476, 12);
-            this.Bell_picturebox.Name = "Bell_picturebox";
-            this.Bell_picturebox.Size = new System.Drawing.Size(35, 42);
-            this.Bell_picturebox.TabIndex = 21;
-            this.Bell_picturebox.TabStop = false;
-            this.Bell_picturebox.Visible = false;
-            // 
             // permission_label
             // 
             this.permission_label.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1491,7 +1261,7 @@
             // 
             this.Z1_emptyInfo_panel.Controls.Add(this.Z1_emptyInfo_label);
             this.Z1_emptyInfo_panel.Controls.Add(this.Z1_emptyInfo_button);
-            this.Z1_emptyInfo_panel.Location = new System.Drawing.Point(527, 227);
+            this.Z1_emptyInfo_panel.Location = new System.Drawing.Point(527, 228);
             this.Z1_emptyInfo_panel.Name = "Z1_emptyInfo_panel";
             this.Z1_emptyInfo_panel.Size = new System.Drawing.Size(277, 131);
             this.Z1_emptyInfo_panel.TabIndex = 186;
@@ -1501,7 +1271,7 @@
             // 
             this.Z2_emptyInfo_panel.Controls.Add(this.Z2_emptyInfo_label);
             this.Z2_emptyInfo_panel.Controls.Add(this.Z2_emptyInfo_button);
-            this.Z2_emptyInfo_panel.Location = new System.Drawing.Point(952, 228);
+            this.Z2_emptyInfo_panel.Location = new System.Drawing.Point(943, 228);
             this.Z2_emptyInfo_panel.Name = "Z2_emptyInfo_panel";
             this.Z2_emptyInfo_panel.Size = new System.Drawing.Size(277, 131);
             this.Z2_emptyInfo_panel.TabIndex = 187;
@@ -1534,12 +1304,257 @@
             this.Z2_emptyInfo_button.UseVisualStyleBackColor = false;
             this.Z2_emptyInfo_button.Click += new System.EventHandler(this.Z2_emptyInfo_button_Click);
             // 
+            // Tare_button
+            // 
+            this.Tare_button.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Tare_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Tare_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Tare_button.Location = new System.Drawing.Point(883, 690);
+            this.Tare_button.Name = "Tare_button";
+            this.Tare_button.Size = new System.Drawing.Size(75, 23);
+            this.Tare_button.TabIndex = 188;
+            this.Tare_button.Text = "TARA";
+            this.Tare_button.UseVisualStyleBackColor = false;
+            this.Tare_button.Click += new System.EventHandler(this.Tare_button_Click);
+            // 
+            // Mi1_picturebox
+            // 
+            this.Mi1_picturebox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Mi1_picturebox.Image = global::PLC_SIEMENS.Properties.Resources.NW_PSADM_pion;
+            this.Mi1_picturebox.Location = new System.Drawing.Point(826, 678);
+            this.Mi1_picturebox.Margin = new System.Windows.Forms.Padding(2);
+            this.Mi1_picturebox.Name = "Mi1_picturebox";
+            this.Mi1_picturebox.Size = new System.Drawing.Size(16, 90);
+            this.Mi1_picturebox.TabIndex = 173;
+            this.Mi1_picturebox.TabStop = false;
+            this.Mi1_picturebox.Click += new System.EventHandler(this.Mi1_Click);
+            // 
+            // Wb3
+            // 
+            this.Wb3.BackColor = System.Drawing.Color.Transparent;
+            this.Wb3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Wb3.Image = global::PLC_SIEMENS.Properties.Resources.silnik_2;
+            this.Wb3.Location = new System.Drawing.Point(968, 712);
+            this.Wb3.Name = "Wb3";
+            this.Wb3.Size = new System.Drawing.Size(32, 15);
+            this.Wb3.TabIndex = 158;
+            this.Wb3.TabStop = false;
+            this.Wb3.Click += new System.EventHandler(this.Wb3_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::PLC_SIEMENS.Properties.Resources.czyszcz_UA_l;
+            this.pictureBox5.Location = new System.Drawing.Point(957, 707);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(25, 43);
+            this.pictureBox5.TabIndex = 159;
+            this.pictureBox5.TabStop = false;
+            // 
+            // ZE3_picturebox
+            // 
+            this.ZE3_picturebox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ZE3_picturebox.Image = global::PLC_SIEMENS.Properties.Resources.ZE;
+            this.ZE3_picturebox.Location = new System.Drawing.Point(860, 767);
+            this.ZE3_picturebox.Name = "ZE3_picturebox";
+            this.ZE3_picturebox.Size = new System.Drawing.Size(33, 12);
+            this.ZE3_picturebox.TabIndex = 129;
+            this.ZE3_picturebox.TabStop = false;
+            this.ZE3_picturebox.Click += new System.EventHandler(this.ZE3_Click);
+            // 
+            // ZE1_picturebox
+            // 
+            this.ZE1_picturebox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ZE1_picturebox.Image = global::PLC_SIEMENS.Properties.Resources.ZE;
+            this.ZE1_picturebox.Location = new System.Drawing.Point(650, 481);
+            this.ZE1_picturebox.Name = "ZE1_picturebox";
+            this.ZE1_picturebox.Size = new System.Drawing.Size(33, 12);
+            this.ZE1_picturebox.TabIndex = 39;
+            this.ZE1_picturebox.TabStop = false;
+            this.ZE1_picturebox.Click += new System.EventHandler(this.ZE1_Click);
+            // 
+            // ZE2_picturebox
+            // 
+            this.ZE2_picturebox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ZE2_picturebox.Image = global::PLC_SIEMENS.Properties.Resources.ZE;
+            this.ZE2_picturebox.Location = new System.Drawing.Point(1072, 481);
+            this.ZE2_picturebox.Name = "ZE2_picturebox";
+            this.ZE2_picturebox.Size = new System.Drawing.Size(33, 12);
+            this.ZE2_picturebox.TabIndex = 127;
+            this.ZE2_picturebox.TabStop = false;
+            this.ZE2_picturebox.Click += new System.EventHandler(this.ZE2_Click);
+            // 
+            // Wb2
+            // 
+            this.Wb2.BackColor = System.Drawing.Color.Transparent;
+            this.Wb2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Wb2.Image = global::PLC_SIEMENS.Properties.Resources.silnik_2;
+            this.Wb2.Location = new System.Drawing.Point(1159, 435);
+            this.Wb2.Name = "Wb2";
+            this.Wb2.Size = new System.Drawing.Size(32, 15);
+            this.Wb2.TabIndex = 156;
+            this.Wb2.TabStop = false;
+            this.Wb2.Click += new System.EventHandler(this.Wb2_Click);
+            // 
+            // Wb1
+            // 
+            this.Wb1.BackColor = System.Drawing.Color.Transparent;
+            this.Wb1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Wb1.Image = global::PLC_SIEMENS.Properties.Resources.silnik_2;
+            this.Wb1.Location = new System.Drawing.Point(734, 435);
+            this.Wb1.Name = "Wb1";
+            this.Wb1.Size = new System.Drawing.Size(32, 15);
+            this.Wb1.TabIndex = 153;
+            this.Wb1.TabStop = false;
+            this.Wb1.Click += new System.EventHandler(this.Wb1_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::PLC_SIEMENS.Properties.Resources.czyszcz_UA_l;
+            this.pictureBox4.Location = new System.Drawing.Point(1146, 430);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(25, 43);
+            this.pictureBox4.TabIndex = 155;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::PLC_SIEMENS.Properties.Resources.czyszcz_UA_l;
+            this.pictureBox3.Location = new System.Drawing.Point(723, 430);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(25, 43);
+            this.pictureBox3.TabIndex = 154;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PLC_SIEMENS.Properties.Resources.Do_silos_czesc_D;
+            this.pictureBox1.Location = new System.Drawing.Point(793, 690);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(165, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 147;
+            this.pictureBox1.TabStop = false;
+            // 
+            // Z1_empty_picturebox
+            // 
+            this.Z1_empty_picturebox.Image = global::PLC_SIEMENS.Properties.Resources.Do_silos_czesc_D_Nap;
+            this.Z1_empty_picturebox.Location = new System.Drawing.Point(605, 435);
+            this.Z1_empty_picturebox.Margin = new System.Windows.Forms.Padding(2);
+            this.Z1_empty_picturebox.Name = "Z1_empty_picturebox";
+            this.Z1_empty_picturebox.Size = new System.Drawing.Size(119, 27);
+            this.Z1_empty_picturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Z1_empty_picturebox.TabIndex = 96;
+            this.Z1_empty_picturebox.TabStop = false;
+            this.Z1_empty_picturebox.Visible = false;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Image = global::PLC_SIEMENS.Properties.Resources.Do_silos_czesc_D;
+            this.pictureBox10.Location = new System.Drawing.Point(605, 309);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(119, 153);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox10.TabIndex = 143;
+            this.pictureBox10.TabStop = false;
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Image = global::PLC_SIEMENS.Properties.Resources.REA_2;
+            this.pictureBox11.Location = new System.Drawing.Point(605, 268);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(119, 43);
+            this.pictureBox11.TabIndex = 142;
+            this.pictureBox11.TabStop = false;
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
+            this.pictureBox12.Location = new System.Drawing.Point(605, 461);
+            this.pictureBox12.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(119, 20);
+            this.pictureBox12.TabIndex = 141;
+            this.pictureBox12.TabStop = false;
+            // 
+            // Z2_empty_picturebox
+            // 
+            this.Z2_empty_picturebox.Image = global::PLC_SIEMENS.Properties.Resources.Do_silos_czesc_D_Nap;
+            this.Z2_empty_picturebox.Location = new System.Drawing.Point(1028, 435);
+            this.Z2_empty_picturebox.Margin = new System.Windows.Forms.Padding(2);
+            this.Z2_empty_picturebox.Name = "Z2_empty_picturebox";
+            this.Z2_empty_picturebox.Size = new System.Drawing.Size(119, 27);
+            this.Z2_empty_picturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Z2_empty_picturebox.TabIndex = 95;
+            this.Z2_empty_picturebox.TabStop = false;
+            this.Z2_empty_picturebox.Visible = false;
+            // 
+            // pictureBox20
+            // 
+            this.pictureBox20.Image = global::PLC_SIEMENS.Properties.Resources.Do_silos_czesc_D;
+            this.pictureBox20.Location = new System.Drawing.Point(1028, 309);
+            this.pictureBox20.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox20.Name = "pictureBox20";
+            this.pictureBox20.Size = new System.Drawing.Size(119, 153);
+            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox20.TabIndex = 137;
+            this.pictureBox20.TabStop = false;
+            // 
+            // pictureBox19
+            // 
+            this.pictureBox19.Image = global::PLC_SIEMENS.Properties.Resources.REA_2;
+            this.pictureBox19.Location = new System.Drawing.Point(1028, 268);
+            this.pictureBox19.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox19.Name = "pictureBox19";
+            this.pictureBox19.Size = new System.Drawing.Size(119, 43);
+            this.pictureBox19.TabIndex = 136;
+            this.pictureBox19.TabStop = false;
+            // 
+            // pictureBox16
+            // 
+            this.pictureBox16.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox16.Image")));
+            this.pictureBox16.Location = new System.Drawing.Point(1028, 461);
+            this.pictureBox16.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox16.Name = "pictureBox16";
+            this.pictureBox16.Size = new System.Drawing.Size(119, 20);
+            this.pictureBox16.TabIndex = 135;
+            this.pictureBox16.TabStop = false;
+            // 
+            // pictureBox17
+            // 
+            this.pictureBox17.Image = global::PLC_SIEMENS.Properties.Resources.REA_2_;
+            this.pictureBox17.Location = new System.Drawing.Point(793, 738);
+            this.pictureBox17.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox17.Name = "pictureBox17";
+            this.pictureBox17.Size = new System.Drawing.Size(165, 30);
+            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox17.TabIndex = 131;
+            this.pictureBox17.TabStop = false;
+            // 
+            // Bell_picturebox
+            // 
+            this.Bell_picturebox.ErrorImage = null;
+            this.Bell_picturebox.Image = global::PLC_SIEMENS.Properties.Resources.BUCZEK_1;
+            this.Bell_picturebox.InitialImage = null;
+            this.Bell_picturebox.Location = new System.Drawing.Point(1476, 12);
+            this.Bell_picturebox.Name = "Bell_picturebox";
+            this.Bell_picturebox.Size = new System.Drawing.Size(35, 42);
+            this.Bell_picturebox.TabIndex = 21;
+            this.Bell_picturebox.TabStop = false;
+            this.Bell_picturebox.Visible = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.Tare_button);
             this.Controls.Add(Settings_button);
             this.Controls.Add(this.Z2_emptyInfo_panel);
             this.Controls.Add(this.Z1_emptyInfo_panel);
@@ -1621,7 +1636,6 @@
             this.MinimizeBox = false;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "++";
             this.WorkMode_panel.ResumeLayout(false);
             this.Alarms_panel.ResumeLayout(false);
             this.Help_panel.ResumeLayout(false);
@@ -1632,6 +1646,8 @@
             this.StatusLine_tablelayoutpanel.ResumeLayout(false);
             this.StatusLine_tablelayoutpanel.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.Z1_emptyInfo_panel.ResumeLayout(false);
+            this.Z2_emptyInfo_panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Mi1_picturebox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Wb3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -1653,8 +1669,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bell_picturebox)).EndInit();
-            this.Z1_emptyInfo_panel.ResumeLayout(false);
-            this.Z2_emptyInfo_panel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1684,7 +1698,6 @@
         private System.Windows.Forms.Label odc2_label2;
         public System.Windows.Forms.PictureBox ZE2_picturebox;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Timer program_cycle;
         private System.Windows.Forms.Label label15;
         public System.Windows.Forms.PictureBox ZE3_picturebox;
         private System.Windows.Forms.PictureBox pictureBox17;
@@ -1752,6 +1765,8 @@
         private System.Windows.Forms.Panel Z2_emptyInfo_panel;
         private System.Windows.Forms.Label Z2_emptyInfo_label;
         private System.Windows.Forms.Button Z2_emptyInfo_button;
+        private System.Windows.Forms.Button Tare_button;
+        public System.Windows.Forms.Timer program_cycle;
     }
 }
 

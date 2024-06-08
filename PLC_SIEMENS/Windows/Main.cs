@@ -96,11 +96,11 @@ namespace PLC_SIEMENS
                 var cykle_PV = Convert.ToDouble(await PLC.analog_read(20, 0, S7.Net.VarType.Int));
                 cyclesPV_label.Text = cykle_PV.ToString();
                 var weight = Convert.ToDouble(await PLC.analog_read(10, 0, S7.Net.VarType.Real));
-                Weight_label.Text = $"{weight.ToString("0.##")} kg";
+                Weight_label.Text = $"{weight.ToString("0.###")} kg";
                 var weight_skl = Convert.ToDouble(await PLC.analog_read(20, 34, S7.Net.VarType.Real));
-                IngredientWeightPV_label.Text = $"{weight_skl.ToString("0.##")} kg";
+                IngredientWeightPV_label.Text = $"{weight_skl.ToString("0.###")} kg";
                 var weight_PV = Convert.ToDouble(await PLC.analog_read(20, 24, S7.Net.VarType.Real));
-                weightPV_label.Text = $"{weight_PV.ToString("0.##")} kg";
+                weightPV_label.Text = $"{weight_PV.ToString("0.###")} kg";
                 var mieszanki_counter = Convert.ToDouble(await PLC.analog_read(20, 30, S7.Net.VarType.Int));
                 MixturesCounter_label.Text = mieszanki_counter.ToString();
 
@@ -138,7 +138,11 @@ namespace PLC_SIEMENS
         private void close_app_button_Click(object sender, EventArgs e)
         {
             var result = MessageBox.Show("Czy napewno chcesz wyjść z aplikacji?", "Zamykanie aplikacji", MessageBoxButtons.YesNo, MessageBoxIcon.Question);          
-            if (result == DialogResult.Yes) Close();
+            if (result == DialogResult.Yes)
+            {
+                PLC.plc.Close();
+                Close();
+            }           
         }
 
         private async void STOP_button_Click(object sender, EventArgs e)
@@ -524,6 +528,11 @@ namespace PLC_SIEMENS
         private async void Z2_emptyInfo_button_Click(object sender, EventArgs e)
         {
             await PLC.writeBool("DB8.DBX4.1", true);
-        }       
+        }
+
+        private async void Tare_button_Click(object sender, EventArgs e)
+        {
+            await PLC.writeBool("DB8.DBX1.1", true);
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace PLC_SIEMENS
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Task.Run(async () => await DefinitionAlarm.init());
-            Task.Run(async () => await PLC.connect());           
+            //Task.Run(async () => await PLC.connect());           
             Application.Run(new Main());
         }
     }   
