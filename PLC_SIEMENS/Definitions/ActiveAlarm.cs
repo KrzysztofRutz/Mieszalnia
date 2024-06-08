@@ -13,7 +13,7 @@ namespace PLC_SIEMENS.Definitions
             bool isconnect = false;
 
             //Połączenie z bazą danych sql server
-            var conn = new SqlConnection("Data Source = DESKTOP-2LGV1R3; Initial Catalog = Mieszalnia; Integrated Security = true");
+            var conn = new SqlConnection("Data Source = localhost; Initial Catalog = Mieszalnia; Integrated Security = true");
             try
             {
                 await conn.OpenAsync();
@@ -66,7 +66,7 @@ namespace PLC_SIEMENS.Definitions
             bool isconnect = false;
 
             //Połączenie z bazą danych sql server
-            var conn = new SqlConnection("Data Source = DESKTOP-2LGV1R3; Initial Catalog = Mieszalnia; Integrated Security = true");
+            var conn = new SqlConnection("Data Source = localhost; Initial Catalog = Mieszalnia; Integrated Security = true");
             try
             {
                 await conn.OpenAsync();

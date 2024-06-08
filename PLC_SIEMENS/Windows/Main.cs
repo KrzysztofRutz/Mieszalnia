@@ -8,7 +8,7 @@ using PLC_SIEMENS.Definitions;
 using PLC_SIEMENS.Windows.Alarms;
 using PLC_SIEMENS.Windows.Devices;
 
-namespace PLC_SIEMENS
+namespace PLC_SIEMENS.Windows
 {
     public partial class Main : Form
     {
@@ -43,7 +43,7 @@ namespace PLC_SIEMENS
             var id = Convert.ToInt32(await PLC.analog_read(20, 38, S7.Net.VarType.Int));
             bool isconnect = false;
             //Połączenie z bazą danych sql server
-            var conn = new SqlConnection("Data Source = DESKTOP-2LGV1R3; Initial Catalog = Mieszalnia; Integrated Security = true");
+            var conn = new SqlConnection("Data Source = localhost; Initial Catalog = Mieszalnia; Integrated Security = true");
             try
             {
                 await conn.OpenAsync();
@@ -391,7 +391,7 @@ namespace PLC_SIEMENS
         private async void recipe_button_Click(object sender, EventArgs e)
         {
             //Połączenie z bazą danych sql server
-            var conn = new SqlConnection("Data Source = DESKTOP-2LGV1R3; Initial Catalog = Mieszalnia; Integrated Security = true");
+            var conn = new SqlConnection("Data Source = localhost; Initial Catalog = Mieszalnia; Integrated Security = true");
             try
             {
                 await conn.OpenAsync();

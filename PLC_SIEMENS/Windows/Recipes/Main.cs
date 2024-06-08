@@ -10,8 +10,8 @@ namespace PLC_SIEMENS.Windows.Recipes
     public partial class Main : Form
     {
         private readonly SqlConnection conn;
-        private readonly PLC_SIEMENS.Main MainApp;
-        public Main(SqlConnection connection, PLC_SIEMENS.Main main)
+        private readonly Windows.Main MainApp;
+        public Main(SqlConnection connection, Windows.Main main)
         {
             InitializeComponent();
             main_timer.Start();

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace PLC_SIEMENS
+namespace PLC_SIEMENS.Windows
 {
     public partial class ElectricalDiagram : Form
     {

@@ -1,10 +1,10 @@
 ﻿using PLC_SIEMENS.Definitions;
 using System.Windows.Forms;
 
-namespace PLC_SIEMENS
+namespace PLC_SIEMENS.Windows
 {
     public partial class Error_PLC : Form
-    {
+    {      
         public Error_PLC()
         {
             InitializeComponent();
@@ -18,10 +18,15 @@ namespace PLC_SIEMENS
             {
                 await PLC.connect();
             }
+
+            if (PLC.plc.IsConnected)
+            {               
+                Close();
+            }
         }
 
         private void Error_PLC_FormClosed(object sender, FormClosedEventArgs e)
-        {
+        {           
             Main.instance.program_cycle.Start();
         }
 

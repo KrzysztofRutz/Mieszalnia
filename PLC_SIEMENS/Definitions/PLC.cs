@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using CefSharp.WinForms.Internals;
+using PLC_SIEMENS.Windows;
 using S7.Net;
 
 namespace PLC_SIEMENS.Definitions
@@ -16,8 +17,7 @@ namespace PLC_SIEMENS.Definitions
             {
                 try
                 {
-                    await plc.OpenAsync();
-                    if (error_window.IsActiveControl()) error_window.Close();
+                    await plc.OpenAsync();                   
                 }
                 catch
                 {                   

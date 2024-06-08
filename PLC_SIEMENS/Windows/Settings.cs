@@ -3,7 +3,7 @@ using PLC_SIEMENS.Definitions;
 using System.Windows.Forms;
 using S7.Net;
 
-namespace PLC_SIEMENS
+namespace PLC_SIEMENS.Windows
 {
     public partial class Settings : Form
     {         
